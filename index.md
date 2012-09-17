@@ -1,15 +1,15 @@
 ---
 layout: page
 title: Rebornix
-tagline: Supporting tagline
+tagline: If you really want it
 ---
 {% include JB/setup %}
 
-My instant blog is [Rebornix](http://www.rebornix.com)
+My old blog is [Rebornix](http://www.rebornix.com), but it can't be accessed now.
 
 ## A coder's blog should be controlled by a version-control-system
 
-Following is a piece of code:
+Following is a piece of code(from my microsoft intern interview):
 
     def NameToNo(name):
         result = 0
@@ -17,7 +17,7 @@ Following is a piece of code:
             result = result * 26 + ord(ch) - ord('A') + 1
         return result
 
-It would be better if the code can be high-lighted.
+It would be better if the code can be highlighted.
 
 ## Sample Posts
 
