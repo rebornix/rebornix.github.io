@@ -1,0 +1,72 @@
+--- 
+layout: post
+title: 海上日志 Sprint3
+
+status: publish
+published: true
+meta: 
+  _edit_last: "1"
+type: post
+tags: 
+- !binary |
+  5bel5L2cL+WunuS5oA==
+
+---
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<div style="font-family: 微软雅黑;">
+
+			<p style="font-family: 微软雅黑;"> 新的一周又开始了，除了每周一期的sprint，还有每周一本书。我要逐渐给每一天定下标签，记得大二学期我坚持了半年的Monday Night Raw和Tuesday Reading Night，效果很不错，可以继续。<!--more--></p>
+
+			<hr />
+			<span style="color: #339966">8.1</span>
+			<ul>
+				<li>16:26，Vendor今儿把那个败的case fix掉了。除去之前理解的部分，他正式搞这个bug是上周四，刚好一周吧。还好他帮我fix了，不然最近的WF的活儿就力不从心了，而且如果两边一起做，我应该得花至少两周。CodeReview研究一下他fix的方法，学习一下，要从中看出功力。P.S. 代码里各种工厂，得重新审视一下设计模式了。</li>
+				<li>14:46，早就听闻OneNote非常赞，但是由于自己的PC上有Evernote，所以从没真正去使用过。反而因为Evernote的多平台和同步有效性一度想成为其付费用户（可能以后还是会）。在公司尝试了一下OneNote，其笔记本的概念很真实，而且单个页面中几乎任何位置都可以写字和做标记，符合了我用铅笔在纸上写字的习惯。要说缺点还是有的，不能在Linux上用，Wine里面有多慢我就不说了</li>
+				<li>13:58，中午玩了会儿UNO，本来把XiaoFeng给我面试时的那条Execl列号题写一下的。月底实习生面试决定是否留下来还是得从算法研究起啊，而且这次就是真的全英文了。</li>
+				<li>10:32，早上来跑脚本，发现还是有一点bug的，Bankq曾经说bug不调通不睡觉，我虽然没这么苛刻，但是交给别人的东西如果还有bug那是不能允许的。处理CSV时出现_csv.Error: Newline inside string。原因是在csv数据中可能出现换行符\t，对其进行replace也不能完全避免这个问题。于是我给其添上""，下一次读取的时候再把""替换掉，bug fixed，依旧很土。</li>
+			</ul>
+			<span style="color: #339966">7.31</span>
+			<ul>
+				<li>22:32, feels great switching back to Linux and more powerful using Shell.</li>
+				<li>22:17，直接在网页里写，就无法使用我喜欢的编辑器，这是怎样一种蛋疼啊，受不了了。还是每天离开公司前同步到网上，然后回来网页编辑吧。如果有什么不爽了，就去改变它。所以我一定要替换掉我的博客系统。</li>
+				<li>21:47，在家里Dropbox传的上去，同步不下来还真是蛋疼的事情啊，一不小心就会覆盖了一天的工作。直接发到博客上可能风险还要小一点，谢特。</li>
+				<li>19:50，真是托大了，以为用python会很好写，虽然几乎没怎么用过，但还是答应pm姐姐把csv处理掉。吃晚饭的时候脾气有点暴躁，因为不太好搞，回来后整了个比较土的方法，还居然行了，尤其是用len判断两个string是否相等的时候，突然觉得撞大运式编程哥已经到了炉火纯青的地步了。终于可以回去鸟</li>
+				<li>16:37，写入CSV时，CSV文件的创建必须加上’b'参数，不然会出现隔行的现象。原因是：python正常写入文件的时候，每行的结束默认添加‘\n’，即0x0D，而writerow命令的结束会再增加一个0x0D0A，因此对于windows系统来说，就是两行，而采用’b’参数，用二进制进行文件写入，系统默认是不添加0x0D的。</li>
+				<li>15:27，今天pantry的水果是葡萄！</li>
+				<li>15:02，处理到xml、csv还是用python会方便一点，处理一下下。</li>
+				<li>14:42，这次是真真切切地查看purchase每一个activity的代码，业务逻辑十分缜密，基本上不可能并行，但是一些细节处理的好的话，还是可以把单个activity的time comsuming 降到一半的。</li>
+				<li>11:12，Dev Leader asks for a FTE to make sure all the cases relative to Workflow can pass. I mailed and told them I can do with it!</li>
+				<li>09:30，谢特，我怎么老是忘了公司用了代理，但是代理用户信息中我有(AT)，神啊，那我的密码之后@代理地址就出错了呀。</li>
+				<li>09:03，到了公司dropbox上已经保存了昨日的数据和git信息，但是没有办法直接进行push和pull的。一种方法clone一个到本地别的位置，但不知为什么无法成功连接。</li>
+			</ul>
+			<span style="color: #339966">7.30</span>
+			<ul>
+				<li>00:21，博客保存在Dropbox的同时，同时上传到bitbucket上，使用Git进行管理。这样，一方面进行了两次备份，同时拥有了版本管理，即使Dropbox出现了较大的问题也可以通过版本来恢复。同时文章全部都是用html进行标记，以后可以直接将其加入到新的博客中，无需考虑如何导入导出。Nice Shot!</li>
+				<li>00:06，貌似又出问题了，八点到现在的记录没了，真是伤啊。MVVM框架搭配VS2010+Blend，开发起来绝对是神器。MVVM Tool Light的出现解决了之前困扰我很久的问题，如何在UI无关的代码中修改UI控件。它封装了模块间传消息的方法，互相通讯的模块不需要相互知道。这样其他模块中异步访问网络得到的数据就可以发送到UI中了。</li>
+				<li>19:55，如果再出现一次错误，就换成bitbucket，没有git太麻烦了。Timothy Ng在LinkedIn上和我建立了Connection，开心。</li>
+				<li>19:54，貌似dropbox的同步也不出了问题。谢特</li>
+				<li>1807，三点和老大们开了个会，讨论了下Performance enhancement的近况，还有很大的提升空间。之后一直在讨论解决问题的思路，贪心啊、神经网络啊，什么思路都有。当问题变成要数据挖掘的时候，突然变得有意思了。晚上回去挖一下Tony那边的数据，写个工具来analysis.终于知道为什么周老板的学生这么抢手了。</li>
+				<li>13:57，Not your work, it's a team work.</li>
+				<li>13:15，需要为OII考虑加密的问题，是对称加密还是用RSA，性能在考虑范围之内。</li>
+				<li>12:40，Sneezry给OII加了几个彩蛋哈哈。晚上回去要先试着重构下代码，除此之外还要加上图片显示的功能。加密也要考虑。</li>
+				<li>10:06，keywords: Diff/ Never use the magic number</li>
+				<li>09:57，Parallelism != Concurrency. We always get confused because in side-effecty laguages, the only way to get parallelism is concurrency.</li>
+				<li>09:04，上个月的工作我做的比较浮躁，无论是看代码、看bug还是别的什么。这个月要沉下心来，把速度提上去。May the Code be with me.</li>
+			</ul>
+			<span style="color: #339966">7.29</span>
+			<ul>
+				<li>23:59，网瘾确实太重了，已经严重影响工作。自己在家和Hobby Day或者公司的效率完全无法比。在那里，上网是为了查资料，而在家根本无法看书或者认真地看博客。读不进书，成不了大事，自勉。</li>
+				<li>23:23，刚才洗澡时想起了Dev的代码，他要修改原先的函数，使得某些调用完成的功能发生一点变化，但基本还是一致的。他并没有添加新的函数，而是给函数添加一个parameter IsNewVersion，需要调用新函数的地方传入true，不需要的地方传入false。其实他只需将IsNewVersion defalut value 设为false，调用新函数的地方传入true，其他call都不必做修改了。好处是，你不知道有多少地方调用了这个函数而你没有修改它们call的方式。</li>
+				<li>21:48，把周末当做一周的开始。今儿白天和Interns出去唱歌了，玩的很high。晚上回来自己煮面，加俩鸡蛋，还有青菜西红柿，还不错哦。开始看linjun给我的《万历十五年》，他不借技术书给我，反而要我看这个。P.S. Linjun是真Geek，从他那儿可以学到不少东西，尽量每个月都去那儿玩，多学一些新的知识。当然自己回来也要做功课，不能只上网。</li>
+			</ul>
+			
+			<p style="font-family: 微软雅黑;"> May the code be with me.</p>
+
+		</div>
+
+	</body>
+</html>
