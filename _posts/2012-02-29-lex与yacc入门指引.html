@@ -46,14 +46,12 @@ tags:
 <p style="font-family: 微软雅黑;">yacc中使用的是自底向上的归约方法。在归约的过程中，我们需要维护一个输入缓冲区和一个栈用于存储文法符号。归约时主要分析技术为：</p>
 
 <ul>
-	<li style="font-family: 微软雅黑;"><span class="Apple-style-span" style="font-family: 'Courier 10 Pitch', Courier, monospace; font-size: 13px; line-height: 19px;">移入:将下个输入符号移动到栈顶</span></li>
-	<li style="font-family: 微软雅黑;"><span class="Apple-style-span" style="font-family: 'Courier 10 Pitch', Courier, monospace; font-size: 13px; line-height: 19px;">归约:将句柄归约为相应的非终结符号</span></li>
-<ul>
-	<li style="font-family: 微软雅黑;"><span class="Apple-style-span" style="font-family: 'Courier 10 Pitch', Courier, monospace; font-size: 13px; line-height: 19px;"> 句柄总是在栈顶</span></li>
-	<li style="font-family: 微软雅黑;"><span class="Apple-style-span" style="font-family: 'Courier 10 Pitch', Courier, monospace; font-size: 13px; line-height: 19px;"> 具体操作时弹出句柄,压入被归约到的非终结符号</span></li>
-</ul>
-	<li style="font-family: 微软雅黑;"><span class="Apple-style-span" style="font-family: 'Courier 10 Pitch', Courier, monospace; font-size: 13px; line-height: 19px;">接受:宣布分析过程成功完成</span></li>
-	<li style="font-family: 微软雅黑;"><span class="Apple-style-span" style="font-family: 'Courier 10 Pitch', Courier, monospace; font-size: 13px; line-height: 19px;">报错:发现语法错误,调用错误恢复子程序</span></li>
+	<li style="font-family: 微软雅黑;">移入:将下个输入符号移动到栈顶</li>
+	<li style="font-family: 微软雅黑;">归约:将句柄归约为相应的非终结符号</li>
+	<li style="font-family: 微软雅黑;">句柄总是在栈顶</li>
+	<li style="font-family: 微软雅黑;">具体操作时弹出句柄,压入被归约到的非终结符号</li>
+	<li style="font-family: 微软雅黑;">接受:宣布分析过程成功完成</li>
+	<li style="font-family: 微软雅黑;">报错:发现语法错误,调用错误恢复子程序</li>
 </ul>
 <p style="font-family: 微软雅黑;">比如这个归约式： FunDec : ID  LP RP;   栈顶分别存着句柄 ID、LP、RP，归约的过程则是将它们退栈并将FunDec这个结非终符压栈。在yacc中，使用$$代表归约式的非终结符，即FunDec，使用$1，$2，$3等表示归约式的句柄。我们将其类型设置为struct TreeNode 则可以构造一个语法树。</p>
 <p style="font-family: 微软雅黑;">但是在这里，我开始遇上经典的“<span style="color: #ff0000;"><strong>段错误</strong></span>”。第一次发生bug是因为我把归约时的两个栈给忘了。对每个归约式都实现$$指向$1。但是进行深度遍历时，无论从哪个节点开始，都只能下降一层。面对这个bug，只需将栈考虑进去，当$1被退出栈后，它的生命期也就结束了，但是$$中用于指向$1的地址没有变，它仍然指向原来$1所在的栈的位置，无论如何更替，这个地址都不会变，错误也就不可避免。</p>

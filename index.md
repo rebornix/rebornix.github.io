@@ -5,12 +5,11 @@ tagline: If you really want it
 ---
 {% include JB/setup %}
 
-My old blog is [Rebornix](http://www.rebornix.com), but it can't be accessed now.
+You can read my blog from [Archive](/archive.html)
 
-## A coder's blog should be controlled by a version-control-system
-
-## As far as I can see.
+## As far as I can see.##
 <a href="http://www.flickr.com/photos/njukidreborn/5189051166/" title="Flickr 上 njukidreborn 的 Moon-3"><img src="http://farm2.staticflickr.com/1268/5189051166_731c130f05_z.jpg" width="640" height="400" alt="Moon-3"></a>
+
 
 Following is a piece of code(from my microsoft intern interview):
 
@@ -21,12 +20,5 @@ Following is a piece of code(from my microsoft intern interview):
         return result
 
 It would be better if the code can be highlighted.
-
-## Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
 
 End
