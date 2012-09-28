@@ -13,7 +13,7 @@ html, body {
 /* line 18, ../_sass/_base.scss */
 body {
   color: #bbb;
-  text-shadow: 1px 1px 1px #000;
+  text-shadow: rgba(0,0,0,0.75);
   height: 100%;
   font-family: 'Oxygen', sans-serif;
   font-size: 14px;
@@ -201,7 +201,7 @@ div.pagination li a {
 /* line 176, ../_sass/_base.scss */
 a.btn, a.btn.disabled {
   color: rgba(255, 255, 255, 0.7);
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: rgba(0,0,0,0.75);
   background: rgba(0, 0, 0, 0.2);
   border: none;
   -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
