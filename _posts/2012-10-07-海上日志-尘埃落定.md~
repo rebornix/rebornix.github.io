@@ -1,0 +1,21 @@
+--- 
+layout: post
+title: 海上日志 尘埃落定
+
+status: publish
+published: true
+meta: 
+  _edit_last: "1"
+type: post
+tags: 
+- 工作/实习 
+- 海上日志
+
+---
+
+<span style="color: #339966">9.28</span>
+<ul>
+<li>10:13，跟了仲盛老师，加入COSEC！</li>
+<li>10:07，markdown语法虽然简练，但是并不是所有的需求都能满足，不过完美支持html也就无可挑剔了。jekyll来生成静态页面，不打算用octopress，因为jekyll够简单，功能不够的话其实自己添加就可以了。现在终于可以在自己喜欢的编辑器里写log了，不纠结鸟。不过因为是github托管，频繁地提交版本会给别地同学带来困扰，所以每日本地commit一次，每周一push。</li>
+<li>10:04，海上日志又要重新开张了</li>
+</ul>
