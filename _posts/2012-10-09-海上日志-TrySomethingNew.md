@@ -12,6 +12,16 @@ tags:
 - 海上日志
 
 ---
+<span style="color: #339966">10.17</span>
+<ul>
+<li>17:23，公司有个果粉在宣扬iPad mini有多好，并一直在讲一个笑话“Surface 32GB要4488，系统就占了12GB”.首先Surface 32GB只要3600+，加上键盘才事4488，别说和iPad一样贵，你要是再买一个高质量的case要再加上500+。其次，Surface可以插U盘和microSD卡好么，吐嘈无力。</li>
+<li>16:00，Physical machine上的安装了VMWare（就是之前我升级的那些），然后要再其上添加Virtual Machine。一共12台机器手动地设置Host Name,OS，Disk，Memory之类，其安装配置则是自动化配备好的。AWS或者Azure提供给用户自由创建虚拟机，其实就是将其全部实现automation。这些原本看似高端的技术的base也不见得就非常的深奥，一如Map Reduce.
+<li>14:59，remote machine上rsync路径不对，我虽然check到了这个manual，但是我一直用local的rsync来设置，真是太傻了。而且没有uptime看一下新build的机器是否是空的</li>
+<li>12:46，居然重启之后就好了，Ubuntu的Network Module很成问题啊。反正我自己的电脑在宿舍连网都上不去。</li>
+<li>12:29，Ryan和我看了十五分钟也没又抓出我呢提所在，reboot一下试试</li>
+<li>11:25，今天的网络不知道为什么老是断，抽的不行，还好有screen帮助，不然啥活也干不下去了。但是不断地ssh重连也很蛋疼啊。</li>
+<li>10:16，早上坐公交车结果把自己的公交卡又搞混了，sheet，哥还是把卡上的号码全部记住吧，就像记住每辆公交车的车牌号一样！</li>
+</ul>
 <span style="color: #339966">10.16</span>
 <ul>
 <li>19:04，最恨和ssh，https纠缠不清了，尤其是在一个VPN内，也不知道对外的ssh有没有被blockc掉，而https可以pull不能push，相当纠结。</li>
