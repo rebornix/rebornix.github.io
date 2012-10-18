@@ -12,6 +12,17 @@ tags:
 - 海上日志
 
 ---
+<span style="color: #339966">10.18</span>
+<ul>
+<li>20:09, SA+Dev的活儿一旦一起都要干，事情就变多了。中午睡了一觉，Happy Hour时看到公司还是有不少美女的，瞬间感觉又会爱了。晚上回去实在是累，啥都不想聊，不合理啊少年。</li>
+<li>18:56，今天在公司吃罗森的盒饭～不是说好的今天Ubuntu12.10 final release的么，UTC都11点了怎么还没有，搞我呀，哥还指望着蹭公司的网下好了回家装呢,what the fucking hell!</li>
+<li>17:06, Fabric seems cool!</li>
+<li>16:35，FreeMind果然好用，思维导图才是帮助我思考的最佳工具，赞一个。学习思维导图的理论得有一年了到现在才开始实践是不是反应太慢了？</li>
+<li>16:27，Happy Hour各种没节操啊，调戏老板们是这家公司的企业文化么～～～</li>
+<li>15:02，Keywords: Python, Django, Extjs.</li>
+<li>13:39，join QA Tools Team, start some coding work.</li>
+<li>11:05，为12台server mount NFS share folder，要修改/etc/fstab，创建dir，然后mount，做到第六台觉得自己真傻，居然不写脚本来做这个事情。</li>
+</ul>
 <span style="color: #339966">10.17</span>
 <ul>
 <li>17:23，公司有个果粉在宣扬iPad mini有多好，并一直在讲一个笑话“Surface 32GB要4488，系统就占了12GB”.首先Surface 32GB只要3600+，加上键盘才事4488，别说和iPad一样贵，你要是再买一个高质量的case要再加上500+。其次，Surface可以插U盘和microSD卡好么，吐嘈无力。</li>
