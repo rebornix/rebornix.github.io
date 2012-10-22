@@ -12,29 +12,20 @@ tags:
 - 海上日志
 
 ---
-<span style="color: #339966">10.18</span>
+<span style="color: #339966">10.22</span>
 <ul>
-<li>17:50，build的机器多了之后，自己也不记得哪些是自己做的，这样不好！</li>
-<li>16:38，SA和Dev双管齐下百花齐放的结果就是忙得跟个狗一样！</li>
-<li>13:46，装完ubuntu12.10后win8没了，修了一个中午都没搞定，尼马马上全组人都要来看了...算了，还是回去重装win8吧，谁让我把linux放在了猪分区！</li>
-<li>10:41，根据最近工作的经验来看，三个屏幕是工作最合理的配置（或者是对于我的工作习惯来说），中间那个用来code或处理issue，右边展示需求或流程，左侧那个用来do some research. 而更多时候我们手里头不可能只有一件事情在做，你也总会经常被打断，Ubuntu的多工作界面就显得很重要。我先在Stage1，2是SA的两份不同的工作，Stage3是Tools Dev，Stage4 Personal Staff，做一些记录和wiki。但还是会感到界面还不够多。王母娘娘，赐我一墙的显示器吧！</li>
-<li>10:19，真是每天来的时候都是一阵忙活。如果你想要干活，ticket是可以源源不断的，虽然活儿都很tiny，但需求之间各有差异，实际也比较难写脚本automation。可能人工智能更靠谱一些。昨晚睡之前Ubuntu12.10都还没有final release，万恶的时区，躺在床上想应该写个脚本一直check官网看是否有更新，一旦发现就叫我起床。早上六点起来发现release出来了，点击下载后又睡了一觉。Come On 12.10，让蹩脚的网络管理和网卡驱动们都一边玩蛋儿去吧！</li>
-</ul>
-<span style="color: #339966">10.18</span>
-<ul>
-<li>20:09, SA+Dev的活儿一旦一起都要干，事情就变多了。中午睡了一觉，Happy Hour时看到公司还是有不少美女的，瞬间感觉又会爱了。晚上回去实在是累，啥都不想聊，不合理啊少年。</li>
-<li>18:56，今天在公司吃罗森的盒饭～不是说好的今天Ubuntu12.10 final release的么，UTC都11点了怎么还没有，搞我呀，哥还指望着蹭公司的网下好了回家装呢,what the fucking hell!</li>
-<li>17:06, Fabric seems cool!</li>
-<li>16:35，FreeMind果然好用，思维导图才是帮助我思考的最佳工具，赞一个。学习思维导图的理论得有一年了到现在才开始实践是不是反应太慢了？</li>
-<li>16:27，Happy Hour各种没节操啊，调戏老板们是这家公司的企业文化么～～～</li>
-<li>15:02，Keywords: Python, Django, Extjs.</li>
-<li>13:39，join QA Tools Team, start some coding work.</li>
-<li>11:05，为12台server mount NFS share folder，要修改/etc/fstab，创建dir，然后mount，做到第六台觉得自己真傻，居然不写脚本来做这个事情。</li>
+<li>19:22,为了防止回去后上不了网，必须要commit一下，不然明天过来没同步之后merge就蛋碎了~~~damn sheet dorm network!</li>
+<li>19:12，终于自己的linux上也把博客同步过来了！马上安装坚果云，做两个git remote depot.</li>
+<li>17:10, Ryan过来问最近有木有什么好玩的，于是我们聊了得有四十分钟的各种Project各种Code和算法...这就是码农的世界么，不过很爽是真的</li>
+<li>16:29，今儿个还没汇报周末工作呢，你知道为什么我周末没有log吗?Yes，周末在家没有网；怎么会没有网?Yes，我的linux连不上；连不上怎么fix？Yes，重装别的版本。Yes，哥周六装了一天，从Ubuntu12.10到Mint13Xfce，到Mint13KDE，再到Mint13Maya，尼马没有一个可以成功的！至于我一条/etc/init.d/networking restart搞崩溃Ubuntu12.10再要没有起来过我就不说啥了，Damn Sheet!周日出去买衣服，终于买了老妈不喜欢的棉开衫，她不让买是觉得我肯定不会洗。晚上就去松江和阿福Celia吃了个饭，认识了一下美丽的Sofia。回来后神清气爽，装上LUbuntu，是啊，哥已经只能用Lubuntu了，时间是把杀猪刀啊。</li>
+<li>16:28，实在忍不住，到楼下给自己买了杯可乐，sorry Regenia，写代码时可乐才是王道啊。</li>
+<li>13:30，oh come on！盗号这件小事将要持续影响我多长时间啊，搜不鸟！</li>
+<li>10:45，不管是否可以恢复好友，是否可以回到过去，但故事的最后我好像还是要说拜拜。Find me by Google Talk(penn.lv#gmail.com) MSN(rebornix#live.com) Skype(njukidreborn) or just this Blog.</li>
+<li>09:46，QQ被盗，怎么会有这么缺德的事情！哥决定不用了，相信别人总要办法找到我</li>
 </ul>
 <span style="color: #339966">10.17</span>
 <ul>
-<li>17:23，公司有个果粉在宣扬iPad mini有多好，并一直在讲一个笑话“Surface 32GB要4488，系统就占了12GB”.首先Surface 32GB只要3600+，加上键盘才事4488，别说和iPad一样贵，你要是再买一个高质量的case要再加上500+。其次，Surface可以插U盘和microSD卡好么，吐嘈无力。</li>
-<li>16:00，Physical machine上的安装了VMWare（就是之前我升级的那些），然后要再其上添加Virtual Machine。一共12台机器手动地设置Host Name,OS，Disk，Memory之类，其安装配置则是自动化配备好的。AWS或者Azure提供给用户自由创建虚拟机，其实就是将其全部实现automation。这些原本看似高端的技术的base也不见得就非常的深奥，一如Map Reduce.
+<li>16:00，Physical machine上的安装了VMWare（就是之前我升级的那些），然后要再其上添加Virtual Machine。一共12台机器手动地设置Host Name,OS，Disk，Memory之类，其安装配置则是自动化配备好的。AWS或者Azure提供给用户自由创建虚拟机，其实就是将其全部实现automation。这些原本看似高端的技术的base也不见得就非常的深奥，一如Map Reduce.</li>
 <li>14:59，remote machine上rsync路径不对，我虽然check到了这个manual，但是我一直用local的rsync来设置，真是太傻了。而且没有uptime看一下新build的机器是否是空的</li>
 <li>12:46，居然重启之后就好了，Ubuntu的Network Module很成问题啊。反正我自己的电脑在宿舍连网都上不去。</li>
 <li>12:29，Ryan和我看了十五分钟也没又抓出我呢提所在，reboot一下试试</li>
