@@ -14,6 +14,7 @@ tags:
 ---
 <span style="color: #339966">10.22</span>
 <ul>
+<li>00:14,修改/etc/sudoers文件，结果不小心出了typo，再想修改不能了，因为无法使用sudo命令（/etc/sudoers 解析错误）。而Ubuntu默认第一个用户可以获得root权限，当然是通过sudo来实现。理论上你仍然可以使用su操作，但是root账户的密码如果首个用户并未进行修改，那么它每次开机都会获得一个随即的密码，这是多么可怕的事情，意味着你无法使用su。最后的办法是，在进入grub时edit启动方式（ro后添加single，以root身份登陆）。如果为对grub加上锁的话，顺利登入，可以修改任何文件，当你忘记了密码时不失为一种fix问题的好方法。我想大部分人的grub是不加锁的，他们的pc有多么的不安全啊，哈哈.Laugh what!之前的你不也一样么！fix it tomorrow</li>
 <li>19:22,为了防止回去后上不了网，必须要commit一下，不然明天过来没同步之后merge就蛋碎了~~~damn sheet dorm network!</li>
 <li>19:12，终于自己的linux上也把博客同步过来了！马上安装坚果云，做两个git remote depot.</li>
 <li>17:10, Ryan过来问最近有木有什么好玩的，于是我们聊了得有四十分钟的各种Project各种Code和算法...这就是码农的世界么，不过很爽是真的</li>
