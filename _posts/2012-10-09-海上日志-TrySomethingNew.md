@@ -12,6 +12,17 @@ tags:
 - 海上日志
 
 ---
+<span style="color: #339966">10.23</span>
+<ul>
+<li>00:19，在有网络的情况下，Ubuntu One很好地同步了公司的Ubuntu和我的主机。也就是说现在我的blog完全不担心丢失，有Ubuntu One及时地同步文件，当我想更新博客时，我及时地将staged的文件commit上去就okay了，同时在Jianguo yun上做了一个bare repository。三重保护，被dreamhost搞砸博客这种事情再也不能发生了。今儿还从Carl那儿血来用toodeldo来管理todolist，同样那句话，有网的情况下还是很无敌的。不管以后到哪儿生活，第一件事一定是把家里的网架好，之后是server。最后一件事情是现在用印象网页版来写wiki，毕竟服务器在国内，还是很快的。至于网不好时，the world sucks!</li>
+<li>17:38，今天第一次参加了Group meeting和scrum meeting，数数指头发现在eBay待了三周了。Carl看我在忙Ryan忙很多SA的活儿，问我有没有时间，我本来想得是我对Django框架还不够了解，可以再看看testsites的代码，但是Carl和Allen都说看代码没有重点看不出什么东西，应该拿一些tiny的活来做，或者修一些bug先。这就让我想起了在MS，第二天Catherine和我首次见面就给我安排工作了“看/commerce和/cts目录下的代码，之后和dev，pm一起做一个prototype”，然后我就持续看了三周的代码。MS的观念就是没有文档，看代码基本可以搞定一切问题。Which one is better? Who knows.在MS，你的感觉是他们觉得你无所不能，什么都可以做，不需要太多的帮忙（你去ask for help你会得到最热情的帮助，当然还是不要问mananger，他们很忙的）；在eBay我就多次感到他们会希望你能够循序渐进，可以说是一个非常靠谱的建议，适合大部分人，只是我先入为主了不太习惯。好在Ryan每天都丢ticket给我让我能够先前的实习状态.</li>
+<li>16:56，把手机的贴膜撕掉了，感觉这屏幕瞬间爽快多了（撕的时候更爽我知道），但这真是一件矛盾的事情</li>
+<li>15:39，fabric确实是实际生产中的好工具，这好象是我这个sprint中第二次发出感慨了。</li>
+<li>11:39，回到昨天single user mode的问题。我在看linux黑客入门这本书时（名字很土，但还是很hack的），里面讲过单用户模式登录修改密码的，我只事按照提供的修改方式去尝试登录fezhao的ubuntu，但是没有成功。直到昨天sudoers文件出错了不得不以single mode登录才hack出修改自己grub启动的方法（no google）。下下周回去再对fezhao来一次，还有毛博</li>
+<li>11:35，刚才Ryan让我写个循环来ping，问我会不会我想都没想就说了会，然后google了一下写了出来。这合理么...所以说现在是能google到就不算不会么</li>
+<li>11:04，要在30分钟内关闭96台VM，如果从Lom登录就需要96个console，真是又土又累的方式，还好可以使用脚本来shutdown, sh或者fabric循环就可以做了。</li>
+<li>09:04，wow，今天事team来的最早的！真难得！新的一天又开始了筒子！</li>
+</ul>
 <span style="color: #339966">10.22</span>
 <ul>
 <li>00:14,修改/etc/sudoers文件，结果不小心出了typo，再想修改不能了，因为无法使用sudo命令（/etc/sudoers 解析错误）。而Ubuntu默认第一个用户可以获得root权限，当然是通过sudo来实现。理论上你仍然可以使用su操作，但是root账户的密码如果首个用户并未进行修改，那么它每次开机都会获得一个随即的密码，这是多么可怕的事情，意味着你无法使用su。最后的办法是，在进入grub时edit启动方式（ro后添加single，以root身份登陆）。如果为对grub加上锁的话，顺利登入，可以修改任何文件，当你忘记了密码时不失为一种fix问题的好方法。我想大部分人的grub是不加锁的，他们的pc有多么的不安全啊，哈哈.Laugh what!之前的你不也一样么！fix it tomorrow</li>
