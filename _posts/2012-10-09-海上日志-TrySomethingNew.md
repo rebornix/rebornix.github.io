@@ -12,6 +12,36 @@ tags:
 - 海上日志
 
 ---
+<span style="color: #339966">10.25</span>
+<ul>
+<li>17:48，哭了，要处理的问题有Django的问题，Extjs的问题，还有SA issue. 不太好搞啊</li>
+<li>15:36，第一次修bug要用到firebug看html，git创建分支，grep查找，改Django代码.</li>
+<li>12:36，开始做Python开发的第一件事是配好Vim Python Mode，damn Cool!</li>
+<li>14:14，又一次配好了Django和Mysql，尤其是配置二者之间的链接时还是有很多问题的，这些上一次装时都出现了，还要再次google真心麻烦。以后坚决不能偷懒写wiki，只要是在Linux上，因为说不定什么时候我就把linux换了。</li>
+<li>11:57，给公司PC配Django，这次一定要写Wiki！</li>
+<li>11:09，Oracle的问题还真是头疼, sheet</li>
+<li>10:17，有了一个管理Cloud和Physics机器的想法，针对personal PC和Smart Phone及免费云服务</li>
+<li>09:23，Good Morning, Rebornix and nobody else</li>
+</ul>
+<span style="color: #339966">10.25</span>
+<ul>
+<li>15:23，运维是一件需要经验的活儿，所以FTE的年龄都稍微大一些。于是老是有人生小孩、产假还有怀孕...</li>
+<li>14:35，果然做过production之后sense就不一样了，之前八秒的latency降了一秒全世界都很开心，现在即使37s的awk时间大家都觉得没太所谓。</li>
+<li>12:34，自己写的工具就叫rawk吧，在Ryan那台Solaris机器上完成相同的挑选单column的效率是awk的34/2.7倍。不过在我的laptop上就不明显了</li>
+<li>10:15，awk作为一个强大的工具的最大问题在于反而过于庞大了。Ryan让我用C写个工具代替awk，至少完成查找column的功能。</li>
+<li>09:22，睡到八点半再过来11路上人很少，不过you know what!我今天是Team第一个！</li>
+</ul>
+<span style="color: #339966">10.24</span>
+<ul>
+<li>23:30，既然考虑到排序时是否in-place，再次回到上午的日志分析。因为总共只有40thousand的unique item，我就直接使用了built-in sorted method。而如果数据量上去，sorted实际只能最大处理half-memory的数据量。这种情况下建立一个最大堆要合理些。Python内建Heap，明天学习一下。</li>
+<li>23;28，sorted排序时创建了一个新的list，但是list.sort() 的话貌似是in-place的。</li>
+<li>23:27，python的源码真不好读，想看一个built-in sorted method，各种云里雾里。不如看过的一些linux内核代码好看。</li>
+<li>17:12，如果纯用Python写，split一句话就parser成功了，和awk一样方便但是高效，纯python9.9s，C的话快了一秒，但是处理string要稍微烦一些。不过我可以试试C++</li>
+<li>15:51，Ryan把这个活丢给我时就说过Shell可能很慢让我用别的方法来做，不过他提前用awk帮我把parser做好了，这恰恰是最耗时的我一直没有去改进。看到网上有argue说awk比C要慢，于是自己来处理string，200MB的数据只需要5s左右，整个工作只要8.3s。这才是一个大的改进。</li>
+<li>13:44，用shell和python多次测试，发现200MB（2million items）的数据即使用很naive的做法大部分时间也都是花在IO上面(34s)，sort的时间占的很小（不到3.4s），不上GB根本没有必要搞什么Big Data Way，神码最小堆之类的，是自己给自己找麻烦.当然，数据达到GB之后情况可能就不一样了</li>
+<li>10:26, 要帮Ryan解析一个日志，找出DNS解析IP的top 10...为什么是这么经典的算法题</li>
+<li>10:25，今儿闹钟没想，不过七点半就醒了，于是睡了个回笼觉到八点半，到公司九点半，也还不错，但是公交车上人还是很多...sheet</li>
+</ul>
 <span style="color: #339966">10.23</span>
 <ul>
 <li>00:19，在有网络的情况下，Ubuntu One很好地同步了公司的Ubuntu和我的主机。也就是说现在我的blog完全不担心丢失，有Ubuntu One及时地同步文件，当我想更新博客时，我及时地将staged的文件commit上去就okay了，同时在Jianguo yun上做了一个bare repository。三重保护，被dreamhost搞砸博客这种事情再也不能发生了。今儿还从Carl那儿血来用toodeldo来管理todolist，同样那句话，有网的情况下还是很无敌的。不管以后到哪儿生活，第一件事一定是把家里的网架好，之后是server。最后一件事情是现在用印象网页版来写wiki，毕竟服务器在国内，还是很快的。至于网不好时，the world sucks!</li>
