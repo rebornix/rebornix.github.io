@@ -12,7 +12,28 @@ tags:
 - 海上日志
 
 ---
-<span style="color: #339966">10.25</span>
+<span style="color: #339966">10.30</span>
+<ul>
+<li>23:18，和Regina这事是迟早要提不可避免的，sheet</li>
+<li>10:37，最近状态不对，心思完全不知道在哪儿，what's wrong with you?</li>
+</ul>
+<span style="color: #339966">10.29</span>
+<ul>
+<li>16:56，因为有dev_env，配置pymode简直是蛋都要碎了</li>
+<li>13:22，写js的坏处之一时不得不面对cache问题，调试server端的js文件真纠结</li>
+<li>10:43,还是Ryan回来后一切才能恢复正常啊，继续各种不懂得问</li>
+</ul>
+<span style="color: #339966">10.28</span>
+<ul>
+<li>20:13，终于算是把网搞的稳定一些了，至少断的少了.今天起来后干了什么呢，出去散了两次步，追了追最近的美剧.兄弟连不得不说是一部好剧，战争的残酷描述的淋漓尽致，倒是让我有一种不忍再看下去的心情.话刚说完网断了，linux下还是不行啊，但是刚才ipad是很nice的，真是奇了怪了.</li>
+</ul>
+<span style="color: #339966">10.27</span>
+<ul>
+<li>10:35，参加活动的有学生，老程序员们，start up团队两个;和Leon把Face1确定好开始看各种API啦</li>
+<li>08:35，第一个非我的成员是一名linux工程师.</li>
+<li>08:24, 在创智天地参加Gurudigger的Hobby Project Day. 今天和Leon一起做一个Cloud Management</li>
+</ul>
+<span style="color: #339966">10.26</span>
 <ul>
 <li>17:48，哭了，要处理的问题有Django的问题，Extjs的问题，还有SA issue. 不太好搞啊</li>
 <li>15:36，第一次修bug要用到firebug看html，git创建分支，grep查找，改Django代码.</li>
@@ -60,7 +81,7 @@ tags:
 <li>19:12，终于自己的linux上也把博客同步过来了！马上安装坚果云，做两个git remote depot.</li>
 <li>17:10, Ryan过来问最近有木有什么好玩的，于是我们聊了得有四十分钟的各种Project各种Code和算法...这就是码农的世界么，不过很爽是真的</li>
 <li>16:29，今儿个还没汇报周末工作呢，你知道为什么我周末没有log吗?Yes，周末在家没有网；怎么会没有网?Yes，我的linux连不上；连不上怎么fix？Yes，重装别的版本。Yes，哥周六装了一天，从Ubuntu12.10到Mint13Xfce，到Mint13KDE，再到Mint13Maya，尼马没有一个可以成功的！至于我一条/etc/init.d/networking restart搞崩溃Ubuntu12.10再要没有起来过我就不说啥了，Damn Sheet!周日出去买衣服，终于买了老妈不喜欢的棉开衫，她不让买是觉得我肯定不会洗。晚上就去松江和阿福Celia吃了个饭，认识了一下美丽的Sofia。回来后神清气爽，装上LUbuntu，是啊，哥已经只能用Lubuntu了，时间是把杀猪刀啊。</li>
-<li>16:28，实在忍不住，到楼下给自己买了杯可乐，sorry Regenia，写代码时可乐才是王道啊。</li>
+<li>16:28，实在忍不住，到楼下给自己买了杯可乐，sorry Regina，写代码时可乐才是王道啊。</li>
 <li>13:30，oh come on！盗号这件小事将要持续影响我多长时间啊，搜不鸟！</li>
 <li>10:45，不管是否可以恢复好友，是否可以回到过去，但故事的最后我好像还是要说拜拜。Find me by Google Talk(penn.lv#gmail.com) MSN(rebornix#live.com) Skype(njukidreborn) or just this Blog.</li>
 <li>09:46，QQ被盗，怎么会有这么缺德的事情！哥决定不用了，相信别人总要办法找到我</li>
