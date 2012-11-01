@@ -12,6 +12,10 @@ tags:
 - 海上日志
 
 ---
+<span style="color: #339966">11.1</span>
+<ul>
+<li>13:23，使用了git好处终于体现了，不小心删错了文件只要pull后merge一下就什么问题都没有了</li>
+</ul>
 <span style="color: #339966">10.30</span>
 <ul>
 <li>23:18，和Regina这事是迟早要提不可避免的，sheet</li>
