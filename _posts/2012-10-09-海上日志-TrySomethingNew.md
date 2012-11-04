@@ -14,8 +14,11 @@ tags:
 ---
 <span style="color: #339966">11.1</span>
 <ul>
+<<<<<<< HEAD
 <li>17:42，实在是fix不掉ersion不match和各种lib引用的问题，找Ryan给帮助，最后结论就是咱们被坑了，不干鸟</li>
 <li>16;29，我已经花了一天半的时间在这个apache迁移上了。不仅是数据和apache本身，还要帮他们把各种适配给做好，也就是让网站在新的机器上重新run起来。但是由于其原先版本过老，直接迁移新机器上的一些tool不能不能适配，比如mysql和perl。其网站的代码里都是用的绝对地址，必须建立symbolic link为其保持原先的结构。一下午都在纠结如何把perl成功的run起来。</li>
+=======
+>>>>>>> ee43dfe4cb7670be659cf6e55b8dbe12cca29e81
 <li>13:23，使用了git好处终于体现了，不小心删错了文件只要pull后merge一下就什么问题都没有了</li>
 </ul>
 <span style="color: #339966">10.30</span>
