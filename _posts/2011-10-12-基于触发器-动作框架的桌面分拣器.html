@@ -1,0 +1,142 @@
+--- 
+layout: post
+title: !binary |
+  5Z+65LqO6Kem5Y+R5ZmoLeWKqOS9nOahhuaetueahOahjOmdouWIhuaLo+WZ
+  qA==
+
+status: publish
+published: true
+meta: 
+  _edit_last: "1"
+type: post
+tags: 
+- Java
+- Trigger Activity
+---
+<span style="font-family: 微软雅黑;">     昨晚尝试给Blog中的代码添加高亮，修改了style.css，虽然成功了但是发布文章出现了异常，经常打着打着上面的一段文字就missing了，非常蛋疼。而且正好在纠结Linux kernel中关于task_struct一些字段，索性后来把文章删了。</span>
+<div><span style="font-family: 微软雅黑;">     早上近九点爬起来上Java课，布置了第一个实验（小作业 sigh～），名为“基于触发器-动作框架的桌面分拣器”，听起来十分的拗口。不过对于触发器-动作这个框架倒是不陌生，前些日子很火的<a href="http://www.ifttt.com" target="_blank">ifttt</a>就是这个原理（要邀请码的留言即可），if this then that。今年最后的大作业也是写一个类似于ifttt的应用，故前些日子学习了下sina的api结果被大神们见笑了。</span></div>
+<div><span style="font-family: 微软雅黑;">     不再扯蛋，实验要完成的要求是：</span></div>
+<div><span style="font-family: 微软雅黑;">     “很多人喜欢把东西随便放在桌面上，导致桌面文件很乱。针对这一问题，我们要求编写一个分拣器，来对不同类型的文件进行归类。”</span></div>
+<div><span style="font-family: 微软雅黑;">   实验要求的触发动作是如果桌面有文件，就根据后缀名把它放入到指定的目录下。<!--more--></span></div>
+<div><span style="font-family: 微软雅黑;">     我花了一点时间，实现了个简单的分拣器，把.txt文件放到txt文件夹下。</span></div>
+<div><span style="font-family: 微软雅黑;">     定义一个Task()接口，所有任务都得实现Task接口</span></div>
+<div class="dp-highlighter">
+<ol class="dp-j">
+	<li class="alt"><span><span class="keyword">public</span><span> </span><span class="keyword">interface</span><span> Task {   </span></span></li>
+	<li><span>          </span><span class="keyword">public</span><span> </span><span class="keyword">boolean</span><span> THIS();   </span></li>
+	<li class="alt"><span>          </span><span class="keyword">public</span><span> </span><span class="keyword">void</span><span> THAT();   </span></li>
+	<li><span>    }   </span></li>
+</ol>
+</div>
+<div align="left"><span style="font-family: 微软雅黑;">   新建一个任务，就叫它FileClassify吧。override This()和That()，遍历desktop中的文件夹，若文件名中存在.txt，触发条件，新建txt文件夹将其存入。</span></div>
+<div align="left"><span style="font-family: 微软雅黑;">   我检索后缀只是用了String.contains(t)，显然这个是不合理的。对文件进行移动时修改了文件的目录，如果更换所在盘，这个方法就失效了。</span></div>
+<div class="dp-highlighter">
+<ol class="dp-j">
+	<li class="alt"><span><span class="keyword">public</span><span> </span><span class="keyword">class</span><span> FileClassify </span><span class="keyword">implements</span><span> Task{   </span></span></li>
+	<li><span>      </span><span class="keyword">private</span><span> String[] fileNameList;   </span></li>
+	<li class="alt"><span>      </span><span class="keyword">private</span><span> String rootDir;   </span></li>
+	<li><span>      </span><span class="keyword">public</span><span> FileClassify(){   </span></li>
+	<li class="alt"><span>            rootDir = </span><span class="keyword">new</span><span> String(</span><span class="string">"C:/Users/Rebornix/Desktop"</span><span>);   </span></li>
+	<li><span>            nameListCreate();   </span></li>
+	<li class="alt"><span>      }   </span></li>
+	<li><span>      </span><span class="keyword">public</span><span> </span><span class="keyword">void</span><span> nameListCreate(){   </span></li>
+	<li class="alt"><span>            File desktop = </span><span class="keyword">new</span><span> File(rootDir);   </span></li>
+	<li><span>            fileNameList = desktop.list();   </span></li>
+	<li class="alt"><span>      }   </span></li>
+	<li><span>      </span><span class="annotation">@Override</span><span>  </span></li>
+	<li class="alt"><span>      </span><span class="keyword">public</span><span> </span><span class="keyword">void</span><span> THAT() {   </span></li>
+	<li><span>            </span><span class="comment">// TODO Auto-generated method stub </span><span>  </span></li>
+	<li class="alt"><span>            File txtDir = </span><span class="keyword">new</span><span> File(rootDir+</span><span class="string">"/txt"</span><span>);   </span></li>
+	<li><span>            </span><span class="keyword">if</span><span>(!txtDir.exists())   </span></li>
+	<li class="alt"><span>                  txtDir.mkdir();   </span></li>
+	<li><span>            File tempFile,fileNew;   </span></li>
+	<li class="alt"><span>            </span><span class="keyword">for</span><span>(</span><span class="keyword">int</span><span> i = </span><span class="number">0</span><span>; i &lt; fileNameList.length; i++){   </span></li>
+	<li><span>                  </span><span class="keyword">if</span><span>(fileNameList[i].contains(</span><span class="string">".txt"</span><span>)){   </span></li>
+	<li class="alt"><span>                        tempFile = </span><span class="keyword">new</span><span> File(rootDir+</span><span class="string">"/"</span><span>+fileNameList[i]);   </span></li>
+	<li><span>                        fileNew = </span><span class="keyword">new</span><span> File(rootDir+</span><span class="string">"/txt/"</span><span>+fileNameList[i]);   </span></li>
+	<li class="alt"><span>                        tempFile.renameTo(fileNew);   </span></li>
+	<li><span>                  }   </span></li>
+	<li class="alt"><span>            }   </span></li>
+	<li><span>               </span></li>
+	<li class="alt"><span>      }   </span></li>
+	<li><span>      </span><span class="annotation">@Override</span><span>  </span></li>
+	<li class="alt"><span>      </span><span class="keyword">public</span><span> </span><span class="keyword">boolean</span><span> THIS() {   </span></li>
+	<li><span>            </span><span class="comment">// TODO Auto-generated method stub </span><span>  </span></li>
+	<li class="alt"><span>            </span><span class="keyword">for</span><span>(</span><span class="keyword">int</span><span> i = </span><span class="number">0</span><span>; i &lt; fileNameList.length; i++){   </span></li>
+	<li><span>                  </span><span class="keyword">if</span><span>(fileNameList[i].contains(</span><span class="string">".txt"</span><span>))   </span></li>
+	<li class="alt"><span>                        </span><span class="keyword">return</span><span> </span><span class="keyword">true</span><span>;   </span></li>
+	<li><span>            </span><span class="keyword">return</span><span> </span><span class="keyword">false</span><span>;   </span></li>
+	<li class="alt"><span>      }   </span></li>
+	<li><span>}   </span></li>
+	<li class="alt"><span>  </span></li>
+</ol>
+</div>
+<div align="left">
+<div align="left"> <span style="font-family: 微软雅黑;">    最后实现一个启动器</span></div>
+<div class="dp-highlighter">
+<ol class="dp-j">
+	<li class="alt"><span><span class="keyword">public</span><span> </span><span class="keyword">class</span><span> Activator {   </span></span></li>
+	<li><span>      </span><span class="keyword">public</span><span> </span><span class="keyword">static</span><span> </span><span class="keyword">void</span><span> main(String[] args){   </span></li>
+	<li class="alt"><span>            Activator act = </span><span class="keyword">new</span><span> Activator(</span><span class="keyword">new</span><span> FileClassify());   </span></li>
+	<li><span>      }   </span></li>
+	<li class="alt"><span>      </span><span class="keyword">public</span><span> Activator(Object basicTask){   </span></li>
+	<li><span>            </span><span class="keyword">if</span><span>(((Task)basicTask).THIS()){   </span></li>
+	<li class="alt"><span>                  ((Task)basicTask).THAT();   </span></li>
+	<li><span>            }   </span></li>
+	<li class="alt"><span>      }   </span></li>
+	<li><span>}  </span></li>
+</ol>
+</div>
+<div align="left">
+<div align="left"><span style="color: #7f0055;"><strong>      实现结果： </strong></span></div>
+<div align="left">
+
+<span><a href="http://rebornix.com/wp-content/uploads/rebornix.com/2011/10/filter.jpg"><img class="aligncenter size-full wp-image-104" title="filter" src="http://rebornix.com/wp-content/uploads/rebornix.com/2011/10/filter.jpg" alt="" width="473" height="148" /></a></span>
+
+&nbsp;
+
+</div>
+<div align="left"><span style="font-family: 微软雅黑;">     功能成功的实现，方法很弱，体验很蹩脚，尤其是和正在用的Fences一比。Fences需要把文件手动调整到fence下，这里是自动调整到目录里。要是可以调用fences的api就好了。</span></div>
+<div align="left"><span class="Apple-style-span" style="font-family: 微软雅黑;">     去吃饭了，回去再优化代码添加功能吧～</span></div>
+
+<hr />
+
+<div style="font-family: 微软雅黑;" align="left">      仓促之下写的THAT()实在是弱爆了！今天听了IBM的CTO Linux Paul的讲座，关于Code Style的一段，自觉这个代码确实不精简，而且功能不靠谱，纯属人工手段。对于后缀的判断其实可以找出最后的一个“.”并将其后面的字符串取出，即为suffix。对每个文件查询其suffix，若已有此文件夹，置入，反之先新建此文件夹。如下：</div>
+<div class="dp-highlighter">
+<ol class="dp-j">
+	<li class="alt"><span><span class="keyword">public</span><span> String suffixDefine(String name){   </span></span></li>
+	<li><span>        </span><span class="keyword">int</span><span> dotPos = name.lastIndexOf(</span><span class="string">'.'</span><span>);    </span></li>
+	<li class="alt"><span>        String suffix = </span><span class="keyword">new</span><span> String();   </span></li>
+	<li><span>           </span></li>
+	<li class="alt"><span>        </span><span class="keyword">if</span><span>(dotPos &lt; name.length()&amp;&amp; dotPos &gt; </span><span class="number">0</span><span>){   </span></li>
+	<li><span>            suffix = name.substring(dotPos + </span><span class="number">1</span><span>); </span><span class="comment">// not dotPos !  </span><span>  </span></li>
+	<li class="alt"><span>            </span><span class="keyword">return</span><span> suffix;   </span></li>
+	<li><span>        }   </span></li>
+	<li class="alt"><span>        </span><span class="keyword">else</span><span>  </span></li>
+	<li><span>                      </span><span class="keyword">return</span><span> </span><span class="string">""</span><span>;   </span></li>
+	<li class="alt"><span>    }   </span></li>
+	<li><span>    </span><span class="annotation">@Override</span><span>  </span></li>
+	<li class="alt"><span>    </span><span class="keyword">public</span><span> </span><span class="keyword">void</span><span> THAT() {   </span></li>
+	<li><span>        </span><span class="comment">// TODO Auto-generated method stub </span><span>  </span></li>
+	<li class="alt"><span>        System.out.println(</span><span class="string">"Yes!"</span><span>);   </span></li>
+	<li><span>        File tempFile;    </span></li>
+	<li class="alt"><span>        File fileNew;   </span></li>
+	<li><span>        String suffix = </span><span class="keyword">new</span><span> String(</span><span class="string">""</span><span>);   </span></li>
+	<li class="alt"><span>        </span><span class="keyword">for</span><span>(</span><span class="keyword">int</span><span> i = </span><span class="number">0</span><span>; i &lt; fileNameList.length; i++){   </span></li>
+	<li><span>            </span><span class="comment">// define the suffix </span><span>  </span></li>
+	<li class="alt"><span>            suffix = suffixDefine(fileNameList[i]);   </span></li>
+	<li><span>            </span><span class="keyword">if</span><span>(suffix != </span><span class="string">""</span><span>){   </span></li>
+	<li class="alt"><span>                File subDir = </span><span class="keyword">new</span><span> File(rootDir + '/' + suffix);   </span></li>
+	<li><span>                </span><span class="keyword">if</span><span>(!subDir.exists())   </span></li>
+	<li class="alt"><span>                    subDir.mkdir();   </span></li>
+	<li><span>                tempFile = </span><span class="keyword">new</span><span> File(rootDir+</span><span class="string">"/"</span><span>+fileNameList[i]);   </span></li>
+	<li class="alt"><span>                fileNew = </span><span class="keyword">new</span><span> File(rootDir+'/'+suffix+'/'+fileNameList[i]);   </span></li>
+	<li><span>                tempFile.renameTo(fileNew);   </span></li>
+	<li class="alt"><span>            }   </span></li>
+	<li><span>        }   </span></li>
+	<li class="alt"><span>    }  </span></li>
+</ol>
+</div>
+<div  style="font-family: 微软雅黑;>      当然，这个仅仅是Java的小作业，实现难度几乎没有，关键在于一个触发的思想。除了触发的算法要写的精妙，必不可少的就是各个应用的API，否则老是分拣器必然没意思。我比较喜欢的是Sina Weibo 和 Evernote的API，后者调用的机制可能略显复杂，但原理相同。用户授权都是使用OAuth 2.0 .我只是先弱弱的使用weibo的SDK，把分拣之后的文件名发条微博，其他的以后再试。包括JavaScript版本。</div>
+</div>
+</div>
