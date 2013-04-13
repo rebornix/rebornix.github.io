@@ -1,11 +1,3 @@
----
-layout: page
-title: Rebornix
-tagline: If you really want it
----
-{% include JB/setup %}
-
-
 ## Farewell Nanjing ##
 
 
@@ -17,5 +9,3 @@ tagline: If you really want it
 　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 　　{% endfor %}
 </ul>
-
-End
