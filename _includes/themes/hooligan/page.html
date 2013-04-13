@@ -1,11 +1,9 @@
-<div class="page-header-wrapper">
+<div class="page-header-wrapper" id="pagetitle">
 	<div class="page-header">
-  		<a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a><h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+  		<h1><a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a> <small>{{ page.title }}</small> {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
   	</div>
 </div>
 
-<div class="row">
-  <div class="span12">
+<div id="bloglist">
     {{ content }}
-  </div>
 </div>
