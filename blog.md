@@ -6,6 +6,6 @@ description: ""
 {% include JB/setup %}
 <div style="font-size:14px">
 {% for post in site.posts %}
-    {{ post.date | date_to_string }} <a href="www.rebornix.com{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br><br>
+    {{ post.date | date_to_string }} <a href="www.rebornix.com{{ post.url }}">{{ post.title }}</a><br><br>
 {% endfor %}
 </div>
