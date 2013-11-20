@@ -22,12 +22,12 @@ tags:
 
 * Install Windows 8.1 or Windows Server 2012 
 * Run System Updates
-* [7zip](http://7-zip.org) [[download(64bit)](http://downloads.sourceforge.net/sevenzip/7z920-x64.msi)] [[download(32bit)](http://downloads.sourceforge.net/sevenzip/7z920.exe)]
+* [7zip](http://7-zip.org) 
 
 # Part II: The Essentials
 
-* [Console](http://www.hanselman.com/blog/Console2ABetterWindowsCommandPrompt.aspx)[[download](http://sourceforge.net/projects/console/)] 虽然windows下的shell 2的让人不想用（比如powershell的各版本互相不兼容），但这不阻碍我们可以拥有一款神奇的terminal。Command line在效率和可靠性上还是要高出一截，配置好Console是我安装好每一台Devbox必做的事情。
-* [Vim](http://www.vim.org) [[download](ftp://ftp.vim.org/pub/vim/pc/gvim74.exe)][[config](https://github.com/rebornix/dev/tree/master/toolset/vim)] 如果觉得Vim太装逼或者学习曲线太陡的话，还是用Emacs吧
+* [Console](http://www.hanselman.com/blog/Console2ABetterWindowsCommandPrompt.aspx)[download](http://sourceforge.net/projects/console/) 虽然windows下的shell 2的让人不想用（比如powershell的各版本互相不兼容），但这不阻碍我们可以拥有一款神奇的terminal。Command line在效率和可靠性上还是要高出一截，配置好Console是我安装好每一台Devbox必做的事情。
+* [Vim](http://www.vim.org) [download](ftp://ftp.vim.org/pub/vim/pc/gvim74.exe)[config](https://github.com/rebornix/dev/tree/master/toolset/vim) 如果觉得Vim太装逼或者学习曲线太陡的话，还是用Emacs吧
 * [notepad++](notepad-plus-plus.org/‎) npp是每一个程序员非程序员都必备的editor吧
 
 # Part III: Development Tools
@@ -35,6 +35,8 @@ tags:
 ## Develop
 * [Visual Studio](http://www.visualstudio.com/zh-cn) 发布这个网站的工具正是小弟最近在做的啦
 * [Resharper](www.jetbrains.com/resharper) 如果觉得Visual Studio的IntelliSense功能还不够丰富，可以试一试JetBrains的Resharper。对于编程经验还不够丰富的年轻程序员，能从Resharper的建议中学到不少知识。
+* [Stylecop](http://stylecop.codeplex.com) StyleCop analyzes C# source code to enfore a set of style and consistency rules. This is a good tool for team code style.
+* FxCop An application that analyzes managed code assemblies and reports infomation about the assemblies. You can find this tool in Windows SDKs.
 
 ## Source control
 * [Git](http://git-scm.com/) TFS也支持git，我司都没法否认的业界潮流啊
@@ -47,12 +49,12 @@ tags:
 # Part IX: Productivity Utilities
 * [Windows Sysinternals Suite](http://technet.microsoft.com/en-us/sysinternals/bb842062) Windows Sysinternals suite, 不得不说是开发和调试Windows System和Windows Application的最佳工具套件。即使我平时只使用过其中三四个tool，但是已经让我觉得自己像是God（咦，Linuxer好像也是这么说的）。
 * [Everything](http://www.voidtools.com/) 第一次安装Everything的时候会扫描disk所有文件夹和文件进行构建数据库，之后每当文件更新，会立刻更新数据库。搜索各种类型的文件速度完全是毫秒级的，支持wildcards和regex。没有linuxer引以为傲的grep那又如何？
-* [grep](http://gnuwin32.sourceforge.net/packages/grep.htm)程序员有时候就是有些独特的品味，用过了*inx之后我确实还是喜欢grep。gunwin32把一套linux上的toolset([bash](http://www.steve.org.uk/Software/bash/), grep, etc)移植到windows上啦。自由飞翔。
+* [grep](http://gnuwin32.sourceforge.net/packages/grep.htm)程序员有时候就是有些独特的品味，用过了\*inx之后我确实还是喜欢grep。gunwin32把一套linux上的toolset([bash](http://www.steve.org.uk/Software/bash/), grep, etc)移植到windows上啦。自由飞翔。
 * [SourceGraph](https://sourcegraph.com/) source graph的slogan是“Search for code, see who uses it, and find usage examples”，[王垠](https://github.com/yinwang0/)倒是推荐过很多次，试试吧。
 * [Fuslogvw](http://msdn.microsoft.com/en-us/library/e74a18c4(v=vs.110).aspx)用来查看所有的assembly binding。尤其是当你要和GAC打交道时，用这个tool简直是要哭了。
 * [ILSpy](ilspy.net).NET反编译工具，Reflector开始收费后，这个选择也不错。
 * [Fiddler](fiddler2.com) web service monitor工具，这都什么年代了，wireshark就丢一边去吧
-* [putty](www.putty.org) 如果你想自由地穿梭在Windows/*inx这些平行宇宙之间，putty就是一个虫洞
+* [putty](www.putty.org) 如果你想自由地穿梭在Windows/\*inx这些平行宇宙之间，putty就是一个虫洞
 
 
 # Misc
