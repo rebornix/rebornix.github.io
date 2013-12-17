@@ -16,7 +16,7 @@ As you can see, this is my first blog written in English since I started bloggin
 Today I want to talk about SignalR, a .Net real time library provided by Asp.Net team, which is such an old concept that it has been around for over 10 years. But real time technology is relatively recently that we've started seeing them used (or advertised). I think it's mainly because this tech has matured and become standardised. 
 
 #Warm up#
-If this is the first time you heard of SignalR, you may want to get started with some tutorials about adding real-time functionality to a web/desktop application. It's a good habit to code yourself while learning new things. 
+If this is the first time you heard of SignalR, you may want to get started with some [tutorials](http://www.signalr.net/) about adding real-time functionality to a web/desktop application. It's a good habit to code yourself while learning new things. 
 
 #Architecture#
 After going through the samples, you can know how this is implemented, the architecture is really simple. All connections between clients and server side are full duplex. Clients can send messages to the server as they always do, server can also push notifications to a specific client. But clients won't talk to each other. From this point of view, you may find the server code is more or less a router. 
@@ -28,9 +28,11 @@ The only question left for us is , what kind of message should we send?
 #Platform and Protocol#
 SignalR is supported under a variety of server and client configurations. Meanwhile, each transport option has a set of requirement of its own. Like WebSocket, SignalR supports this new technique, but it falls back to other compatible techniques for older browsers or clients gracefully. 
 
-In server side, If you want to use WebSocket, Windows Server 2012 or Windows 8 is required. WebSocket can even be used on Windows Azure websites, as long as the site's .NET framework version is set to 4.5 and WebSocket is enabled. 
+In server side, If you want to use WebSocket, Windows Server 2012 or Windows 8 is required. WebSocket can even be used on Windows Azure websites, as long as the site's .NET framework version is set to 4.5 and WebSocket option is enabled. 
 
 While in Client side, the situation may be more complex. It varies from Web Browser, Windows desktop applications, Silverlight application to mobile devices. Just as you can see below, SignalR may use Forever Frame, Server-Sent Events or Long Polling if WS is somehow not supported.
+
+![SignalR Protocols](http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-60-23/2605.4.jpg)
 
 However, as a .NET developer, you will never be bothered which protocol to choose. You can even regard SignalR as a wrapper and do not care about the inner implementation. SignalR would decide which protocol is the best and switch to it.
 
