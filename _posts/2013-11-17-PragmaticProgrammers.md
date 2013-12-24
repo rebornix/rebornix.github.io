@@ -52,9 +52,9 @@ tags:
 * [grep](http://gnuwin32.sourceforge.net/packages/grep.htm)程序员有时候就是有些独特的品味，用过了\*inx之后我确实还是喜欢grep。gunwin32把一套linux上的toolset([bash](http://www.steve.org.uk/Software/bash/), grep, etc)移植到windows上啦。自由飞翔。
 * [SourceGraph](https://sourcegraph.com/) source graph的slogan是“Search for code, see who uses it, and find usage examples”，[王垠](https://github.com/yinwang0/)倒是推荐过很多次，试试吧。
 * [Fuslogvw](http://msdn.microsoft.com/en-us/library/e74a18c4(v=vs.110).aspx)用来查看所有的assembly binding。尤其是当你要和GAC打交道时，用这个tool简直是要哭了。
-* [ILSpy](ilspy.net).NET反编译工具，Reflector开始收费后，这个选择也不错。
-* [Fiddler](fiddler2.com) web service monitor工具，这都什么年代了，wireshark就丢一边去吧
-* [putty](www.putty.org) 如果你想自由地穿梭在Windows/\*inx这些平行宇宙之间，putty就是一个虫洞
+* [ILSpy](http://ilspy.net).NET反编译工具，Reflector开始收费后，这个选择也不错。
+* [Fiddler](http://fiddler2.com) web service monitor工具，这都什么年代了，wireshark就丢一边去吧
+* [putty](http://www.putty.org) 如果你想自由地穿梭在Windows/\*inx这些平行宇宙之间，putty就是一个虫洞
 
 
 # Misc
