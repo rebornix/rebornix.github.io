@@ -10,7 +10,7 @@ body {
 
 #bloglist {
     text-align: left;
-    margin:0 0 0 20%;
+    margin:1% 20% 0 20%;
 }
 
 #pagetitle {
@@ -19,7 +19,7 @@ body {
 }
 #blogcontent {
     text-align:left;
-    margin:1% 15% 0 20%;
+    margin:1% 20% 0 20%;
     font-size: 14px;
 }
 h1 {
