@@ -124,6 +124,7 @@ Mozila上对exec这个方法的定义是`A RegExp method that executes a search 
 
 ```
 function fn() { return 1; };
+
 var result = fn();
 ```
 
@@ -131,6 +132,7 @@ var result = fn();
 
 ```
 var fn = function() { return 1; };
+
 var result = fn();
 ```
 
