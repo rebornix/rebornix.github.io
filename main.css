@@ -22,11 +22,6 @@ body {
     margin:1% 20% 0 20%;
     font-size: 14px;
 }
-h1 {
-    margin-bottom: 0;
-    font-size: 18px;
-    font-weight: normal;
-}
 
 a {
     color: #AAA;
@@ -41,16 +36,16 @@ a:hover {
 /* Code blocks */
 
 code, pre {
-	font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size:14px;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-size:12px;
 }
 
 pre {
-	padding: 4px 12px;
+  padding: 4px 12px;
   background: #FDFEFB;  
   border-radius:4px;
   border:1px solid #D7D8C8;
   overflow: auto;
   overflow-y: hidden;
-	margin-bottom: 32px;
+  margin-bottom: 32px;
 }
