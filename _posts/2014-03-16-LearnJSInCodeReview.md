@@ -14,9 +14,11 @@ tags:
 ---
 
 我一直很想学Javascript，我的基友Sneezry是知道这个惊天大秘密的。书翻了好几本之后，我觉得已经打通了任督二脉，变身JS Expert。紧接着我和每一位JS初学者一样，陷入究竟是干掉facebook还是twitter的深深的纠结之中。不过我很快就释然了，乔布斯重新定义了手机的时候可没有想过要干掉Windows Mobile和塞班，那不过碰巧是副作用而已，我应该立刻动手。我沐浴、更衣、摸香，从白天奋战到黑夜，我的成果是这样的：
+
 <a href="http://www.flickr.com/photos/njukidreborn/12854428494/" title="Flickr 上 rebornix 的 chrome crash"><img src="https://v4s2.yimg.com/sk/3733/12854428494_1c72c98cde_z.jpg" width="640" height="392" alt="chrome crash"></a>
 
 那一刻，我意识到，我可能真的不是那块料。
+
 <a href="http://www.flickr.com/photos/njukidreborn/12854376623/" title="Flickr 上 rebornix 的 Iamnotthatpieceofmaterial"><img src="https://v4s2.yimg.com/so/7298/12854376623_b4cdbc73de_z.jpg" width="322" height="406" alt="Iamnotthatpieceofmaterial"></a>
 
 我放弃了，一个聪明的人应该知道自己什么时候得坚持，什么时候要学会放弃。那之后，有那么几次，我重新燃起了对JS的兴趣，事实残酷地甩了我几个巴掌。
@@ -119,18 +121,19 @@ Mozila上对exec这个方法的定义是`A RegExp method that executes a search 
  - use function variable
 
 我从没想过函数的声明方式居然也能影响performance。长的好不好，和好不好使从来没有绝对的关系。如果哪个朋友对此有异议，回炉重造看个十来部岛国武打片你就了然于心了，不客气。JS定义函数的方式比较多，这里我就挑两种来比较一下，第一种是function declaration，也就是我使用的
+
 ```
 function fn() { return 1; };
-
 var result = fn();
 ```
 
 第二种，是function expression，即同事们希望我使用的function variable
+
 ```
 var fn = function() { return 1; };
-
 var result = fn();
 ```
+
 已经备受打击的我决定到jsperf上跑一跑分，[结果](http://jsperf.com/function-declaration-vs-function-expression2/5)出乎我的意料！在和Function expression的较量中，Function declaration完胜，在Chrome v33 上，declaration的性能甚至达到了expression的**20倍**。那感觉就像你第一次玩骷髅王中单遇到了敌法师，不作死就不会死。
 
 最后一条comment：
