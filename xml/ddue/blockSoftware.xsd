@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:maml="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  targetNamespace="http://ddue.schemas.microsoft.com/authoring/2003/5"
+	elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <annotation>
+    <documentation>
+      This schema definition defines block inline types for the CS Schema. This schema is part of the base layer.
+    </documentation>
+  </annotation>
+
+  <include schemaLocation="inline.xsd" />
+
+  
+    <complexType name="codeElementType" mixed="true">
+        <choice minOccurs="0" maxOccurs="unbounded">
+            <element name="legacyItalic" type="maml:textType" />
+            <element name="codeFeaturedElement" type="maml:textType" />
+            <element ref="maml:placeholder" />
+            <element ref="maml:br" />
+            <element name="comment" type="string">
+                <annotation>
+                    <documentation>
+                        The comment element allows for the description of code/developer
+                        comments within a code block.
+                    </documentation>
+                </annotation>
+            </element>
+        </choice>
+        <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup" />
+        <attribute name="language" type="maml:devLanguagesType">
+            <annotation>
+                <documentation>
+                    The language attribute describes the programming language used in a code sample or
+                    some other programattic structure.
+                </documentation>
+            </annotation>
+        </attribute>
+        <attribute name="styleId" type="string"/>
+    </complexType>
+
+    <element name="code" type="maml:codeElementType">
+        <annotation>
+            <documentation>
+                The code element describes a code fragment.
+            </documentation>
+          <appinfo>
+            <elementStyle styleType="documentElement" display="block" font-family="Consolas Courier monospace" margin="1em" padding="0.5em" border-top-width="2px" border-bottom-width="2px" border-left-width="1px" border-right-width="1px" border-style="solid" border-color="#bbbbbb"/>
+            <elementStyle styleType="documentElementTag" content="maml:code" location="before" />
+          </appinfo>
+        </annotation>
+    </element>
+
+
+    <simpleType name="codeReferenceStringType">
+    <restriction base="token"></restriction>
+  </simpleType>
+  
+  <complexType name="codeReferenceType" mixed="false">
+    <simpleContent>
+      <extension base="maml:codeReferenceStringType"></extension>
+    </simpleContent>
+  </complexType>
+  
+  <element name="codeReference" type="maml:codeReferenceType">
+    <annotation>
+      <documentation>
+        This element holds a reference to a block of code.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:codeReference" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+  
+  <group name="codeGroup">
+    <choice>
+      <element ref="maml:code" />
+      <element ref="maml:codeReference" />
+    </choice>
+  </group>
+  
+  <element name="computerOutput" type="maml:inlineType">
+    <annotation>
+      <documentation>
+        The computerOutput element describes UI or console output.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:computerOutput" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <group name="blockSoftwareGroup">
+    <choice>
+      <group ref="maml:codeGroup" />
+      <element ref="maml:computerOutput" />
+    </choice>
+  </group>
+
+</schema>

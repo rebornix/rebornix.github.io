@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:maml="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  targetNamespace="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <annotation>
+    <documentation>
+      This schema definition defines common structure types for the CS Schema.
+      This schema is part of the common layer.
+    </documentation>
+  </annotation>
+
+  <include schemaLocation="block.xsd"/>
+
+    <element name="steps">
+    <annotation>
+      <documentation>
+        This element is a collection of steps in a procedure.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:steps" location="before" />
+      </appinfo>
+    </annotation>
+    <complexType mixed="false">
+      <choice minOccurs="0" maxOccurs="unbounded">
+        <element ref="maml:step"/>
+        <element ref="maml:procedure"/>
+      </choice>
+      <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup"/>
+      <attribute name="class" use="required">
+        <annotation>
+          <documentation>
+            The class attribute describes the type of list.
+          </documentation>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <enumeration value="bullet" />
+            <enumeration value="ordered" />
+          </restriction>
+        </simpleType>
+      </attribute>
+    </complexType>
+  </element>
+
+  <element name="step">
+    <annotation>
+      <documentation>
+        This element is a step in a procedure.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:step" location="before" />
+      </appinfo>
+    </annotation>
+    <complexType mixed="false">
+      <sequence>
+        <element ref="maml:content" minOccurs="1" maxOccurs="1" />
+        <element ref="maml:steps" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+      <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup"/>
+    </complexType>
+  </element>
+
+  <element name="procedure" >
+    <annotation>
+      <documentation>
+        This element is the root of a procedure.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:procedure" location="before" />
+      </appinfo>
+    </annotation>
+    <complexType mixed="false">
+      <sequence>
+        <element ref="maml:title"/>
+        <element ref="maml:steps"/>
+        <element ref="maml:conclusion" minOccurs="0"/>
+      </sequence>
+      <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup"/>
+      <attributeGroup ref="maml:expansionGroup" />
+      <attributeGroup ref="maml:referenceGroup" />
+    </complexType>
+  </element>
+
+</schema>

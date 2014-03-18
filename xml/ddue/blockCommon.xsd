@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:maml="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  targetNamespace="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <annotation>
+    <documentation>
+      This schema definition defines block inline types for the CS Schema. This schema is part of the base layer.
+    </documentation>
+  </annotation>
+
+  <include schemaLocation="inline.xsd"/>
+  <include schemaLocation="hierarchy.xsd"/>
+  <include schemaLocation="developerStructure.xsd" />
+
+  <complexType name="authornoteType">
+    <simpleContent>
+      <extension base="maml:textType">
+      </extension>
+    </simpleContent>
+  </complexType>
+  
+  <element name="authornote" type="maml:authornoteType">
+    <annotation>
+      <documentation>
+        The authornote element describes a block of text for a writer to describe what it is like
+        to work with the product - concepts that may be difficult to understand, 
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:authornote" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="para" >
+    <annotation>
+      <documentation>
+        The para element describes a paragraph. It is the most basic documentation unit.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:para" location="before" />
+      </appinfo>
+    </annotation>
+    <complexType>
+      <complexContent mixed="true">
+        <extension base="maml:inlineType">
+          <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup" />
+          <attributeGroup ref="maml:referenceGroup" />
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+
+  <element name="tokenBlock" type="maml:textType">
+    <annotation>
+      <documentation>
+        tokenBlock elements are expected to contain replacement content that will render as one or more paragraph blocks in the output.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:tokenBlock" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+  
+  <element name="secondaryErrorTitle" type="maml:textType">
+    <annotation>
+      <documentation>
+        The title element describes the name of a part of the document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:secondaryErrorTitle" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="nonLocErrorTitle" type="maml:textType">
+    <annotation>
+      <documentation>
+        The title element describes the name of a part of the document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:nonLocErrorTitle" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="alert">
+    <annotation>
+      <documentation>
+        The alert element describes an slim alert structure that largely mimicks the block alert structure.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" margin="1em" border="1px solid #bbbbbb" background-color="#fcfec5" padding="0.5em" margin-left="auto" />
+        <elementStyle styleType="documentElementTag" content="maml:alert" location="before" />
+      </appinfo>
+    </annotation>
+    <complexType>
+      <group ref="maml:structureSimpleGroup" maxOccurs="unbounded"/>
+      <attribute name="class" type="maml:alertTypesType" use="required">
+        <annotation>
+          <documentation>
+            The class attribute describes the type of alert.
+          </documentation>
+        </annotation>
+      </attribute>
+      <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup"/>
+      <attributeGroup ref="maml:referenceGroup" />
+    </complexType>
+  </element>
+
+  <element name="quote" type="maml:inlineType">
+    <annotation>
+      <documentation>
+        The quote element describes a quotation.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:quote" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="introduction" type="maml:sectionContentType">
+    <annotation>
+      <documentation>
+        This element contains an introduction to some piece of documentation.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:introduction" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="description" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element holds a general discussion.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:description" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="changeHistory" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        A container element for describing the history of changes to a topic.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:changeHistory" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+  
+  <element name="conclusion" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element holds a conclusion to some piece of documentation.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:conclusion" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <complexType name="endNoteType">
+    <annotation>
+      <documentation>
+        The endNoteType complexType describes a simple endNote
+        content model.
+      </documentation>
+    </annotation>
+    <group ref="maml:endNoteGroup" minOccurs="0" maxOccurs="unbounded" />
+    <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup" />
+  </complexType>
+
+  <element name="endNote" type="maml:endNoteType">
+    <annotation>
+      <documentation>
+        The endNote element describes an endNote.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:endNote" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <complexType name="endNotePlaceholderType">
+    <annotation>
+      <documentation>
+        The endNotePlaceholderType complexType describes a simple endNotePlaceholder
+        content model.
+      </documentation>
+    </annotation>
+  </complexType>
+
+  <element name="endNotePlaceholder" type="maml:endNotePlaceholderType">
+    <annotation>
+      <documentation>
+        The endNote element describes an endNote.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:endNotePlaceholder" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="IndexPlaceholder">
+    <annotation>
+      <documentation>
+        The IndexPlaceholder element represents a place to place an index.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:IndexPlaceholder" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <group name="endNoteGroup">
+    <choice>
+      <element ref="maml:code" />
+      <element ref="maml:table" />
+      <element ref="maml:para" />
+      <element ref="maml:definitionTable" />
+      <element ref="maml:procedure" />
+      <element ref="maml:alert" />
+      <element ref="maml:quote" />
+      <element ref="maml:list" />
+      <element ref="maml:mediaLink" />
+    </choice>
+  </group>
+
+  <group name="blockCommonGroup">
+    <choice>
+      <element ref="maml:authornote" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:para" />
+      <element ref="maml:alert" />
+      <element ref="maml:quote" />
+      <element ref="maml:legacySyntax" />
+    </choice>
+  </group>
+
+</schema>
