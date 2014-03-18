@@ -16,10 +16,10 @@
     </documentation>
   </annotation>
 
-  <include schemaLocation="http://clixdevr3.blob.core.windows.net/ddueschema/developerStructure.xsd" />
-  <include schemaLocation="http://clixdevr3.blob.core.windows.net/ddueschema/developerReference.xsd" />
-  <include schemaLocation="http://clixdevr3.blob.core.windows.net/ddueschema/hierarchy.xsd" />
-  <include schemaLocation="http://clixdevr3.blob.core.windows.net/ddueschema/glossary.xsd" />
+  <include schemaLocation="developerStructure.xsd" />
+  <include schemaLocation="developerReference.xsd" />
+  <include schemaLocation="hierarchy.xsd" />
+  <include schemaLocation="glossary.xsd" />
 
   <complexType name="codeEntityDocumentType" mixed="false">
     <sequence>
