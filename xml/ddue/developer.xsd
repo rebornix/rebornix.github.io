@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:maml="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  targetNamespace="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  blockDefault="#all"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  xml:lang="en">
+
+  <annotation>
+    <documentation>
+      This schema describes MAML, the Microsoft Assistance Markup Language. MAML is intended for software documentation. In particular, it is intended to accomodate the needs of Microsoft documentation.
+      The schema is broken into three main areas: end user, developer and IT Pro. These areas adequaltely categorize Microsoft documentation.
+      The namespace uri for this version of Maml is: http://ddue.schemas.microsoft.com/authoring/2003/5. Each backwards-incompatible revision to Maml will require that the date fields be appropriately incremented in uri of the updated version of the Maml schema.
+    </documentation>
+  </annotation>
+
+  <include schemaLocation="developerStructure.xsd" />
+  <include schemaLocation="developerReference.xsd" />
+  <include schemaLocation="hierarchy.xsd" />
+  <include schemaLocation="glossary.xsd" />
+
+  <complexType name="codeEntityDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:assembly" />
+      <element ref="maml:codeEntities" />
+    </sequence>
+  </complexType>
+
+  <element name="codeEntityDocument" type="maml:codeEntityDocumentType">
+    <annotation>
+      <documentation>
+        This is the root element of a reference document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement"  display="block"/>
+        <elementStyle styleType="documentElementTag" content="maml:codeEntityDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <complexType name="developerHowToDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <choice>
+        <sequence>
+          <choice minOccurs="1" maxOccurs="unbounded" >
+            <element ref="maml:procedure"/>
+            <element name ="section">
+              <complexType>
+                <sequence>
+                  <element ref="maml:title" minOccurs="0" maxOccurs="1"/>
+                  <element name ="content">
+                    <complexType mixed="false">
+                      <sequence>
+                        <choice minOccurs="0" maxOccurs="unbounded">
+                          <group ref="maml:blockGroup"/>
+                          <element ref="maml:list"/>
+                          <element ref="maml:definitionTable"/>
+                          <element ref="maml:table"/>
+                          <element ref="maml:mediaLink"/>
+                          <element ref="maml:tokenBlock"/>
+                        </choice>
+                        <element ref="maml:procedure"/>
+                        <choice minOccurs="0" maxOccurs="unbounded">
+                          <group ref="maml:structureGroup"/>
+                        </choice>
+                      </sequence>
+                      <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup"/>
+                    </complexType>
+                  </element>
+                  <element ref="maml:sections" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup"/>
+                <attribute name="DoNotNumber" type="boolean" use="optional" default="false" />
+                <attributeGroup ref="maml:expansionGroup" />
+              </complexType>
+            </element>            
+          </choice>
+          <element ref="maml:codeExample" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <element ref="maml:codeExample" maxOccurs="unbounded"/>
+      </choice>
+      <element ref="maml:buildInstructions" minOccurs="0"/>
+      <element ref="maml:robustProgramming" minOccurs="0"/>
+      <element ref="maml:security" minOccurs="0"/>
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" />
+    </sequence>
+  </complexType>
+
+  <element name="developerHowToDocument" type="maml:developerHowToDocumentType">
+    <annotation>
+      <documentation>
+        This is the root element of a 'how to' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerHowToDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <complexType name="developerConceptualDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <element ref="maml:section" minOccurs="0" maxOccurs="unbounded" />
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" />
+    </sequence>
+  </complexType>
+
+  <element name="developerConceptualDocument" type="maml:developerConceptualDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of a 'conceptual' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerConceptualDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="prerequisites" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is the node for developerWalkthroughDocumentType
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:prerequisites" location="before" />
+      </appinfo>
+    </annotation>  
+  </element>
+
+  <element name="nextSteps" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is the node for developerWalkthroughDocument Type.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:nextSteps" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+  
+  <complexType name="developerWalkthroughDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <element ref="maml:prerequisites" minOccurs="0" />
+      <choice minOccurs="1" maxOccurs="unbounded" >
+        <element ref="maml:procedure"/>
+        <element ref="maml:section"/>
+      </choice>
+      <element ref="maml:nextSteps" minOccurs="0" />
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" />
+    </sequence>
+  </complexType>
+  
+  <element name="developerWalkthroughDocument" type="maml:developerWalkthroughDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of a 'walkthrough' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerWalkthroughDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="inThisSection" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is the node for developerOrientation document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:inThisSection" location="before" />
+      </appinfo>
+    </annotation>  
+  </element>
+
+  <element name="reference" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is the node for developerOrientation document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:reference" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="relatedSections" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is the node for developerOrientation document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:relatedSections" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+ 
+  <complexType name="developerOrientationDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <element ref="maml:inThisSection" minOccurs="0" />      
+      <element ref="maml:reference" minOccurs="0" />
+      <element ref="maml:relatedSections" minOccurs="0" />
+      <element ref="maml:externalResources" minOccurs="0" />
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" minOccurs="0" />
+    </sequence>
+  </complexType>
+
+  <element name="developerOrientationDocument" type="maml:developerOrientationDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of an 'orientation' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerOrientationDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="requirements" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is the part of developerSample document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:requirements" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="demonstrates" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is the part of developerSample document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:demonstrates" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+  
+  <complexType name="developerSampleDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <element ref="maml:procedure" minOccurs="0" maxOccurs="unbounded" />
+      <element ref="maml:requirements" minOccurs="0" />
+      <element ref="maml:demonstrates" minOccurs="0" />
+      <element ref="maml:codeExample" minOccurs="0" maxOccurs="unbounded"/>
+      <element ref="maml:section" minOccurs="0" maxOccurs="unbounded" />
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" />
+    </sequence>
+  </complexType>
+
+  <element name="developerSampleDocument" type="maml:developerSampleDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of a 'sample' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerSampleDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <complexType name="developerTroubleshootingDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <element ref="maml:section" minOccurs="0" maxOccurs="unbounded" />
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" />
+    </sequence>
+  </complexType>
+
+  <element name="developerTroubleshootingDocument" type="maml:developerTroubleshootingDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of a 'troubleshooting' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerTroubleshootingDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="languageReferenceRemarks" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is the part of 'developerReferenceWithoutSyntax' Document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:languageReferenceRemarks" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+  
+  <complexType name="developerReferenceWithoutSyntaxDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <choice maxOccurs="unbounded" >
+        <element ref="maml:section" minOccurs="0" maxOccurs="unbounded" />
+        <element ref="maml:languageReferenceRemarks" minOccurs="0" />
+        <element ref="maml:codeExample" minOccurs="0" maxOccurs="unbounded"/>
+        <element ref="maml:IndexPlaceholder" minOccurs="0" maxOccurs="1"/>
+      </choice>
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" />
+    </sequence>
+  </complexType>
+
+  <element name="developerReferenceWithoutSyntaxDocument" type="maml:developerReferenceWithoutSyntaxDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of a 'general reference' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerReferenceWithoutSyntaxDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="dotNetFrameworkEquivalent" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is part of 'developerReferenceWithSyntax' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:dotNetFrameworkEquivalent" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  
+  <complexType name="developerReferenceWithSyntaxDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <element ref="maml:syntaxSection" maxOccurs="unbounded" />
+      <choice maxOccurs="unbounded" >
+        <element name="parameters" type="maml:namedSectionType" minOccurs="0" />
+        <element name="returnValue" type="maml:namedSectionType" minOccurs="0" />
+        <element name="exceptions" type="maml:namedSectionType" minOccurs="0" />
+        <element ref="maml:languageReferenceRemarks" minOccurs="0" />
+        <element ref="maml:codeExample" minOccurs="0" />
+        <element ref="maml:dotNetFrameworkEquivalent" minOccurs="0" />
+        <element ref="maml:requirements" minOccurs="0" />
+        <element ref="maml:section" minOccurs="0" maxOccurs="unbounded" />
+      </choice>
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" />
+    </sequence>
+  </complexType>
+
+  <element name="developerReferenceWithSyntaxDocument" type="maml:developerReferenceWithSyntaxDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of a document that contains reference and syntax.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerReferenceWithSyntaxDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <complexType name="developerErrorMessageDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:nonLocErrorTitle" minOccurs="0" />
+      <element ref="maml:secondaryErrorTitle" minOccurs="0" />
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <element ref="maml:procedure" minOccurs="0" maxOccurs="unbounded" />
+      <element ref="maml:codeExample" minOccurs="0" maxOccurs="unbounded"/>
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" minOccurs="0" />
+    </sequence>
+  </complexType>
+
+  <element name="developerErrorMessageDocument" type="maml:developerErrorMessageDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of an 'error message' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerErrorMessageDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="taskList" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is part of 'developerUIReference' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:taskList" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="uiElementList" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is part of 'developerUIReference' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:uiElementList" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+  
+  <complexType name="developerUIReferenceDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <element ref="maml:taskList" minOccurs="0" />
+      <choice maxOccurs="unbounded" >
+        <element ref="maml:section" minOccurs="0" maxOccurs="unbounded" />
+        <element ref="maml:uiElementList" />
+      </choice>
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" />
+    </sequence>
+  </complexType>
+
+  <element name="developerUIReferenceDocument" type="maml:developerUIReferenceDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of an 'UI reference' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerUIReferenceDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <complexType name="developerSDKTechnologyOverviewOrientationDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <element ref="maml:inThisSection" />
+      <element ref="maml:reference" minOccurs="0" />
+      <element ref="maml:relatedSections" minOccurs="0" />
+      <element ref="maml:externalResources" minOccurs="0" />
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+    </sequence>
+  </complexType>
+
+  <element name="developerSDKTechnologyOverviewOrientationDocument" type="maml:developerSDKTechnologyOverviewOrientationDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of an 'orientation' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerSDKTechnologyOverviewOrientationDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="keywords" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element contains keywords for 'developerSDKTechnologyOverviewTechnologySummary' documents.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:keywords" location="before" />
+      </appinfo>
+    </annotation>  
+  </element>
+
+  <element name="namespaces" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element contains namespace information in 'developerSDKTechnologyOverviewTechnologySummary' documents.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:namespaces" location="before" />
+      </appinfo>
+    </annotation>  
+  </element>
+
+  <element name="relatedTechnologies" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element contains relatedTechnologies information in 'developerSDKTechnologyOverviewTechnologySummary' documents.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:relatedTechnologies" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="background" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element contains background information in 'developerSDKTechnologyOverviewTechnologySummary' documents.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:background" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="implementingTechnologyNameClasses" type="maml:sectionType">
+    <annotation>
+      <documentation>
+        This element contains 'implementingTechnologyNameClasses' information in 'developerSDKTechnologyOverviewTechnologySummary' documents.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:implementingTechnologyNameClasses" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+
+  <element name="technologyNameClassesAtAGlance" type="maml:sectionType">
+    <annotation>
+      <documentation>
+        This element contains 'technologyNameClassesAtAGlance' information in 'developerSDKTechnologyOverviewTechnologySummary' documents.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:technologyNameClassesAtAGlance" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="whatsNew" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element contains 'whatsNew' information in 'developerSDKTechnologyOverviewTechnologySummary' documents.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:whatsNew" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+  
+  <complexType name="developerSDKTechnologyOverviewTechnologySummaryDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <element ref="maml:keywords" />
+      <element ref="maml:namespaces" />
+      <element ref="maml:relatedTechnologies" minOccurs="0" />
+      <element ref="maml:background" />
+      <element ref="maml:implementingTechnologyNameClasses" />
+      <element ref="maml:technologyNameClassesAtAGlance" />
+      <element ref="maml:whatsNew" minOccurs="0" />
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" />
+    </sequence>
+  </complexType>
+
+  <element name="developerSDKTechnologyOverviewTechnologySummaryDocument" type="maml:developerSDKTechnologyOverviewTechnologySummaryDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of a 'technology summary' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerSDKTechnologyOverviewTechnologySummaryDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="developerSDKTechnologyOverviewArchitectureDocument" type="maml:developerConceptualDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of an 'architecture' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerSDKTechnologyOverviewArchitectureDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="developerSDKTechnologyOverviewScenariosDocument" type="maml:developerConceptualDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of an 'scenarios' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerSDKTechnologyOverviewScenariosDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="codeList" type="maml:namedSectionType">
+    <annotation>
+      <documentation>
+        This element is the code list of the 'developerSDKTechnologyOverviewCodeDirectory' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:codeList" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+  
+  <complexType name="developerSDKTechnologyOverviewCodeDirectoryDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0" />
+      <element ref="maml:introduction" />
+      <element ref="maml:codeList" />
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" />
+    </sequence>
+  </complexType>
+
+  <element name="developerSDKTechnologyOverviewCodeDirectoryDocument" type="maml:developerSDKTechnologyOverviewCodeDirectoryDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of an 'UI reference' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerSDKTechnologyOverviewCodeDirectoryDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="byline" type="maml:singleParagraphSimpleContentType">
+    <annotation>
+      <documentation>
+        This element is the byline of the 'developerWhitePaper' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:byline" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  
+  <complexType name="developerWhitePaperDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0"/>
+      <element name="byline" type="maml:singleParagraphSimpleContentType"/>
+      <element name="date" type="maml:singleParagraphSimpleContentType"/>
+      <element name="summarySection" type="maml:namedSectionType"/>
+      <element name="downloadCenterLink" type="maml:namedSectionType" minOccurs="0"/>
+      <element name="appliesTo" type="maml:namedSectionType" minOccurs="0"/>
+      <element name="contents" type="maml:namedSectionType" minOccurs="0"/>
+      <element ref="maml:introduction"/>
+      <element ref="maml:section" minOccurs="0" maxOccurs="unbounded"/>
+      <element ref="maml:conclusion"/>
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics" minOccurs="0"/>
+      <element name="additionalInformation" type="maml:namedSectionType" minOccurs="0"/>
+      <element name="authorBio" type="maml:namedSectionType" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <element name="developerWhitePaperDocument" type="maml:developerWhitePaperDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of a 'sample' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerWhitePaperDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <complexType name="developerGlossaryDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:glossary" />
+    </sequence>
+  </complexType>
+
+  <element name="developerGlossaryDocument" type="maml:developerGlossaryDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of a 'glossary' document.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerGlossaryDocument" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <complexType name="developerXmlReferenceDocumentType" mixed="false">
+    <sequence>
+      <element ref="maml:summary" minOccurs="0"/>
+      <element ref="maml:introduction"/>
+      <element ref="maml:schemaHierarchy" minOccurs="0"/>
+      <element ref="maml:syntaxSection"/>
+      <element name="type" type="maml:singleParagraphSimpleContentType" minOccurs="0"/>
+      <element ref="maml:attributesandElements"/>
+      <element name="textValue" type="maml:namedSectionType" minOccurs="0"/>
+      <element name="remarks" type="maml:namedSectionType" minOccurs="0"/>
+      <element ref="maml:codeExample" minOccurs="0" maxOccurs="unbounded"/>
+      <element ref="maml:elementInformation" minOccurs="0"/>
+      <element ref="maml:changeHistory" minOccurs="0" maxOccurs="1" />
+      <element ref="maml:relatedTopics"/>
+    </sequence>
+  </complexType>
+
+  <element name="developerXmlReference" type="maml:developerXmlReferenceDocumentType">
+    <annotation>
+      <documentation>
+        This element is the root of a document that contains reference and syntax.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerXmlReference" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+    <!-- ************ PowerShell CmdLet Document ************ -->
+
+  <complexType name="cmdletAliasesType">
+    <sequence>
+      <element name="cmdletAlias" type="string" maxOccurs="unbounded" />
+    </sequence>
+  </complexType>
+
+  <complexType name="cmdletParametersType">
+    <sequence minOccurs="0">
+      <element name="cmdletParameter" minOccurs="0" maxOccurs="unbounded">
+        <complexType>
+          <sequence>
+            <element name="parameterName" type="string" />
+            <element name="type" type="string" />
+            <element name="description" type="maml:cmdletDescriptionType"/>
+            <element name="parameterSets">
+              <complexType>
+                <sequence>
+                  <element name="parameterSet" maxOccurs="unbounded">
+                    <complexType>
+                      <simpleContent>
+                        <extension base="string">
+                          <attribute name="pipelineInput" />
+                          <attribute name="valueFromRemArg" />
+                          <attribute name="position" use="required" />
+                          <attribute name="required" type="boolean" />
+                          <attribute name="variableLength" type="boolean" />
+                          <attribute name="helpMessage" />
+                          <attribute name="helpMessageBaseName"/>
+                          <attribute name="helpMessageResourceId"/>
+                        </extension>
+                      </simpleContent>
+                    </complexType>
+                  </element>
+                </sequence>
+                <attribute name="validateCount" />
+                <attribute name="validateLength" />
+                <attribute name="validateNotNull" type="boolean" />
+                <attribute name="validateNotNullOrEmpty" type="boolean" />
+                <attribute name="validatePattern" />
+                <attribute name="validateRange" />
+                <attribute name="validateScript" />
+                <attribute name="validateSet" />
+              </complexType>
+            </element>
+            <element name="parameterValueEnums" minOccurs="0">
+              <complexType>
+                <sequence>
+                  <element name="parameterValueEnum" maxOccurs="unbounded">
+                    <complexType>
+                      <sequence>
+                        <element name="name"/>
+                        <element name="description" type="maml:cmdletDescriptionType"/>
+                      </sequence>
+                    </complexType>
+                  </element>
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+          <attribute name="wildcard" type="boolean" />
+          <attribute name="aliases" />
+          <attribute name="defaultValue" />
+          <attribute name="paramValueReq" type="boolean" use="required"/>
+          <attribute name="paramValueVarLength" type="boolean" use="required"/>
+        </complexType>
+      </element>
+    </sequence>
+    <attribute name="supportsShouldProcess" type="boolean" default="false"/>
+    <attribute name="supportsTransaction" type="boolean" default="false"/>
+    <attribute name="commonParameters" type="boolean" default="true"/>
+    <attribute name="defaultParameterSet" default="Default"/>
+  </complexType>
+
+  <complexType name="inputTypesType">
+    <sequence>
+      <element name="inputType" type="maml:inputOutputType" maxOccurs="unbounded" />
+    </sequence>
+  </complexType>
+
+  <complexType name="outputTypesType">
+    <sequence>
+      <element name="outputType" type="maml:inputOutputType" maxOccurs="unbounded" />
+    </sequence>
+  </complexType>
+
+  <complexType name="cmdletRemarksType">
+    <sequence>
+      <element name="cmdletRemark" maxOccurs="unbounded" type="maml:cmdletDescriptionType"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="cmdletCodeExamplesType">
+    <choice maxOccurs="unbounded">
+      <element name="cmdletCodeExample">
+        <complexType>
+          <sequence>
+            <element name="title"/>
+            <choice maxOccurs="unbounded">
+              <element name="description" type="maml:cmdletDescriptionType"/>
+              <element name="code">
+                <complexType mixed="true">
+                  <complexContent>
+                    <extension base="maml:codeElementType">
+                      <sequence minOccurs="0">
+                        <element name="localizedText" type="maml:inlineType"/>
+                      </sequence>
+                      <attribute name="prompt" type="string" use="optional" default="C:\PS>"/>
+                    </extension>
+                  </complexContent>
+                </complexType>
+              </element>
+              <element name="computerOutput" type="maml:inlineType" />
+            </choice>
+          </sequence>
+        </complexType>
+      </element>
+
+      <element name="complexExample">
+        <complexType>
+          <sequence>
+            <element name="title"/>
+            <element name="description" type="maml:cmdletDescriptionType"/>
+            <element name="cmdletCodeExample" maxOccurs="unbounded">
+              <complexType>
+                <choice maxOccurs="unbounded">
+                  <element name="description" type="maml:cmdletDescriptionType"/>
+                  <element name="code">
+                    <complexType mixed="true">
+                      <complexContent>
+                        <extension base="maml:codeElementType">
+                          <sequence minOccurs="0">
+                            <element name="localizedText" type="maml:inlineType"/>
+                          </sequence>
+                          <attribute name="prompt" type="string" use="optional" default="C:\PS>"/>
+                        </extension>
+                      </complexContent>
+                    </complexType>
+                  </element>
+                  <element name="computerOutput" type="maml:inlineType" />
+                </choice>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+    </choice>
+  </complexType>
+
+  <complexType name="relatedLinksType">
+    <sequence>
+      <element name="onlineVersion" type="string" minOccurs="0" />
+      <group ref="maml:relatedTopicLinkGroup" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="cmdletSynopsisDescriptionType">
+    <sequence>
+      <element name="synopsis" type="string" />
+      <element name="detailedDescription" type="maml:cmdletDescriptionType"/>
+    </sequence>
+    <attribute name="verb" use="required"/>
+    <attribute name="noun" use="required"/>
+  </complexType>
+
+  <element name="cmdletDescription" type="maml:cmdletSynopsisDescriptionType">
+    <annotation>
+      <documentation>
+        This element is a cmdlet Description element.
+      </documentation>
+    </annotation>    
+  </element>
+
+  <element name="cmdletModule" type="string">
+    <annotation>
+      <documentation>
+        This element is a cmdlet Module element.
+      </documentation>
+    </annotation>
+  </element>
+
+  <element name="cmdletAliases" type="maml:cmdletAliasesType">
+    <annotation>
+      <documentation>
+        This element is a cmdlet Aliases element.
+      </documentation>
+    </annotation>
+  </element>
+
+  <element name="cmdletParameters" type="maml:cmdletParametersType">
+    <annotation>
+      <documentation>
+        This element is a cmdlet Parameters element.
+      </documentation>
+    </annotation>
+  </element>
+
+  <element name="inputTypes" type="maml:inputTypesType">
+    <annotation>
+      <documentation>
+        This element is a inputTypes element.
+      </documentation>
+    </annotation>
+  </element>
+
+  <element name="outputTypes" type="maml:outputTypesType">
+    <annotation>
+      <documentation>
+        This element is a outputTypes element.
+      </documentation>
+    </annotation>
+  </element>
+
+  <element name="cmdletRemarks" type="maml:cmdletRemarksType">
+    <annotation>
+      <documentation>
+        This element is a cmdlet Remarks type.
+      </documentation>
+    </annotation>
+  </element>
+
+  <element name="cmdletCodeExamples" type="maml:cmdletCodeExamplesType">
+    <annotation>
+      <documentation>
+        This element is a cmdlet Code Example element.
+      </documentation>
+    </annotation>
+  </element>
+
+  <element name="relatedLinks" type="maml:relatedLinksType">
+    <annotation>
+      <documentation>
+        This element is a relatedLinks element.
+      </documentation>
+    </annotation>  
+  </element>
+  
+  <complexType name="PSCmdletHelpContentType">
+      <sequence>
+        <element ref="maml:cmdletDescription" />
+        <element ref="maml:cmdletModule" minOccurs="0" />
+        <element ref="maml:cmdletAliases" minOccurs="0" />
+        <element ref="maml:cmdletParameters" />
+        <element ref="maml:inputTypes" minOccurs="0" />
+        <element ref="maml:outputTypes" minOccurs="0" />
+        <element ref="maml:cmdletRemarks" minOccurs="0" />
+        <element ref="maml:cmdletCodeExamples" />
+        <element ref="maml:relatedLinks" />
+      </sequence>
+  </complexType>
+    
+    <element name="PSCmdletHelpContent" type="maml:PSCmdletHelpContentType">
+        <annotation>
+            <appinfo>PowerShell cmdlet document</appinfo>
+        </annotation>
+    </element>
+
+    <complexType name="inputOutputType">
+        <annotation>
+            <appinfo>PowerShell cmdlet input output type</appinfo>
+        </annotation>
+        <sequence>
+            <element name="name" type="string" />
+            <element name="uri" minOccurs="0" type="string" />
+            <element name="description" type="maml:cmdletDescriptionType"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="cmdletDescriptionType">
+        <annotation>
+            <appinfo>
+                PowerShell description type only includes the para tag as the block
+                element. In the inline common group, notLocalizable, localizedText
+                removed by request.
+            </appinfo>
+        </annotation>
+        <choice minOccurs="0" maxOccurs="unbounded">
+            <element ref="maml:para"/>
+        </choice>
+    </complexType>
+
+</schema>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:maml="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  targetNamespace="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <annotation>
+    <documentation>
+      This schema definition defines the inline UI elements for the CS Schema. This schema is part of the base layer.
+    </documentation>
+  </annotation>
+
+  <include schemaLocation="base.xsd" />
+
+  <element name="userInput" type="string">
+    <annotation>
+      <documentation>
+        The userInput element describes data that is entered by the user.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:userInput" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="userInputLocalizable" type="string">
+    <annotation>
+      <documentation>
+        The ui element describes any localizable user input.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:userInputLocalizable" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <group name="inlineUiGroup">
+    <annotation>
+      <documentation>
+        This group is intended to be be used for referencing all base UI elements.
+      </documentation>
+    </annotation>
+    <choice>
+      <element ref="maml:userInput" />
+      <element ref="maml:userInputLocalizable" />
+    </choice>
+  </group>
+
+</schema>

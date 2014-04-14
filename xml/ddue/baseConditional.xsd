@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:maml="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  targetNamespace="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  blockDefault="#all"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  xml:lang="en">
+
+  <annotation>
+    <documentation>
+      This schema describes MAML, the Microsoft Assistance Markup Language. MAML is intended for software documentation. In particular, it is intended to accomodate the needs of Microsoft documentation.
+      The schema is broken into three main areas: end user, developer and IT Pro. These areas adequaltely categorize Microsoft documentation.
+      The namespace uri for this version of Maml is: http://ddue.schemas.microsoft.com/authoring/2003/5. Each backwards-incompatible revision to Maml will require that the date fields be appropriately incremented in uri of the updated version of the Maml schema.
+    </documentation>
+  </annotation>
+
+  <include schemaLocation="base.xsd"/>
+
+  <simpleType name="operatingSystemsStringType">
+    <restriction base="token">
+      <enumeration value="Win95"/>
+      <enumeration value="Win98"/>
+      <enumeration value="Win98Se"/>
+      <enumeration value="WinMe"/>
+      <enumeration value="WinNt4Server"/>
+      <enumeration value="WinNt4Workstation"/>
+      <enumeration value="Win2kProfessional"/>
+      <enumeration value="Win2kServer"/>
+      <enumeration value="Win2kAdvanced"/>
+      <enumeration value="Win2kDatacenter"/>
+      <enumeration value="Win2kServerApplianceKit"/>
+      <enumeration value="WinXpHome"/>
+      <enumeration value="WinXpProfessional"/>
+      <enumeration value="WinXpMediaCenter"/>
+      <enumeration value="WinXpTablet"/>
+      <enumeration value="WinXpEmbedded"/>
+      <enumeration value="Win2003Server"/>
+      <enumeration value="NETCF"/>
+    </restriction>
+  </simpleType>
+
+  <simpleType name="operatingSystemFamiliesStringType">
+    <restriction base="token">
+      <enumeration value="Win9xFamily"/>
+      <enumeration value="WinNt4Family"/>
+      <enumeration value="Win2kFamily"/>
+      <enumeration value="WinXpFamily"/>
+    </restriction>
+  </simpleType>
+
+  <simpleType name="platformStringType">
+    <union memberTypes="maml:operatingSystemsStringType maml:operatingSystemFamiliesStringType">
+      <simpleType>
+        <restriction base="token">
+          <enumeration value="EcmaCli"/>
+        </restriction>
+      </simpleType>
+    </union>
+  </simpleType>
+
+  <complexType name="platformType" mixed="false">
+    <simpleContent>
+      <extension base="maml:platformStringType"/>
+    </simpleContent>
+  </complexType>
+
+  <element name="platform" type="maml:platformType">
+    <annotation>
+      <documentation>
+        This element holds the identifier for a platform (such as an operating system version).
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerXmlReference" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+  
+  <complexType name="platformsType" mixed="false">
+    <sequence>
+      <element ref="maml:platform" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <element name="platforms" type="maml:platformsType">
+    <annotation>
+      <documentation>
+        This element is a collection of platform elements.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:developerXmlReference" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+</schema>

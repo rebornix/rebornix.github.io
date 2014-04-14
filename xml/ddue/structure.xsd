@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:maml="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  targetNamespace="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <!-- Schema documentation -->
+  <annotation>
+    <documentation>
+      This schema definition defines common structure types for the CS Schema.
+      This schema is part of the base layer.
+    </documentation>
+  </annotation>
+
+  <!-- include and import declarations -->
+  <include schemaLocation="structureTable.xsd"/>
+  <include schemaLocation="structureList.xsd"/>
+  <include schemaLocation="structureProcedure.xsd"/>
+  <include schemaLocation="structureMedia.xsd"/>
+
+  <complexType name="sectionContentType" mixed="false">
+    <choice minOccurs="0" maxOccurs="unbounded">
+      <group ref="maml:structureGroup"/>
+    </choice>
+    <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup"/>
+  </complexType>
+
+  <element name="content" type="maml:sectionContentType">
+    <annotation>
+      <documentation>
+        This element holds authored content.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:content" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="definition" type="maml:sectionContentType">
+    <annotation>
+      <documentation>
+        A single definition that goes with this entry.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:definition" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="definedTerm" type="maml:inlineType">
+    <annotation>
+      <documentation>
+        A single item that is being defined.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:definedTerm" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="definitionTable">
+    <annotation>
+      <documentation>
+        This element is a two column table without a header or footer. The first column contains the item being defined, the second column contains the definition of the item.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:definitionTable" location="before" />
+      </appinfo>
+    </annotation>
+    <complexType mixed="false">
+      <sequence maxOccurs="unbounded">
+        <element ref="maml:definedTerm"/>
+        <element ref="maml:definition"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <group name="structureGroup">
+    <choice>
+      <group ref="maml:blockGroup"/>
+      <element ref="maml:list"/>
+      <element ref="maml:definitionTable"/>
+      <element ref="maml:table"/>
+      <element ref="maml:procedure"/>
+      <element ref="maml:mediaLink"/>
+      <element ref="maml:endNotePlaceholder"/>
+      <element ref="maml:tokenBlock"/>
+    </choice>
+  </group>
+
+  <group name="structureSimpleGroup">
+    <choice>
+      <element ref="maml:para"/>
+      <element ref="maml:list"/>
+    </choice>
+  </group>
+
+</schema>

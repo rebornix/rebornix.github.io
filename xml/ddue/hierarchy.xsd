@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:maml="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  targetNamespace="http://ddue.schemas.microsoft.com/authoring/2003/5"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <annotation>
+    <documentation>
+      This schema definition defines common hierarchy types for the CS Schema. This schema is part of the base layer.
+    </documentation>
+  </annotation>
+
+  <include schemaLocation="structure.xsd"/>
+
+  <complexType name="sectionType">
+    <sequence>
+      <element ref="maml:title" minOccurs="0" maxOccurs="1"/>
+      <element ref="maml:content" minOccurs="1" maxOccurs="unbounded" />
+      <element ref="maml:sections" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+    <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup"/>
+    <attribute name="DoNotNumber" type="boolean" use="optional" default="false" />
+  </complexType>
+
+  <complexType name="namedSectionType">
+    <sequence>
+      <element ref="maml:content"/>
+      <element ref="maml:sections" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+    <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup"/>
+    <attributeGroup ref="maml:referenceGroup" />
+  </complexType>
+
+  <element name="section">
+    <annotation>
+      <documentation>
+        The section element describes a section within a document. The section element supports recursion.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:section" location="before" />
+      </appinfo>
+    </annotation>
+    <complexType>
+      <complexContent>
+        <extension base="maml:sectionType">
+          <attributeGroup ref="maml:expansionGroup" />
+        </extension>
+      </complexContent>
+    </complexType>     
+  </element>
+
+  <element name="sectionSimple" type="maml:sectionContentType">
+    <annotation>
+      <documentation>
+        The sectionSimple element describes a section within a document. This element is similar to the section element; however, it is not recursive.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:sectionSimple" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <complexType name="sectionsType" mixed="false">
+    <choice minOccurs="0" maxOccurs="unbounded">
+      <element ref="maml:section"/>
+      <element ref="maml:sectionSimple"/>
+    </choice>
+  </complexType>
+
+  <element name="sections" type="maml:sectionsType">
+    <annotation>
+      <documentation>
+        This element holds a collection of section elements.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:sections" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <element name="sampleRef">
+    <annotation>
+      <documentation>
+        The sampleRef element contains a reference to an external code sample.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:sampleRef" location="before" />
+      </appinfo>
+    </annotation>
+    <complexType>
+      <attribute name="srcID" type="token"/>
+      <attribute name="databaseID" type="token"/>
+    </complexType>
+  </element>
+
+  <group name="relatedTopicLinkGroup">
+    <choice>
+      <element ref="maml:link"/>
+      <element ref="maml:legacyLink"/>
+      <element ref="maml:codeEntityReference"/>
+      <element ref="maml:externalLink"/>
+      <element ref="maml:sampleRef"/>
+    </choice>
+  </group>
+
+  <complexType name="relatedTopicsType" mixed="false">
+    <choice minOccurs="0" maxOccurs="unbounded">
+      <group   ref="maml:relatedTopicLinkGroup"/>
+    </choice>
+    <attributeGroup ref="maml:contentIdentificationSharingAndConditionGroup"/>
+  </complexType>
+
+  <element name="relatedTopics" type="maml:relatedTopicsType">
+    <annotation>
+      <documentation>
+        The relatedTopicsLink is used to link to other topics that might be interesting to the reader.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:relatedTopics" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+  <complexType name="externalResourcesType" mixed="false">
+    <sequence>
+      <element ref="maml:link"/>
+    </sequence>
+  </complexType>
+
+  <element name="externalResources" type="maml:externalResourcesType">
+    <annotation>
+      <documentation>
+        This element holds a collection of section elements.
+      </documentation>
+      <appinfo>
+        <elementStyle styleType="documentElement" display="block" />
+        <elementStyle styleType="documentElementTag" content="maml:externalResources" location="before" />
+      </appinfo>
+    </annotation>
+  </element>
+
+</schema>
