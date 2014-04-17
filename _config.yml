@@ -82,7 +82,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : reborni
+      short_name : rebornix
     livefyre :
       site_id : 123
     intensedebate :
