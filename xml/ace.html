@@ -1,0 +1,20 @@
+	<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="ace.css" type="text/css" />
+</head>
+<body>
+<div id="editor"></div>
+    <script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="src/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
+	<script src="src/mode-xml.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor");
+		var XMLMode = require("ace/mode/xml").Mode;
+		editor.getSession().setMode(new XMLMode());
+		editor.getSession().setUseWrapMode(true);
+		editor.setShowPrintMargin(true);
+		editor.setHighlightActiveLine(true);
+    </script>
+</body>
+</html>
