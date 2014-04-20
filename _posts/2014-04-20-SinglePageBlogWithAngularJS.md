@@ -97,7 +97,8 @@ ng-repeat的作用是轮询`blogList`里的blog object，为每个blog创建一�
     
 读者可能并不知道上面代码里`$scope $http`的含义，但不影响我们理解这段代码的作用。我对`https://api.github.com/repos/rebornix/rebornix.github.io/contents/_posts`Get了一把，获得了我写过的文章的列表，然后赋值给了blogList，因为blogList是一个list，我们最终能够在`home.html`里对它做了一个轮询`ng-repeat="blog in blogList"`，记得吗？
 
-通过相同的方式，我给"entry.html"写了一个controller用来显示blog content。一个简易的博客系统就完成啦~
+通过相同的方式，我给"entry.html"写了一个controller用来显示blog content。
+##一个简易的，不需要任何backend，不需要任何环境（php，ror，django，etc）支持的博客系统就完成啦##
 
 #后果#
 就这样，写了不到一百行代码（如果我把html也当代码的话），我就已经实现了一个single-page blog，详情可见 [rebornix.com/spa.html](http://rebornix.com/spa.html) 。而我只是对angularjs的view-engine和routing有了些许的了解。从学习angularJS到最终完成不到半天，这其中还夹杂着洗衣做饭陪女王大人看电视。
