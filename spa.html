@@ -1,13 +1,19 @@
 <!doctype html>
-<html>
+<html data-ng-app="SinglePageBlogApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Sharefolder by rebornix</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="http://code.angularjs.org/1.0.5/angular.js"></script>
+	<script src="app/scripts/base64.js"></script>
+	<script src="app/scripts/showdown.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-resource.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -17,37 +23,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     </head>
 	<body>
-	<script>
-	function BlogController($scope, $http, $log) {
-		$scope.blogList = [];
-		$http({method: 'GET', url: 'https://api.github.com/repos/rebornix/sharefolder/contents/md?ref=gh-pages'}).
-			success(function(data, status, headers, config) {
-					$scope.blogList = data.reverse();
-				}).
-		    	error(function(data, status, headers, config) {
-					$log.log("error!");
-			});
-		$scope.currentBlog= $scope.blogList[0];
+	<script src="app/app.js"></script>
+	<script src="app/controllers/BlogController.js"></script>
+	<script src="app/controllers/EntryController.js"></script>
 
-		$scope.selectBlog = function(blog) {
-			$scope.currentBlog = blog;
-		}
-	}
-	BlogController.$inject = ['$scope', '$http', '$log'];
-    </script>
-	
 	<div class="wrapper">
 		<h1>Rebornix blogs</h1>
-		<div ng-app ng-controller="BlogController">
-			<ul>
-				<li ng-repeat="blog in blogList">
-				<a ng-click="selectBlog(blog)">{{blog["name"]}}</a>
-				</li>
-			</ul>
-			<hr>
-
-			<b>Selected Blog : {{currentBlog["name"]}} </b>
-		</div>
+		<div data-ng-view=""></div>
 	</div>
 	</body>
 </html>
