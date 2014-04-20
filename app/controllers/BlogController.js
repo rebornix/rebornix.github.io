@@ -18,6 +18,7 @@ app.controller('BlogController', function($scope, $http, $log, $window, blogEntr
 
 		$scope.selectBlog = function(blog) {
 			blogEntryService.setBlogEntry(blog);
-			$window.location.href = "#/entry";
+			params = blog["name"].split('-');
+			$window.location.href = "#/" + params[0] + "/" + params[1] + "/" + params[2] + "/" + params[3].replace(".md", "");
 		}
 });

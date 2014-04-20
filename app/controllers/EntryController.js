@@ -1,4 +1,4 @@
-app.controller('EntryController', function($scope, $http, $log, $window, $sce, blogEntryService) {
+app.controller('EntryController', function($scope, $http, $log, $window, $sce, $routeParams, blogEntryService) {
 		$scope.blogEntry = blogEntryService.getBlogEntry();
 		
 		$scope.renderHtml = function (htmlCode) {

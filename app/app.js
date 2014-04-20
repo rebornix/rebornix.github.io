@@ -1,15 +1,15 @@
 var app = angular.module('SinglePageBlogApp', ['ngRoute', 'ngResource', 'ui.bootstrap']);
 app.config(function ($routeProvider) {
 
-    $routeProvider.when("/explore", {
+    $routeProvider.when("/home", {
         controller: "BlogController",
         templateUrl: "app/views/home.html"
     });
-	$routeProvider.when("/entry", {
+	$routeProvider.when("/:year/:month/:day/:name", {
         controller: "EntryController",
         templateUrl: "app/views/entry.html"
     });
-    $routeProvider.otherwise({ redirectTo: "/explore" });
+    $routeProvider.otherwise({ redirectTo: "/home" });
 });
 
 app.service('blogEntryService', function() {
