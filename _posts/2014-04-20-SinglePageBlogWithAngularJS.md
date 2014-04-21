@@ -55,7 +55,7 @@ tags:
     
 上面的code简直就像普通话一样通俗易懂。引入一个名叫ngRoute的module后，我可以定义不同url pattern对应的页面，比如访问"/home"，就会得到"home.html"；访问"2014/04/20/SinglePageBlog"，会得到"entry.html"。
 
-不过"home.html"依然只是static page，我们肯定不希望每次写了一篇新的文章，我都去更新"home.html"中的blog list。这样虽然够静态够环保，但是实在是原始了。
+不过"home.html"依然只是static page，我们肯定不希望每次写了一篇新的文章，我都去更新"home.html"中的blog list。这样虽然够静态够环保，但是实在是太原始了。
 
 好在Angular能够允许我们定义怎么渲染页面，这也就是上面代码中controller的作用，通过自己定义controller，能够动态的创建页面。下面我们来看看我是怎么做的。
 
@@ -98,6 +98,7 @@ ng-repeat的作用是轮询`blogList`里的blog object，为每个blog创建一�
 读者可能并不知道上面代码里`$scope $http`的含义，但不影响我们理解这段代码的作用。我对`https://api.github.com/repos/rebornix/rebornix.github.io/contents/_posts`Get了一把，获得了我写过的文章的列表，然后赋值给了blogList，因为blogList是一个list，我们最终能够在`home.html`里对它做了一个轮询`ng-repeat="blog in blogList"`，记得吗？
 
 通过相同的方式，我给"entry.html"写了一个controller用来显示blog content。
+
 ##一个简易的，不需要任何backend，不需要任何环境（php，ror，django，etc）支持的博客系统就完成啦##
 
 #后果#
