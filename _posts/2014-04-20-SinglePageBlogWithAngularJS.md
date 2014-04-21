@@ -15,7 +15,7 @@ tags:
 
 
 #前因#
-前段日子我和sneezry吐槽，我们组这次re-arch打算纯用AngularJS做一个SPA。是的你没看错，庞大臃肿如我司现在也突然开始更大限度地鼓励开发拥抱新的（或者叫 外面的）技术，就像了迎来了改革开放。没有一丁点儿的.NET code，换做谁都是要有顾虑的，可以想象，这样一个决定在公司内引起多大的波澜。sneezry甚至还写了这样一篇[博客](http://sneezry.com/#!/2014/03/18/JS_is_candy)。
+前段日子我和sneezry吐槽，我们组这次re-arch打算纯用AngularJS做一个SPA。是的你没看错，庞大臃肿如我司现在也突然开始更大限度地鼓励开发拥抱新的（或者叫 外面的）技术，就像了迎来了改革开放。没有一丁点儿的.NET code，换做谁都是要有顾虑的，可以想象，这样一个决定在公司内引起多大的波澜。sneezry甚至还写了这样一篇[博客](http://sneezry.com/#!/2014/03/18/JS_is_candy)来吐槽我们这群猿始人。
 
 一个月过去了，产品渐渐成型。我和大小伙伴们惊奇地发现，prototype的效果比想象中好非常多，performance问题也不算大。周五看完他们的demo，被小小震撼的我决定自己也来试试AngularJS。
 
@@ -23,7 +23,7 @@ tags:
 简单来说，一个SPA就是动态地加载资源，把所有的功能都在单个页面实现，用户访问不同的功能时不需要页面的跳转，就像你使用大部分桌面应用一样。这里我们只是管中窥豹说到SPA，我第一个想到的，其实是Sneezry的博客系统Hooloo，无论是查看博客列表还是阅读文章，都不用离开当前页面。不过Sneezry的大神比较土豪，没有使用什么库，自己拿JS手写的。我等学渣肯定学不来，我就来看看用AngularJS该怎么达到相同的目的。
 
 ##View Engine##
-作为一个简陋的博客，只需要两种页面，第一个是blog list，第二个就是article content。只要有一个section能够动态加载页面，就大功告成了。我虽然没有一丁点儿AngularJS的知识，但是我知道在Asp.NET里面是这么做的：
+作为一个足够简陋的博客，需要且只要两种页面，第一个是blog list，第二个就是article content。只要有一个section能够动态加载页面，就大功告成了。我虽然没有一丁点儿AngularJS的知识，但是我知道在Asp.NET里面是这么做的：
 
     <div role="main">
             @RenderBody()
@@ -55,7 +55,7 @@ tags:
     
 上面的code简直就像普通话一样通俗易懂。引入一个名叫ngRoute的module后，我可以定义不同url pattern对应的页面，比如访问"/home"，就会得到"home.html"；访问"2014/04/20/SinglePageBlog"，会得到"entry.html"。
 
-不过"home.html"依然只是static page，我们肯定不希望每次写了一篇新的文章，我都去更新"home.html"中的blog list。这样虽然够静态够环保，但是实在是太原始了。
+不过"home.html"依然只是static page，我们肯定不希望每次写了一篇新的文章，我都去更新"home.html"中的blog list。这样虽然够静态够环保，可是真的大丈夫吗？
 
 好在Angular能够允许我们定义怎么渲染页面，这也就是上面代码中controller的作用，通过自己定义controller，能够动态的创建页面。下面我们来看看我是怎么做的。
 
