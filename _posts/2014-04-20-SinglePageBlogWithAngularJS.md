@@ -64,13 +64,13 @@ home.html它长这样，虽然有点磕碜：
     <div>
 	<ul>
 		<li ng-repeat="blog in blogList">
-			<a ng-click="selectBlog(blog)" >{{blog["name"]}}</a>
+			<a ng-click="selectBlog(blog)" >{ { blog["name"] } }</a>
 		</li>
 	</ul>
 	<hr>
     </div>
 
-ng-repeat的作用是轮询`blogList`里的blog object，为每个blog创建一个对应的`<li>`，`{{blog["name"]}}`则是访问这个blog对象的field：name。定义完这个动态的html，下面我们来看看负责渲染的controller `BlogController.js`
+ng-repeat的作用是轮询`blogList`里的blog object，为每个blog创建一个对应的`<li>`，`{ { blog["name"] } }`则是访问这个blog对象的field：name。定义完这个动态的html，下面我们来看看负责渲染的controller `BlogController.js`
 
     app.controller('BlogController', function($scope, $http, $log, $window, blogEntryService) {
 		    $scope.blogList = [];
