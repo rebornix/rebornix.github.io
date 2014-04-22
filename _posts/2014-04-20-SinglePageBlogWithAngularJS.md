@@ -102,7 +102,7 @@ ng-repeat的作用是轮询`blogList`里的blog object，为每个blog创建一�
 ##一个简易的，不需要任何backend，不需要任何环境（php，ror，django，etc）支持的博客系统就完成啦##
 
 #后果#
-就这样，写了不到一百行代码（如果我把html也当代码的话），我就已经实现了一个single-page blog，详情可见 [rebornix.com/spa.html](http://rebornix.com/spa.html) 。而我只是对angularjs的view-engine和routing有了些许的了解。从学习angularJS到最终完成不到半天，这其中还夹杂着洗衣做饭陪女王大人看电视。
+就这样，写了不到一百行代码（如果我把html也当代码的话），我就已经实现了一个single-page blog，详情可见 [spblog.github.io](http://spblog.github.io/) ，你也可以fork[源代码](https://github.com/spblog/spblog.github.io)然后修改，code实在是少得很，基本是在写CSS与HTML。而我只是对angularjs的view-engine和routing有了些许的了解。从学习angularJS到最终完成不到半天，这其中还夹杂着洗衣做饭陪女王大人看电视。
 
 当然对于一个功能完备的博客来说，还有很多坑要踩，比如博文被Google收录的问题，这些在Sneezry介绍[Hooloo的博客](http://sneezry.com/#!/2014/02/11/基于Github的前端轻量级博客系统)里也都有提到（不得不佩服Sneezry，这货几乎是完成了和AngularJS相似的功能，造轮子万岁！），但我就不继续了。毕竟，我的目的并不是拿AngularJS再造一个Hooloo。
 
