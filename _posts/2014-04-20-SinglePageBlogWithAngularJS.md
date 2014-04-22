@@ -11,7 +11,7 @@ tags:
 - JavaScript
 
 ---
-今天这篇博客的主题是Single-page blog with AugularJS，也就是说，用AngualrJS做一个Single-page app（SPA），并用在博客系统上。对于这个topic，我觉得有责任对读者朋友们说点什么。我一定不是第一个做这件事的人，我肯定也不会是最后一个，但我还是要把自己的切身经历讲一讲，尽可能地让部分读者知道，因为这些open source tool/library的存在，开发一个你想象中的产品变得如此容易。
+今天这篇博客的主题是Single-page blog with AugularJS，也就是说，用AngualrJS做一个Single-page app（SPA），并用在博客系统上。如果乃是个典型的有代码坚决不看文档的童鞋，可以直接跳转[这里Single Page Blog](https://github.com/spblog/spblog.github.io)看代码。对于这个topic，我觉得有责任对读者朋友们说点什么。我一定不是第一个做这件事的人，我肯定也不会是最后一个，但我还是要把自己的切身经历讲一讲，尽可能地让部分读者知道，因为这些open source tool/library的存在，开发一个你想象中的产品变得如此容易。
 
 
 #前因#
