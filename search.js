@@ -1,5 +1,5 @@
 var AmbientSearch = new (function() {
-/* Sample
+/* Sample2
 	// AmbientSearch.SetRoute('devdivcn'); // optional hints for routing
 	WScript.Echo(AmbientSearch.GetEndpointUri());
 	var arrIndices = JsonDeserialize(AmbientSearch.GetIndices());
