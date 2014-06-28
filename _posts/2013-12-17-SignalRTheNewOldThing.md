@@ -26,7 +26,7 @@ The only question left for us is , what kind of message should we send?
 "There is one thousand Hamlet in one thousand reader's eyes". If you are building a online chat room like Jabbr, you'd like to send/receive encrypted texts and images. If you are developing an online game, the messages would be more complex. Anyway, it just depends on your needs.
 
 #Platform and Protocol#
-SignalR is supported under a variety of server and client configurations. Meanwhile, each transport option has a set of requirement of its own. Like WebSocket, SignalR supports this new technique, but it falls back to other compatible techniques for older browsers or clients gracefully. 
+SignalR is supported under a variety of server and client configurations. Meanwhile, each transport option has a set of need of its own. Like WebSocket, SignalR supports this new technique, but it falls back to other compatible techniques for older browsers or clients gracefully. 
 
 In server side, If you want to use WebSocket, Windows Server 2012 or Windows 8 is required. WebSocket can even be used on Windows Azure websites, as long as the site's .NET framework version is set to 4.5 and WebSocket option is enabled. 
 
@@ -34,7 +34,7 @@ While in Client side, the situation may be more complex. It varies from Web Brow
 
 ![SignalR Protocols](http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-60-23/2605.4.jpg)
 
-However, as a .NET developer, you will never be bothered which protocol to choose. You can even regard SignalR as a wrapper and do not care about the inner implementation. SignalR would decide which protocol is the best and switch to it.
+Yet, as a .NET developer, you will never be bothered which protocol to choose. You can even regard SignalR as a wrapper and do not care about the inner implementation. SignalR would decide which protocol is the best and switch to it.
 
 As SignalR supports multi platforms, it is such a relief to .NET developers that we don't need to learn more libraries doing the same thing. A stable and  easy-to-use library is enough. I even leverage SignalR in my personal Chrome Extension then I have a perfect real time logging module.
 
