@@ -15,7 +15,7 @@ tags:
 
 本篇文章仅代表博主本人想法，不代表雇主（Microsoft）。不为别的，就因为我的博客已经被IT部门残忍标记为违反公司security policy并且ban掉了...
 
-如果你有时间且有这个闲情逸致，我墙裂建议你观看一下Microsoft Connect的[Keynote]](http://channel9.msdn.com/Events/Visual-Studio/Connect-event-2014/011)。视频不长只有三十分钟，但是绝对物超所值，看完之后你就知道投资C#是否是你这十年最重要的决定。
+如果你有时间且有这个闲情逸致，我墙裂建议你观看一下Microsoft Connect的[Keynote](http://channel9.msdn.com/Events/Visual-Studio/Connect-event-2014/011)。视频不长只有三十分钟，但是绝对物超所值，看完之后你就知道投资C#是否是你这十年最重要的决定。
 
 一次编写 到处运行
 -------------
