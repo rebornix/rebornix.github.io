@@ -79,3 +79,8 @@ Apache Cordova和Xamarin两亿齐飞
  - 瑞波币一定会涨到10块钱！
 
 我反正是不信。
+
+###update 2014.11.16
+周末的时候试了一下Cordova，使用Visual Studio安装Cordova extension，安装成功后新建project，立马就爆了。提示我没有找到合适的Java版本，我特么一看原来我已经装了1.6的Java，VS的安装包并没有帮我安装1.7，我只能自己手动来更新。安装完后再次新建cordova的project，这次成功了，结果build不能成功，被爆`cannot find modle 'q'`。我以为是我姿势不对，bing了一下发现已经有人在microsoft forum上提问了但还木有人回复。禁不住怒火中烧，我司裁掉这么多Test，现在这软件质量，真是不堪入目。搜索了一番未果，默默地关掉了Windows。
+
+我还是扫地擦桌子陪我女王大人出街去吧，就不要浪费我的周末了。
