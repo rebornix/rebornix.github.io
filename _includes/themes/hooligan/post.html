@@ -1,4 +1,4 @@
-<div id="blogcontent">
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 <div class="page-header">
   <h1>
     <a class="brand" href="http://rebornix.com">{{ site.title }}</a>
@@ -10,7 +10,7 @@
 </div>
 
 <div class="row">
-  <div class="span8">
+  <div class="col-md-10">
     {{ content }}
     <hr>
     <div class="pagination btn-group">
@@ -30,7 +30,7 @@
     {% include JB/comments %}
   </div>
   
-  <div class="span4">
+  <div class="col-md-2">
     <section>
       <h4>Published</h4>
       <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
