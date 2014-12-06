@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style="text-align:center; font-size:24px;font-family: 'Patrick Hand SC';text-align: left;margin-top: 100px;">
-<h1 style="margin-bottom: 0;font-size: 24px;font-weight: bold;">Penn Lv 那就写个有人情味的博客吧</h1>
+<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style="text-align:center; font-size:24px;font-family: 'Patrick Hand SC';text-align: center;margin-top: 100px;">
+<h1 style="margin-bottom: 0;font-size: 24px;font-weight: bold;">石器时代的结束不是因为石头用完了</h1>
 <a href="https://github.com/rebornix" >Github</a>
 <a href="http://pinsta.me/rebornix">Instagram</a>
 <a href="http://lnkd.in/H9z7RU" >Resume</a>
@@ -11,7 +11,10 @@ layout: default
 <a href="/subscribe" >Subscribe</a>
 <div style="font-size:18px;font-family: 'Patrick Hand SC';text-align: left;margin-top:60px;">
 {% for post in site.posts %}
-    {{ post.date | date_to_string }} <a href="{{ post.url }}">{{ post.title }}</a><br><br>
+  <div style="margin-top: 20px;"><a href="{{ post.url }}">{{ post.title }}</a> <span style="float:right">{{ post.date | date_to_string }}</span></div>
 {% endfor %}
+</div>
+<div style="margin-top:100px; text-align:center">
+cici
 </div>
 </div>
