@@ -105,4 +105,4 @@ $http.get(url,{responseType:'byteArray'}).then(function(response) { ... } ;
 看来我只能把他们吵架的故事告诉我的老板，希望他不要嫌我这个bug fix的太dirty。
 
 --------
-分割线。周四live site被爆了一天，没想到礼拜五我又被爆了，这一次，我被Angular-ui某个库的一个特别stupid的bug玩地死去活来。不过我现在要去打扫了，下次再来和大家讲故事。当然，你可以Donate祝我一臂之力，早日买到扫地机器人，把省下的时间写博客(陪妹子)。
+分割线。周四live site被爆了一天，没想到礼拜五我又被爆了，这一次，我被Angular-ui某个库的一个特别stupid的bug玩地死去活来。不过我现在要去打扫了，下次再来和大家讲故事。当然，你可以Donate助我一臂之力，早日买到扫地机器人，把省下的时间写博客(陪妹子)。
