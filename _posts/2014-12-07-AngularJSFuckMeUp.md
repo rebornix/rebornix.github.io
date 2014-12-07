@@ -31,26 +31,27 @@ tags:
 
 [AngularJS/src/ng/http.js](https://github.com/angular/angular.js/blob/master/src/ng/http.js)代码的第一段就把故事交代了，我们看
 
-```
-var APPLICATION_JSON = 'application/json';
-var CONTENT_TYPE_APPLICATION_JSON = {'Content-Type': APPLICATION_JSON + ';charset=utf-8'};
-var JSON_START = /^\s*(\[|\{[^\{])/;
-var JSON_END = /[\}\]]\s*$/;
-var JSON_PROTECTION_PREFIX = /^\)\]\}',?\n/;
 
-function defaultHttpResponseTransform(data, headers) {
-  if (isString(data)) {
-    // strip json vulnerability protection prefix
-    data = data.replace(JSON_PROTECTION_PREFIX, '');
-    var contentType = headers('Content-Type');
-    if ((contentType && contentType.indexOf(APPLICATION_JSON) === 0 && data.trim()) ||
-        (JSON_START.test(data) && JSON_END.test(data))) {
-      data = fromJson(data);
+    var APPLICATION_JSON = 'application/json';
+    var CONTENT_TYPE_APPLICATION_JSON = {'Content-Type':APPLICATION_JSON + ';charset=utf-8'};
+    var JSON_START = /^\s*(\[|\{[^\{])/;
+    var JSON_END = /[\}\]]\s*$/;
+    var JSON_PROTECTION_PREFIX = /^\)\]\}',?\n/;
+
+    function defaultHttpResponseTransform(data, headers) {
+      if (isString(data)) {
+        // strip json vulnerability protection prefix
+        data = data.replace(JSON_PROTECTION_PREFIX, '');
+        var contentType = headers('Content-Type');
+        if ((contentType && contentType.indexOf(APPLICATION_JSON) === 0 && data.trim()) || (JSON_START.test(data) && JSON_END.test(data))) 
+        {
+          data = fromJson(data);
+        }
+      }
+      return data;
     }
-  }
-  return data;
-}
-```
+
+
 我们看到，在浏览器收到HTTP response后，AngularJS会试图对response body的数据进行一些transform，而默认的transform方法就是判断数据是否为JSON。判断的方式有两种
 
 1. 看Response Headers里面是否有`Content-Type`，如果有，判断一下是否为`application/json`。
@@ -58,27 +59,27 @@ function defaultHttpResponseTransform(data, headers) {
 
 我们的这条HTTP Response肯定不符合第一条，那么就到了第二条check。只要`JSON_START.test(data) && JSON_END.test(data)`为`true`，那么AngularJS就会试图把response data当作JSON来parse。可是这两条正则表达式弱到你可以分分钟想到一个满足条件的值：
 
-```
-> JSON_START.test('[a}') && JSON_END.test('[a}')
-< true
-```
+
+    > JSON_START.test('[a}') && JSON_END.test('[a}')
+    < true
+
 老师们，这确定这两条正则表达式不是在逗我？
 
 找到root cause，我们再来看下导火索是啥。提示，我们的response data是markdown文档，你能构造出一个让AngularJS误以为是JSON的文档吗？
 
 这里我就不卖关子了。我们的用户写的文档，是类似于这样的：
 
-```
-[link](some links...)
 
-Function bar definition:
+    [link](some links...)
+
+    Function bar definition:
 
     function bar() {
       if (a > b) {
         foo();
       }
     }
-```
+    
 
 这是一种典型的API文档。这年头无论是technical writer都开始追求文档书写的轻便化，无论是开源项目（比如AngularJS自己）还是MSDN的一些API文档都开始使用Markdown来书写。
 
@@ -96,9 +97,9 @@ Function bar definition:
 #如果AngularJS还没修，我们该怎么workaround呢
 AngularJS 1.2正式release和1.3release之间隔了11一个月，如果我们傻傻分不清再等个11个月，早就被老板爆了。不过还好还是有一个比较clean的方式避开这个bug，你只需要在$http的request中显式地申明response content-type，就像这样
 
-```
-$http.get(url,{responseType:'byteArray'}).then(function(response) { ... } ;
-```
+
+    $http.get(url,{responseType:'byteArray'}).then(function(response) { ... } ;
+
 
 当然，你是没法从官方文档看到这个奇淫巧计的，他们只是告诉你这里可以填responseType，类型是string，具体参考MDN，[点这里](https://developer.mozilla.org/en-US/docs/DOM/XMLHttpRequest#responseType)。
 
