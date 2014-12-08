@@ -105,7 +105,3 @@ AngularJS 1.2正式release和1.3release之间隔了11一个月，如果我们傻
 
 --------
 分割线。周四live site被爆了一天，没想到礼拜五我又被爆了，这一次，我被Angular-ui某个库的一个特别stupid的bug玩地死去活来。不过我现在要去打扫了，下次再来和大家讲故事。当然，你可以Donate助我一臂之力，早日买到扫地机器人，把省下的时间写博客(陪妹子)。
-
-```
-markdown code snippet test
-```
