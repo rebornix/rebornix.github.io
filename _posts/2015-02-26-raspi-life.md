@@ -69,7 +69,7 @@ tags:
 
 你看，派和电源加起来，两张信用卡大小，就是一台随身携带的linux server，续航直逼macbook air哦！从此我可以在任何时间、任何地点，点亮树莓派，然后ssh上去，自由飞翔。就像这样：
 
-<img src="http://rebornix.qiniudn.com/raspi-WP_20150227_003.jpg" alt="installation" style="height: 400px;width: 600px;">
+<img src="http://rebornix.qiniudn.com/raspi-WP_20150227_003.jpg" alt="installation" style="height: 600px;width: 400px;">
 
 一旦树莓派没有了网线和电源线的限制，它的便携性是完美的。我可以在上面安装一个private的docker registry，这样我自己的image就不用发布到public docker hub上。同时，由于派可以随身携带，无论我走到哪儿，在家，在公司，甚至在咖啡馆，我都能访问我的私人docker registry。
 
