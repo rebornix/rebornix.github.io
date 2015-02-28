@@ -37,6 +37,7 @@ tags:
 <img src="http://rebornix.qiniudn.com/raspi-0.jpg" alt="installation" style="height: 400px;width: 600px;">
 
 更新完全后，你看到的首页是这样的
+
 <img src="http://rebornix.qiniudn.com/raspi-2.jpg" alt="installation" style="height: 400px;width: 600px;">
 
 第一次启动的xbmc只是一张白纸，你可以选择从硬盘或者局域网共享文件夹中访问音频、视频等，也可以通过安装插件来访问电视资源。插件可以从[官网](http://addons.xbmc.org/)下载，也可以下载至本地然后安装。比如[中文插件](https://github.com/taxigps/xbmc-addons-chinese)，安装完之后就可以访问优酷、搜狐视频和hpd的直播资源，和你的小米盒子，简直没有差别。更有趣的是，你甚至可以安装一些18+的插件，关注一些动作巨星，这里就不便具体展开了。
@@ -52,7 +53,7 @@ tags:
 
 由于树莓派功耗特别低(B+型只有3.0W)，所以利用pi来进行下载会比用常年开着电脑好很多（当然壕是不在乎电费的）。在pi上安装transmission和别的linux发行版并没有什么区别，你甚至可以把树莓派打造成一个乞丐版[NAS](http://chichou.0ginr.com/blog/315)，功效直逼小米路由器。这里我插一句话，但凡你不是特别穷困潦倒，玩NAS/离线下载的话，请买群晖。能花钱的地方，就不要花时间了。折腾完树莓派的效果如下
 
-<img src="http://rebornix.qiniudn.com/raspi-3.jpg" alt="installation" style="height: 400px;width: 600px;">
+<img src="http://rebornix.qiniudn.com/raspi-3" alt="installation" style="height: 400px;width: 600px;">
 
 这时出现一点差错，transmission装好后，怎么都没法下载，transmission提示是端口映射失效。检查完树莓派、路由器之后我发现，原因出在服务商**长城宽带**上。人如其名，长城宽带，就是长城内的局域网，由于使用NAT，bt下载被无情阉割（有兴趣的朋友可以维基一下NAT，你简直不敢相信中国的部分网络已经糟糕成这样了）。
 
