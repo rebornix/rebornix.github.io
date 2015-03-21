@@ -44,6 +44,7 @@ tags:
   *  使用ssh进行端口映射 `ssh -qTfnN rebornix@VPSDOMAIN -R 6800:RASPBERRYPI_IP:6800` 。完成映射后，你已经可以在webui-aria和yaaw中配置`VPSDOMAIN:6800/json-rpc`来管理树莓派上的aria进行下载了。
   * 写一个脚本，让你的pi在boot时自动进行端口的映射。当然可能pi启动的时候，你的路由器还没有启动，这种情况下，cronjob比较合适。我写了一个脚本，然后配置它每十五分钟跑一次
 
+脚本如下:
 
     	    #!/bin/bash
     		  wget -q --tries=10 --timeout=100 --spider http://www.baidu.com
