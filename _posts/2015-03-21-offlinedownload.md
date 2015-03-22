@@ -46,20 +46,20 @@ tags:
 
 脚本如下:
 
-    	    #!/bin/bash
-    		  wget -q --tries=10 --timeout=100 --spider http://www.baidu.com
-    		  if [[ $? -eq 0 ]]; then
-    		        echo "Online"
-    		        if ps aux | grep "[s]sh -qTfnN" > /dev/null
-    		        then
-    		            echo "ssh port forward running"
-    		        else
-    		            echo "ssh port forward not running!"
-    		            ssh -qTfnN rebornix@VPSDOMAIN -R 6800:RASPBERRYPI_IP:6800
-    		        fi
-    		  else
-    		        echo "Offline"
-    		  fi
+    #!/bin/bash
+	  wget -q --tries=10 --timeout=100 --spider http://www.baidu.com
+	  if [[ $? -eq 0 ]]; then
+	        echo "Online"
+	        if ps aux | grep "[s]sh -qTfnN" > /dev/null
+	        then
+	            echo "ssh port forward running"
+	        else
+	            echo "ssh port forward not running!"
+	            ssh -qTfnN rebornix@VPSDOMAIN -R 6800:RASPBERRYPI_IP:6800
+	        fi
+	  else
+	        echo "Offline"
+	  fi
 
 
 ----------
