@@ -18,9 +18,9 @@ tags:
 
 不过苦日子总算过完了:)
 
-<img src="http://rebornix.qiniudn.com/raspi-WP_20150319_004[1].jpg" alt="installation" style="width: 600px;">
+<img src="http://rebornix.qiniudn.com/raspi-WP_20150319_004[1].jpg" alt="installation" style="width: 100%;">
 
-<img src="http://rebornix.qiniudn.com/raspi-WP_20150320_001[1].jpg" alt="installation" style="width: 600px;">
+<img src="http://rebornix.qiniudn.com/raspi-WP_20150320_001[1].jpg" alt="installation" style="width: 100%;">
 
 
 ##谈正事：远程下载
