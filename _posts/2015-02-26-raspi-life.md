@@ -34,15 +34,15 @@ tags:
 
 启动之后需要更新一下kernel和modules
 
-<img src="http://rebornix.qiniudn.com/raspi-0.jpg" alt="installation" style="height: 400px;width: 600px;">
+<img src="https://dn-rebornix.qbox.me/raspi-0.jpg" alt="installation" style="height: 400px;width: 600px;">
 
 更新完全后，你看到的首页是这样的
 
-<img src="http://rebornix.qiniudn.com/raspi-2.jpg" alt="installation" style="height: 400px;width: 600px;">
+<img src="https://dn-rebornix.qbox.me/raspi-2.jpg" alt="installation" style="height: 400px;width: 600px;">
 
 第一次启动的xbmc只是一张白纸，你可以选择从硬盘或者局域网共享文件夹中访问音频、视频等，也可以通过安装插件来访问电视资源。插件可以从[官网](http://addons.xbmc.org/)下载，也可以下载至本地然后安装。比如[中文插件](https://github.com/taxigps/xbmc-addons-chinese)，安装完之后就可以访问优酷、搜狐视频和hpd的直播资源，和你的小米盒子，简直没有差别。更有趣的是，你甚至可以安装一些18+的插件，关注一些动作巨星，这里就不便具体展开了。
 
-<img src="http://rebornix.qiniudn.com/raspi-1.jpg" alt="installation" style="height: 400px;width: 600px;">
+<img src="https://dn-rebornix.qbox.me/raspi-1.jpg" alt="installation" style="height: 400px;width: 600px;">
 
 另一个有意思的细节是，xbmc不仅仅可以装在树莓派上，linux、mac、windows都可以安装，有网的地方，就能有直播。不得不承认，外国人动手的热情和能力都太棒了，无论什么都能start from scratch做出来，并且愿意把技术分享给他人。而在我朝，你所熟悉的story是，某山寨厂商抄袭国外某技术，然后量产，以低价卖给了所有人。
 
@@ -53,7 +53,7 @@ tags:
 
 由于树莓派功耗特别低(B+型只有3.0W)，所以利用pi来进行下载会比用常年开着电脑好很多（当然壕是不在乎电费的）。在pi上安装transmission和别的linux发行版并没有什么区别，你甚至可以把树莓派打造成一个乞丐版[NAS](http://chichou.0ginr.com/blog/315)，功效直逼小米路由器。这里我插一句话，但凡你不是特别穷困潦倒，玩NAS/离线下载的话，请买群晖。能花钱的地方，就不要花时间了。折腾完树莓派的效果如下
 
-<img src="http://rebornix.qiniudn.com/raspi-3" alt="installation" style="height: 400px;width: 600px;">
+<img src="https://dn-rebornix.qbox.me/raspi-3" alt="installation" style="height: 400px;width: 600px;">
 
 这时出现一点差错，transmission装好后，怎么都没法下载，transmission提示是端口映射失效。检查完树莓派、路由器之后我发现，原因出在服务商**长城宽带**上。人如其名，长城宽带，就是长城内的局域网，由于使用NAT，bt下载被无情阉割（有兴趣的朋友可以维基一下NAT，你简直不敢相信中国的部分网络已经糟糕成这样了）。
 
@@ -66,11 +66,11 @@ tags:
  
 这年头随着网速的大幅提升和无线技术的发展，网线对于普通用户都快成上世纪恐龙了。树莓派自带了一个网线接口，不够方便。于是我京东花30块钱撸了一个[无线网卡](http://item.jd.com/509932.html)，免驱动完美支持，一次点亮。然后我将我闲置快三年的移动电源拿了出来给树莓派供电，20Wh，够树莓派坚持五六个小时。从此我的派，说走就走。
 
-<img src="http://rebornix.qiniudn.com/raspi-WP_20150227_002.jpg" alt="installation" style="height: 400px;width: 600px;">
+<img src="https://dn-rebornix.qbox.me/raspi-WP_20150227_002.jpg" alt="installation" style="height: 400px;width: 600px;">
 
 你看，派和电源加起来，两张信用卡大小，就是一台随身携带的linux server，续航直逼macbook air哦！从此我可以在任何时间、任何地点，点亮树莓派，然后ssh上去，自由飞翔。就像这样：
 
-<img src="http://rebornix.qiniudn.com/raspi-WP_20150227_003.jpg" alt="installation" style="height: 600px;width: 400px;">
+<img src="https://dn-rebornix.qbox.me/raspi-WP_20150227_003.jpg" alt="installation" style="height: 600px;width: 400px;">
 
 一旦树莓派没有了网线和电源线的限制，它的便携性是完美的。我可以在上面安装一个private的docker registry，这样我自己的image就不用发布到public docker hub上。同时，由于派可以随身携带，无论我走到哪儿，在家，在公司，甚至在咖啡馆，我都能访问我的私人docker registry。
 
@@ -101,7 +101,7 @@ Berryio是一个用于管理树莓派上GPIO接口或其他连接设备、监控
 
 使用这个工具最大的好处是摆脱ssh。你可以通过web来操控树莓派，这意味着即使没有ssh client，你可以通过手机完成对树莓派的操作。从此树莓派的便携性就显得不那么鸡肋。
 
-<img src="http://rebornix.qiniudn.com/raspi-raspi-berryio-wifi.PNG" alt="installation" style="height: 400px;width: 600px;">
+<img src="https://dn-rebornix.qbox.me/raspi-raspi-berryio-wifi.PNG" alt="installation" style="height: 400px;width: 600px;">
 
 Berryio很好滴展示了我的派使用了无线网卡 :)
 
