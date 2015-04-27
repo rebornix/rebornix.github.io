@@ -71,3 +71,5 @@ namespace Badge
 
 ##造轮子充满乐趣
 ![Yeah](http://rebornix.qiniudn.com/yeah.svg)
+
+![Report Bug](http://rebornix.qiniudn.com/reportbug.svg)
