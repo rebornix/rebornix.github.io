@@ -24,7 +24,7 @@ tags:
 Shield提供了一套绘制badge的方案，并且开源了nodejs、php、go等语言的实现方式，甚至他们提供了一个服务[Shield.io](http://shield.io)方便大家使用。这几乎是完美的。
 
 ##那为啥我要造轮子
-原因也挺简单的，shield并不可能像Azure，AWS那样提供SLA（我们也不该要求他们提供）。我们应该尽可能地为我们的网站减少这样的external dependency。既然他们开源了，我干脆就写了一个.NET版本，通过[Nuget](https://www.nuget.org/packages/DotBadge)管理Assembly，然后把这个服务run在我们自己的机器上。我给它取了个很俗的名字，叫DotBadge，大家可以前去[Github](https://github.com/rebornix/DotBadge)围观。
+原因也挺简单的，shield并不可能像Azure，AWS那样提供SLA（我们也不该要求他们提供）。我们要尽可能地为我们的网站减少这样的external dependency。既然他们开源了，我干脆就写了一个.NET版本，通过[Nuget](https://www.nuget.org/packages/DotBadge)管理Assembly，然后把这个服务run在我们自己的机器上。我给它取了个很俗的名字，叫DotBadge，大家可以前去[Github](https://github.com/rebornix/DotBadge)围观。
 
 ##如何使用
 我在Github Repo的Readme里面写的比较详细了，这里再贴一份中文的
