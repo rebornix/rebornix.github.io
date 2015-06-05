@@ -23,7 +23,7 @@ body {
 }
 
 a {
-    color: #AAA;
+    color: #777777;
     text-decoration: none;
     margin: 0 0 0 0;
 }
@@ -47,4 +47,8 @@ pre {
   overflow: auto;
   overflow-y: hidden;
   margin-bottom: 32px;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: white;
 }
