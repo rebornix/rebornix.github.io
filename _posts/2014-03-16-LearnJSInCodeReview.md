@@ -23,7 +23,7 @@ tags:
 
 我放弃了，一个聪明的人应该知道自己什么时候得坚持，什么时候要学会放弃。那之后，有那么几次，我重新燃起了对JS的兴趣，事实残酷地甩了我几个巴掌。
 
-#Learn JS in Code Review#
+##Learn JS in Code Review
 最近老板让我多打了一份杂工，和周总他们一起写写JS。工资嘛，当然还是只有一份的，但我仿佛又看到了希望，我可能真的要达成我多年的夙愿，做一名服务水平一流的前台工程狮，哦不，前端工程师。
 
 我接到的第一个前端的活儿，就是给我们页面上的TOC（table of content）加上搜索的功能，这个搜索需要先call后台，然后在前台的tree上定位。我们的tree是用jstree实现的，所以看到这个需求当时我就思密达了，别说jstree了，我连Jquery都没用过啊欧巴！
@@ -82,7 +82,7 @@ $("#searchText").keyup(function (event) {
 });
 ```
 
-##正则表达式##
+###正则表达式
 在上面的code中，我使用正则表达式`var re = /[a-zA-Z]{2}\d+/;`来判断用户输入。很不幸地，就这么一段小小的代码，我收到了三条comment，简直是人类的耻辱。
 
 我们先看第一条：
@@ -114,7 +114,7 @@ var re = new RegExp("ab+c"); // Calling the constructor function
 
 Mozila上对exec这个方法的定义是`A RegExp method that executes a search for a match in a string. It returns an array of information.`显然，如果我不加上`^`和`$`标记开头和结尾，是无法实现exact match的。出现这个错误完全是对JS Regex的不了解。
 
-##Function##
+###Function
 
 除了正则表达式，同事们对我定义函数的方式似乎也有很大的意见：
 
@@ -187,7 +187,7 @@ $("#searchText").keyup(function (event) {
 });
 ```
 
-##代码冗余##
+###代码冗余
 发完第二版之后，我以为终于可以告一段落迎来新的篇章了，结果同事们百折不挠。不过这次的comment和JavaScript语言本身没有太大的关系。
 
 首先是要减少if/else深度和分支，我的上一段代码里有三个分支最终都要call到`jstree.search()`，不同只是传入的参数。其次，ajax的参数complete、success、error都是optional的，不需要的地方可以略去。总结一下就是尽可能地减少代码冗余。
@@ -235,7 +235,7 @@ $("#searchText").keyup(function (event) {
 });
 ```
 
-#Conclusion#
+##Conclusion
 经历了这次Code Review后，我再次感受到，写出能用的代码和高质量的代码是有很大距离的。在短短三十行代码里我比较深入地研究了下JavaScript的正则表达式、函数定义和性能上的优化，学习的效率和成果让我颇为满意。
 
 如果你也有一群追求代码质量且愿意帮助他人提高的同事，Code Review不失为一个老少皆宜的学习方法。如果你的团队没有这样的氛围，这也没关系，你只需找一个愿意和你一起专研某门技术的好基友作peer review就好了。别忘了送他一块肥皂。

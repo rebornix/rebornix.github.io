@@ -14,7 +14,7 @@ tags:
 
 上周四早上收到美帝客户的邮件爆我们，说咱们的编辑器不能编辑markdown也不能preview。美帝同志还是很体贴的，虽然这周我on call，他们也没有惨无人道地半夜把我喊起来，只是静静地等我们都来了公司才呼唤我们。这里给你们点赞！
 
-#Live Site
+##Live Site
 
 上线一看，只有部分文章的内容load不出来，导致无法编辑和预览。抓包看了下，HTTP request call全部都是成功了，也就是说问题没有出在后台，至少浏览器已经成功获取content。那问题很显然出在JS代码上，而获取markdown文档代码其实只有一行：
     
@@ -26,7 +26,7 @@ tags:
 
 问题到这里变得比较清晰了，backend server显式地申明response的content-type为任意二进制数据，为何AngularJS坚持要把数据当JSON解析呢？
 
-#打开AngularJS $http 瞧一瞧
+##打开AngularJS $http 瞧一瞧
 带着疑惑我打开anguarjs关于$http的代码，看看究竟是什么样的逻辑。[AngularJS/src/ng/http.js](https://github.com/angular/angular.js/blob/master/src/ng/http.js)代码的第一段就把故事交代了，我们看
 
 
@@ -83,7 +83,7 @@ tags:
 
 于是我被爆了，华丽丽地，连肥皂都没捡。
 
-#那什么时候这个Bug会被修掉呢？
+##那什么时候这个Bug会被修掉呢？
 发现问题后我给AngularJS开了一个[issue](https://github.com/angular/angular.js/issues/10349)，他们很快确认了这个bug。我建议能不能把这条非常弱的RegEx去掉，或者是实现像Jquery一样的Intelligence。
 
 他们表示，remove掉是肯定不可能的，由于他们从一开始就有这段代码，一些`non-well-behaving`的backend可能偷懒不添加`content-type`，把这段remove掉，这些用户一更新AngularJS就挂掉了，这种属于breaking change，只能等到1.4这样的大版本更新。而现在的code base里这个黑科技出现在很多地方，没法简单地修改，所以一时半会儿也没法引入类似Jquery的智能监测。
@@ -92,7 +92,7 @@ tags:
 
 当然，他们对于`[a}`这样的string都能被认为是JSON自己都受不了，于是他们发了一个[pull request](https://github.com/angular/angular.js/blob/master/src/ng/http.js)，保证opening/closing brackets是一样的。我觉得吧，这是条不归路。
 
-#如果AngularJS还没修，我们该怎么workaround呢
+##如果AngularJS还没修，我们该怎么workaround呢
 AngularJS 1.2正式release和1.3release之间隔了11一个月，如果我们傻傻分不清再等个11个月，早就被老板爆了。不过还好还是有一个比较clean的方式避开这个bug，你只需要在$http的request中显式地申明response content-type，就像这样
 
 
