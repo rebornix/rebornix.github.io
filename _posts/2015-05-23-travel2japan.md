@@ -2,8 +2,8 @@
 layout: post
 title: 带着《德川家康》去旅行
 category: Travel
-status: publish
-published: true
+status: draft
+published: false
 meta: 
   _edit_last: ""
 type: post
