@@ -1,16 +1,14 @@
-a {
-    color: #ff9393;
-}
-
-a:hover {
-    color: #ff754f;
-}
-
 h1, h2, h3, h4, h5, h6{
 	color: #ff754f;
 }
 
-/* Code blocks */
+a {
+    color: #ff754f;
+}
+
+p {
+	margin-bottom: 20px;
+}
 
 code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
@@ -34,10 +32,6 @@ pre {
 	color: white;
 }
 
-p {
-	margin-bottom: 20px;
-}
-
 .blogpost h2 {
   margin-top: 30px;
 }
@@ -45,5 +39,10 @@ p {
 .blogpost a {
   text-decoration: none;
   border-bottom: 2px solid #fecd9d;
+  color: #ff9393;
+}
+
+.blogpost a:hover {
+	color: #ff754f;
 }
 

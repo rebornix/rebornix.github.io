@@ -5,7 +5,7 @@ layout: default
 <div style="text-align:center; font-size:24px;text-align: center;margin-top: 100px;">
 <div style="font-size:18px;font-family: 'Patrick Hand SC';text-align: left;margin-top:60px;">
 {% for post in site.posts %}
-  <div style="margin-top: 20px;"><a href="{{ post.url }}">{{ post.title }}</a> <span style="float:right">{{ post.date | date_to_string }}</span></div>
+  <div style="margin-top: 20px;font-size: 20px;"><a href="{{ post.url }}">{{ post.title }}</a> <span style="float:right;color:rgba(0,0,0,0.2);">{{ post.date | date_to_string }}</span></div>
 {% endfor %}
 </div>
 </div>
