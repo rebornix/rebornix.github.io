@@ -1,6 +1,5 @@
 body {
-    font-size: 18px;
-    font-family: 'Maven Pro', Helvetica, Arial, serif;
+    font-size: 15px;
 }
 
 #slant {
@@ -51,4 +50,14 @@ pre {
 
 .navbar-default .navbar-nav > li > a {
 	color: white;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+.content h2 {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: bold;
 }
