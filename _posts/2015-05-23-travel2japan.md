@@ -2,8 +2,8 @@
 layout: post
 title: 带着《德川家康》去旅行
 category: Travel
-status: draft
-published: false
+status: published
+published: true
 meta: 
   _edit_last: ""
 type: post
@@ -19,75 +19,104 @@ tags:
 前方多图预警，不过我亲爱的粉丝们可以一睹我的芳容:(
 
 ##Day 1
-![银座](http://rebornix.qiniudn.com/jp-P1010692.JPG)
+  
+<img src="https://dn-rebornix.qbox.me/jp-P1010692.JPG?imageView2/1/w/800/q/90" alt="银座" style="width: 100%;">
 
-![东京塔](http://rebornix.qiniudn.com/jp-P1010702.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1010707.JPG?imageView2/1/w/800/q/90" alt="东京塔" style="width: 100%;">
+
+
 ##Day 2
-![皇居前](http://rebornix.qiniudn.com/jp-P1010765 - Copy.JPG)
 
-![天皇的御花园是真美](http://rebornix.qiniudn.com/jp-P1010782.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1010758.JPG?imageView2/1/w/800/q/90" alt="皇居" style="width: 100%">
+  
+<img src="https://dn-rebornix.qbox.me/jp-P1010782.JPG?imageView2/1/w/800/q/90" alt="天皇的御花园是真美" style="width: 100%">
+  
+<img src="https://dn-rebornix.qbox.me/jp-P1010803.JPG?imageView2/1/w/800/q/90" alt="二条城" style="width: 100%">
+和伟子
+
+秋叶原
+
+台场
+
+<img src="https://dn-rebornix.qbox.me/jp-IMG_4258.JPG?imageView2/1/w/800/q/90" alt="偶遇自由女神" style="width: 100%">
+  
 ##Day 3
-![Tokyo to Fujisawa](http://rebornix.qiniudn.com/jp-Fujisawa.PNG)
+<img src="https://dn-rebornix.qbox.me/jp-Fujisawa.PNG?imageView2/1/w/800/q/90" alt="Tokyo to Fujisawa" style="width: 60%">
 
-![长谷寺 前来研习的学生们](http://rebornix.qiniudn.com/jp-P1010840.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1010840.JPG?imageView2/1/w/800/q/90" alt="长谷寺 前来研习的学生们" style="width: 100%">
 
-![长谷寺](http://rebornix.qiniudn.com/jp-P1010843 - Copy.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1010843 - Copy.JPG?imageView2/1/w/800/q/90" alt="长谷寺" style="width: 100%">
 
-![是吉签哦](http://rebornix.qiniudn.com/jp-P1010851.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1010861.JPG?imageView2/1/w/800/q/90" alt="长谷寺" style="width: 100%">
+  
+<img src="https://dn-rebornix.qbox.me/jp-P1010869.JPG?imageView2/1/w/800/q/90" alt="萌萌哒" style="width: 100%">
 
-![精美的日式建筑](http://rebornix.qiniudn.com/jp-P1010856.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020046.JPG?imageView2/1/w/800/q/90" alt="镰仓的海" style="width: 100%">
 
-![萌萌哒](http://rebornix.qiniudn.com/jp-P1010869.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1010882.JPG?imageView2/1/w/800/q/90" alt="一次简单的日式午饭" style="width: 100%">
 
-![镰仓的海](http://rebornix.qiniudn.com/jp-P1010870.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1010884.JPG?imageView2/1/w/800/q/90" alt="镰仓高校前" style="width: 100%">
 
-![一次简单的日式午饭](http://rebornix.qiniudn.com/jp-P1010882.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1010887.JPG?imageView2/1/w/800/q/90" alt="漫画里有粗线！" style="width: 100%">
 
-![镰仓高校前](http://rebornix.qiniudn.com/jp-P1010884.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1010895.JPG?imageView2/1/w/800/q/90" alt="樱木在这里遇到了晴子" style="width: 100%">
 
-![漫画里有粗线！](http://rebornix.qiniudn.com/jp-P1010887.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1010972.JPG?imageView2/1/w/800/q/90" alt="湘北 全国制霸！" style="width: 100%">
 
-![樱木在这里遇到了晴子](http://rebornix.qiniudn.com/jp-P1010895.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020008.JPG?imageView2/1/w/800/q/90" alt="他们的火车" style="width: 100%">
 
-![湘北 全国制霸！](http://rebornix.qiniudn.com/jp-P1010972.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020030.JPG?imageView2/1/w/800/q/90" alt="江岛" style="width: 100%">  
+  
+<img src="https://dn-rebornix.qbox.me/jp-P1020055.JPG?imageView2/1/w/800/q/90" alt="前往江岛 居然看到了富士山" style="width: 100%">  
 
-![他们的火车](http://rebornix.qiniudn.com/jp-P1020012.JPG)
+海边啥都好 就是风大造型不好凹
 
-![前往江岛 居然看到了富士山](http://rebornix.qiniudn.com/jp-P1020055.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020072.JPG?imageView2/1/w/800/q/90" alt="海边啥都好 就是风大造型不好凹" style="width: 100%"> 
 
-![什么动物...](http://rebornix.qiniudn.com/jp-P1020083.JPG)
+在海边玩耍的日本友人把这个拿出来放到好奇的我的手上，我到最后也没能听明白他们跟我解释的这是啥...
+
+<img src="https://dn-rebornix.qbox.me/jp-P1020083.JPG?imageView2/1/w/800/q/90" alt="" style="width: 100%"> 
+     
 ##Day 4
-![富士山映入眼帘](http://rebornix.qiniudn.com/jp-P1020088.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020088.JPG?imageView2/1/w/800/q/90" alt="富士山映入眼帘" style="width: 100%">
 
-![河口湖](http://rebornix.qiniudn.com/jp-P1020101.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020109.JPG?imageView2/1/w/800/q/90" alt="台风来啦" style="width: 100%">
 
-![台风来啦](http://rebornix.qiniudn.com/jp-P1020109.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020196.JPG?imageView2/1/w/800/q/90" alt="这位朋友" style="width: 100%">
+  
+<img src="https://dn-rebornix.qbox.me/jp-P1020172.JPG?imageView2/1/w/800/q/90" alt="沿湖一周" style="width: 100%">
 
-![沿湖一周](http://rebornix.qiniudn.com/jp-P1020172.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020208.JPG?imageView2/1/w/800/q/90" alt="起风啦" style="width: 100%">
 
-![这位朋友](http://rebornix.qiniudn.com/jp-P1020196.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020219.JPG?imageView2/1/w/800/q/90" alt="街角的日式别墅 马姑娘说好像留下来啊" style="width: 100%">
 
-![起风啦](http://rebornix.qiniudn.com/jp-P1020208.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020221.JPG?imageView2/1/w/800/q/90" alt="终于来到了超市 富士山已经云雾缭绕" style="width: 100%">
 
-![街角的日式别墅 马姑娘说好像留下来啊](http://rebornix.qiniudn.com/jp-P1020219.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020250.JPG?imageView2/1/w/800/q/90" alt="八音盒美术馆" style="width: 100%">
 
-![终于来到了超市 富士山已经云雾缭绕](http://rebornix.qiniudn.com/jp-P1020221.JPG)
+逛完美术馆，天公不作美开始下起了雨。赶了半天的车又完了一下午，我们已经是又饿又冷又累，立刻坐巴士回了酒店。在河口湖我们选择了日式传统民居榻榻米。
 
-![八音盒美术馆](http://rebornix.qiniudn.com/jp-P1020250.JPG)
 
-![怀石料理](http://rebornix.qiniudn.com/jp-P1020342.JPG)
+  
+<img src="https://dn-rebornix.qbox.me/jp-P1020342.JPG?imageView2/1/w/800/q/90" alt="怀石料理" style="width: 100%">
+  
+<img src="https://dn-rebornix.qbox.me/jp-IMG_4465.JPG?imageView2/1/w/800/q/90" alt="怀石料理" style="width: 100%">
 
-![巴嘎！](http://rebornix.qiniudn.com/jp-P1020375.JPG)
+吃完后换上浴衣去泡温泉。
+<img src="https://dn-rebornix.qbox.me/jp-P1020372.JPG?imageView2/1/w/800/q/90" alt="巴嘎！" style="width: 100%">
 
+
+
+##Day 5
 一睁眼富士山！
 
-![Mt Fuji!](http://rebornix.qiniudn.com/jp-P1020378.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020378.JPG?imageView2/1/w/800/q/90" alt="Mt Fuji!" style="width: 100%">
 
-![对着富士吃早饭](http://rebornix.qiniudn.com/jp-P1020408.JPG)
+<img src="https://dn-rebornix.qbox.me/jp-P1020408.JPG?imageView2/1/w/800/q/90" alt="对着富士吃早饭" style="width: 100%">
 
-![再见啦](http://rebornix.qiniudn.com/jp-P1020430.JPG)
-##Day 5
+虽然纸币上的是从本栖湖拍摄的，但由于富士山的完美对称，使得这张照片毫无违和感。
+<img src="https://dn-rebornix.qbox.me/jp-IMG_4337.JPG?imageView2/1/w/800/q/90" alt="日本纸币上的风景" style="width: 100%">
 
 ##Day 6
 
-##Day7 
+##Day 7 

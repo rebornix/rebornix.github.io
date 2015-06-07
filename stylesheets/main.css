@@ -32,6 +32,13 @@ pre {
   overflow-y: hidden;
 }
 
+::selection {
+  background: #ff9393; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #ff9393; /* Gecko Browsers */
+}
+
 .navbar-default .navbar-nav > li > a {
 	color: white;
 }
