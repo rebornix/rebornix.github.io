@@ -42,7 +42,7 @@ Angular 中有你可以这么使用expression
 1. 在 built-in 的 directive 中，比如 `<input type="text" name="userName" ng-model="user.name"`
 2. 另一种就是使用 double bracket {% raw %} `<p>My first expression: {{ value }}</p>`{% endraw %}。
 
-可是奇怪的事情，当你使用`ng-src`的时候，你需要这样写 {% raw %}`<img src="http://www.gravatar.com/avatar/{{hash}}" alt="Description"/>` {% endraw %}... 我已经不知道该说什么好了 ...你可以再看看这里 [1](http://stackoverflow.com/questions/28232073/creating-a-directive-for-bootstrap-menuitems/28232195#28232195), [2](http://stackoverflow.com/questions/28379139/angularjs-ng-click-function-with-angular-expression-parameter-returning-a-syntax/28379163#28379163)。
+可是奇怪的事情，当你使用`ng-src`的时候，你需要这样写 {% raw %}`<img ng-src="http://www.gravatar.com/avatar/{{hash}}" alt="Description"/>` {% endraw %}... 我已经不知道该说什么好了 ...你可以再看看这里 [1](http://stackoverflow.com/questions/28232073/creating-a-directive-for-bootstrap-menuitems/28232195#28232195), [2](http://stackoverflow.com/questions/28379139/angularjs-ng-click-function-with-angular-expression-parameter-returning-a-syntax/28379163#28379163)。
 
 
 ###$scope
