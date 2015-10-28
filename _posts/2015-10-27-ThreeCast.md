@@ -42,7 +42,7 @@ https://itunes.apple.com/cn/podcast/san-ren-xing/id1052351099?mt=2)，接下来�
 1. Windows 电脑，可以访问[http://three.sh在线收听](http://three.sh)
 2. Android 手机，下载一个播客客户端，订阅即可追踪到我们每一期节目，[参考这里](https://gist.github.com/rebornix/65f10eaa31d6aaeaebd4)
 3. iOS 手机手动订阅，打开 Podcasts 应用，在 store 里面搜索《三人行》，也可以手动添加 rss ，[参考这里](https://gist.github.com/huntersnk/d1ee900347bbb673c523)
-4. Mac OS 电脑，同上，在IOS手机 Podcasts 中订阅后就会自动同步到电脑中的 Podcasts
+4. Mac OS 电脑，同上，在 iOS 手机 Podcasts 中订阅后就会自动同步到电脑中的 Podcasts
 
 第一期我们斗胆聊了聊和博客（ blog ）有关的故事，如果觉得有趣（没劲），不妨给我们写邮件反馈（hi@three.sh）！
 
