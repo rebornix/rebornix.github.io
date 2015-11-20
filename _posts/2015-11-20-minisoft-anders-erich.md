@@ -11,7 +11,7 @@ tags:
 - microsoft
 
 ---
-大概半年前，我写了一篇名叫[《有点软文》](/snippets/2015/04/14/minisoft/)的文章，深情并茂地告诉大家，我司其实隐藏着很多牛人巨擘。有些人是身怀屠龙记，但是大家不认识；有些朋友则是声名远播，但可惜的是大家根本不知道他在微软。在看完 [Connect](https://connect2015.visualstudio.com) ( Visual Studio 大会 )之后，我决定克服拖延症，来讲一讲大会上除了 Scott Gu （Asp.Net 之父）以外的两个天王巨星。
+大概半年前，我写了一篇名叫[《有点软文》](/snippets/2015/04/14/minisoft/)的文章，深情并茂地告诉大家，我司其实隐藏着很多牛人巨擘。有些人是身怀屠龙技，但是大家不认识；有些朋友则是声名远播，但可惜的是大家根本不知道他在微软。在看完 [Connect](https://connect2015.visualstudio.com) ( Visual Studio 大会 )之后，我决定克服拖延症，来讲一讲大会上除了 Scott Gu （Asp.Net 之父）以外的两个天王巨星。
 
 那就是 Anders Hejlsberg 和 Erich Gamma
 
@@ -33,7 +33,9 @@ Anders 早年写了Compass Pascal编译器的 core，后来卖给了 Borland，�
 
 相比于 Anders，Erich 的名声相对小一些，但这决不意味着这哥们的战斗力不强。我们知道 Anders 醉心于语言设计，而 Erich 就是软件开发的实践派。每每谈到软件开发，大家就不可避免地提及设计模式。而将设计模式从建筑行业引入到软件领域的，就是 Erich Gamma（当然，还有另外三个小伙伴，他们的统称十分霸气，Gang of Four，四人 帮）。Erich 91年博士毕业后就来到美国，与三个小伙伴一起布道设计模式。
 
-有些工程师朋友会觉得设计模式不过是纸上谈兵，这里我们按下不表。Erich Gamma 在11年加入了 Visual Studio Team，开始在瑞士苏黎世独自带领团队（Erich 是瑞士人，我司为了大牛也真是大手笔）。加入 Visual Studio Team 之后，Erich 开始亲自操刀，用 JavaScript 的编辑器 Monaco。在 Visual Studio Online，Onedrive（线上），Office 365 中广泛应用。
+*注解* ：经网友提醒，这里多讲点背景故事。Erich Gamma 在加入微软之前，和 Kent Beck 一起合作开发了单元测试框架 JUnit ，之后又领导了 Eclipse Java Development Tools 项目，真的是 IBM 的一个瑰宝啊。
+
+有些工程师朋友会觉得设计模式不过是纸上谈兵，这里我们按下不表。Erich Gamma 在11年加入了 Visual Studio Team，开始在瑞士苏黎世独自带领团队（Erich 是瑞士人，我司为了大牛也真是大手笔）。加入 Visual Studio Team 之后，Erich 开始亲自操刀，用 JavaScript 实现的编辑器 Monaco。在 Visual Studio Online，Onedrive（线上），Office 365 中广泛应用。
 
 我刚加入微软的时候，做的项目中就用了 Monaco，刚开始不知天高地厚，发现 Monaco 的 bug 后还嚷嚷着要去爆他们。有一次内部 Training，我们组也不知道怎么就请到了 Erich Gamma，他跟我们介绍如何利用 TypeScript （和 Anders 老兄产生了交集）重构 Monaco，把代码量从十万行硬是降到了两万以下。当时我都没好好听，觉得这又是一个爱忽悠的哥们。后来某次翻看设计模式的书，突然发现我天天想着要去爆的人，居然就是大名鼎鼎的 Erich。
 
