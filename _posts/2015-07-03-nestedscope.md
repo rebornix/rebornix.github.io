@@ -127,8 +127,11 @@ https://github.com/angular/angular.js/blob/291d7c467fba51a9cb89cbeee62202d51fe64
 问题到这里已经清楚了，Angular 的 nested scope 使用了 prototype 这个机制来实现 child scope 对 parent scope 的继承，当我们修改 child scope 上的属性时，会导致无法更新 parent scope 的属性。那么该如何解救它们呢？
 
 有两招
+
 # Dot Notation 和 $parent
+
 ## 第一招，江湖人称 Dot Notation
+
 换做人能够听懂的语言就是，避免给 child scope 上的属性赋值。还记得上文我们讲解 prototype chain 的时候说过，属性是 object 也可以继承
 
     > parent = { "name" : { "first": "peng", "last": "lv"}}
