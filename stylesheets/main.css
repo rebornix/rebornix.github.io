@@ -70,7 +70,7 @@ pre {
 }
 
 img.avatar {
-    width: 80px;
+    height: 100px;
     width: 100px;
     background-color: #fff;
     border-radius: 50px;
@@ -83,4 +83,10 @@ div.herotator {
     vertical-align: middle;
     text-align: center;
     margin-top: 100px;
+}
+div.herotator p {
+  color: white;
+}
+div.herotator p a {
+  color: white;
 }
