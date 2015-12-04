@@ -68,6 +68,9 @@ pre {
 .profile_meta ul li a{
 	color: white;
 }
+.profile_meta ul {
+  padding-left: 0px;
+}
 
 img.avatar {
     height: 100px;
