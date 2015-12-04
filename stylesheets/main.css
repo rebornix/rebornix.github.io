@@ -93,3 +93,8 @@ div.herotator p {
 div.herotator p a {
   color: white;
 }
+@media (max-device-width: 480px) {
+  p {
+   font-size: 16px;
+  }
+}
