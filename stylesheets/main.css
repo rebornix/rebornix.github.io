@@ -57,3 +57,30 @@ pre {
 	color: #ff754f;
 }
 
+.profile_meta ul li{
+	list-style-type: none;
+    display: inline-block;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.profile_meta ul li a{
+	color: white;
+}
+
+img.avatar {
+    width: 80px;
+    width: 100px;
+    background-color: #fff;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    box-shadow: 0 0 0 5px #fff;
+}
+
+div.herotator {
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 100px;
+}
