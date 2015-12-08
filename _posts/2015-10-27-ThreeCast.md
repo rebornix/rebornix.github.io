@@ -5,6 +5,15 @@ category: podcast
 status: publish 
 published: true
 type: post
+keywords:
+  - podcast
+  - itunes
+  - antennapod
+  - threecast
+  - 三人行
+  - 播客
+  - sneezry
+  - hunternsk
 tags: 
 - podcast
 

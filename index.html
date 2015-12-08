@@ -1,11 +1,12 @@
 ---
 layout: default
+description: Homepage of rebornix.com
 ---
 
 <div style="text-align:center; font-size:24px;text-align: center;margin-top: 100px;">
 <div style="font-size:18px;font-family: 'Patrick Hand SC';text-align: left;margin-top:60px;">
 {% for post in site.posts %}
-  <div style="margin-top: 20px;font-size: 20px;"><a href="{{ post.url }}">{{ post.title }}</a> <span style="float:right;color:rgba(0,0,0,0.2);">{{ post.date | date_to_string }}</span></div>
+  <h2 style="margin-top: 20px;font-size: 20px;"><a href="{{ post.url }}">{{ post.title }}</a> <span style="float:right;color:rgba(0,0,0,0.2);">{{ post.date | date_to_string }}</span></h2>
 {% endfor %}
 </div>
 </div>

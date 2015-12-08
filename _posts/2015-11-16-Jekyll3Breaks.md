@@ -5,6 +5,12 @@ category: Engineering
 status: publish 
 published: true
 type: post
+keywords:
+  - jekyll
+  - jekyll 3.0
+  - bug
+  - permalink
+  - 升级
 tags: 
 - jekyll
 - ruby

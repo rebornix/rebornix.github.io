@@ -5,6 +5,16 @@ category: Frontend
 status: publish 
 published: true
 type: post
+keywords:
+  - Stackoverflow
+  - AngularJS
+  - Angular
+  - Stack Overflow 学 Angular
+  - Angular Digest loop
+  - Two way binding
+  - scope 
+  - directive
+  - modules
 tags: 
 - 
 

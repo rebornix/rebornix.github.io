@@ -8,7 +8,7 @@
       {% endif %}
       {{ site.title }}
     </title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% elsif page.excerpt %}<meta name="description" content="{{ page.excerpt | strip_html }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- HTML5 shim, for IE6-8 support of HTML elements -->
@@ -16,6 +16,12 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    {% if page.keywords %}
+    <meta name="keywords" content="{{ page.keywords | join: ', ' }}" />
+    {% else %}
+    <meta name="keywords" content="rebornix, peng lv, njukidreborn, web design, development, C#, JavaScript, jekyll, grunt, , front-end developer, raspberry pi, stackoverflow, angularjs, angular, angular2, microsoft, software development engineer, sde, windows, SA, unix" />
+    {% endif %}
+    <link rel="canonical" href="https://rebornix.com{{page.url}}" />
 
        <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" media="all">
        <link href='/stylesheets/font.css' rel='stylesheet' type='text/css'>
@@ -31,7 +37,7 @@
   <body>
     <nav class="navbar navbar-default navbar-static-top" style="background-color: #ff754f;font-family: 'Patrick Hand SC';">
       <div class="container">
-        <div style="" class="herotator"><a href="/"><img src="/assets/avatar.jpg" class="avatar"></a>
+        <div style="" class="herotator"><a href="/"><img src="/assets/avatar.jpg" class="avatar" alt="Rebornix Avatar"></a>
 	<h1 style="
 	    color: white;
 	"><a href="/" style="color: white">Rebornix</a></h1>

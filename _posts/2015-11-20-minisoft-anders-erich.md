@@ -7,6 +7,13 @@ published: true
 meta: 
   _edit_last: ""
 type: post
+keywords:
+  - Anders Hejlsberg
+  - Erich Gamma
+  - Visual Studio Code
+  - VS Code
+  - Angular 2
+  - TypeScript
 tags: 
 - microsoft
 
