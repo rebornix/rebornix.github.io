@@ -38,7 +38,7 @@ Anders 早年写了Compass Pascal编译器的 core，后来卖给了 Borland，�
 #[Erich Gamma](https://en.wikipedia.org/wiki/Erich_Gamma)
 ![](https://pbs.twimg.com/profile_images/66432812/eg2.gif)
 
-相比于 Anders，Erich 的名声相对小一些，但这决不意味着这哥们的战斗力不强。我们知道 Anders 醉心于语言设计，而 Erich 就是软件开发的实践派。每每谈到软件开发，大家就不可避免地提及设计模式。而将设计模式从建筑行业引入到软件领域的，就是 Erich Gamma（当然，还有另外三个小伙伴，他们的统称十分霸气，Gang of Four，四人 帮）。Erich 91年博士毕业后就来到美国，与三个小伙伴一起布道设计模式。
+我们知道 Anders 醉心于语言设计，而 Erich 就是软件开发的实践派。每每谈到软件开发，大家就不可避免地提及设计模式。而将设计模式从建筑行业引入到软件领域的，就是 Erich Gamma（当然，还有另外三个小伙伴，他们的统称十分霸气，Gang of Four，四人 帮）。Erich 91年博士毕业后就来到美国，与三个小伙伴一起布道设计模式。
 
 *注解* ：经网友提醒，这里多讲点背景故事。Erich Gamma 在加入微软之前，和 Kent Beck 一起合作开发了单元测试框架 JUnit ，之后又领导了 Eclipse Java Development Tools 项目，真的是 IBM 的一个瑰宝啊。
 
