@@ -1,13 +1,5 @@
 body {
- font-family: "Hiragino Sans GB", "Microsoft YaHei","WenQuanYi Micro Hei", sans-serif
-}
-
-h1, h2, h3, h4, h5, h6{
-	color: #ff754f;
-}
-
-a {
-    color: #ff754f;
+ font-family: helvetica neue, helvetica, "Hiragino Sans GB", "Microsoft YaHei","WenQuanYi Micro Hei", sans-serif
 }
 
 p {
@@ -19,25 +11,6 @@ code, pre {
   font-size:12px;
 }
 
-code {
-	color: #ff754f;
-}
-
-pre {
-  padding: 4px 12px;
-  background: #FDFEFB;  
-  border-radius:4px;
-  border:1px solid #D7D8C8;
-  overflow: auto;
-  overflow-y: hidden;
-}
-
-::selection {
-  background: #ff9393; /* WebKit/Blink Browsers */
-}
-::-moz-selection {
-  background: #ff9393; /* Gecko Browsers */
-}
 
 .navbar-default .navbar-nav > li > a {
 	color: white;
@@ -45,16 +18,6 @@ pre {
 
 .blogpost h2 {
   margin-top: 30px;
-}
-
-.blogpost a {
-  text-decoration: none;
-  border-bottom: 2px solid #fecd9d;
-  color: #ff9393;
-}
-
-.blogpost a:hover {
-	color: #ff754f;
 }
 
 .profile_meta ul li{
@@ -86,6 +49,7 @@ div.herotator {
     vertical-align: middle;
     text-align: center;
     margin-top: 100px;
+    margin-bottom: 100px;
 }
 div.herotator p {
   color: white;
@@ -93,8 +57,54 @@ div.herotator p {
 div.herotator p a {
   color: white;
 }
+
+.archive {
+  margin-bottom: 3rem;
+}
+
+.archive-item {
+  margin-bottom: 2rem;
+  overflow: auto; /* clearfix */
+}
+
+.archive-title {
+  font-size: 20px;
+}
+
+.archive-date {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 @media (max-device-width: 480px) {
   p {
    font-size: 16px;
   }
 }
+
+@media (min-width: 34rem) {
+  .archive-list {
+    margin-top: 60px;
+  }
+
+  .bio {
+    margin-top: 60px;
+  }
+}
+
+.post-date {
+  display: block;
+  margin: -.5rem 0 .5rem;
+  color: #ccc;
+}
+
+.navbar {
+  background-color: rgba(0, 122, 204, 1);
+}
+@media (min-width: 34rem) {
+  .navbar {
+    background-image: url(/assets/bat.jpeg);
+    background-position: center;
+  }
+}
+

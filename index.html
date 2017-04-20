@@ -3,10 +3,31 @@ layout: default
 description: Homepage of rebornix.com
 ---
 
-<div style="text-align:center; font-size:24px;text-align: center;margin-top: 100px;">
-<div style="font-size:18px;font-family: 'Patrick Hand SC';text-align: left;margin-top:60px;">
-{% for post in site.posts %}
-  <h2 style="margin-top: 20px;font-size: 20px;"><a href="{{ post.url }}">{{ post.title }}</a> <span style="float:right;color:rgba(0,0,0,0.2);">{{ post.date | date_to_string }}</span></h2>
-{% endfor %}
-</div>
+<div class="row">
+  <div class="col-md-8 archive-list">
+    <div style="font-size:18px;text-align: left;">
+    {% for post in site.posts %}
+      <div class="archive-item">
+      {% if post.external_url %}
+      <span class="post-date archive-date">{{ post.date | date_to_string }}</span>
+      <a href="{{ post.external_url }}" class="archive-title">{{ post.channel }} / {{ post.title }}</a>
+      {% else %}
+      <span class="post-date archive-date">{{ post.date | date_to_string }}</span>
+      <a href="{{ post.url }}" class="archive-title">{{ post.title }}</a>
+      {% endif %}
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+  <div class="col-md-4 bio">
+    <p style="color: #337ab7; font-size: 20px;">Peng Lyu</p>
+    <p>Developer on <a href="https://code.visualstudio.com">VS Code</a>, Co-host Chinese Podcast <a href="http://dotnet.fm">.NET FM</a></p>
+    <p></p>
+    <p>Follow me at <a href="https://github.com/rebornix" target="_blank">GitHub</a>, <a href="https://medium.com/@rebornix" target="_blank">Medium</a>, <a href="/atom" target="_blank">RSS</a>
+    <div class="profile_meta">
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+  </div>
 </div>
