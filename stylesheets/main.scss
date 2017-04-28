@@ -103,6 +103,18 @@ body {
       // padding: 8rem 0rem;
     }
   }
+
+  .container {
+    box-sizing: border-box;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    .archive-list {
+      box-sizing: border-box;  
+      width: 100%;
+      float: left;
+    }
+  }
   .bio {
     margin-top: 60px;
   }
