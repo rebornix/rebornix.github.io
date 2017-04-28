@@ -1,0 +1,204 @@
+---
+---
+
+$link: #337ab7;
+$link-border: #337ab7;
+
+body {
+  font-family: helvetica neue, helvetica, "Hiragino Sans GB", "Microsoft YaHei","WenQuanYi Micro Hei", sans-serif;
+  margin: 0;
+}
+
+.herotator {
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+  background-image: url(/assets/bat.jpeg);
+  background-position: center center;
+  background-size: cover;
+
+  .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.1);
+    height: 100%;
+  }
+
+  .site {
+    position: relative;
+    text-align: center;
+    padding: 8rem 4rem;
+
+    h1{
+      font-size: 4rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  padding-left: 8rem;
+  padding-right: 8rem;
+
+  .archive-list {
+    box-sizing: border-box;  
+    width: 70%;
+    float: left;
+    padding: 2rem;
+
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style-type: none;
+        margin-bottom: 1.75rem;
+
+        a {
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $link;
+
+      &:hover {
+        border-bottom: 2px solid $link;
+      }
+    }
+
+    .post-date {
+      display: block;
+      color: #ccc;
+    }
+  }
+}
+
+.bio {
+  box-sizing: border-box;  
+  width: 30%;
+  font-size: .8rem;
+  line-height: 1.8;
+  text-align: left;
+  float: left;
+  padding: 2rem
+}
+
+@media (max-width: 34rem) {
+  .herotator {
+    background: rgba(0, 122, 204, 1);
+    
+    .site {
+      position: relative;
+      text-align: center;
+      // padding: 8rem 0rem;
+    }
+  }
+  .bio {
+    margin-top: 60px;
+  }
+}
+
+
+code, pre {
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-size:12px;
+}
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+blockquote {
+    border-left: 3px solid #0151ba;
+    margin: 0;
+    padding: 1rem 1.25rem;
+    font-size: 1.4rem;
+    color: #0151ba;
+}
+
+// .navbar-default .navbar-nav > li > a {
+// 	color: white;
+// }
+
+// .blogpost h2 {
+//   margin-top: 30px;
+// }
+
+// .profile_meta ul li{
+// 	list-style-type: none;
+//     display: inline-block;
+//     padding-right: 20px;
+//     padding-left: 20px;
+//     margin-top: 10px;
+// }
+
+// .profile_meta ul li a{
+// 	color: white;
+// }
+// .profile_meta ul {
+//   padding-left: 0px;
+// }
+
+// img.avatar {
+//     height: 100px;
+//     width: 100px;
+//     background-color: #fff;
+//     border-radius: 50px;
+//     -webkit-border-radius: 50px;
+//     -moz-border-radius: 50px;
+//     box-shadow: 0 0 0 5px #fff;
+// }
+
+// .archive {
+//   margin-bottom: 3rem;
+// }
+
+// .archive-item {
+//   margin-bottom: 2rem;
+//   overflow: auto; /* clearfix */
+// }
+
+// .archive-title {
+//   font-size: 20px;
+// }
+
+// .archive-date {
+
+// }
+
+// @media (max-device-width: 480px) {
+//   p {
+//    font-size: 16px;
+//   }
+// }
+
+// .navbar {
+//   background-color: rgba(0, 122, 204, 1);
+// }
+// @media (min-width: 34rem) {
+//   .navbar {
+//     background-image: url(/assets/bat.jpeg);
+//     background-position: center;
+//   }
+// }
+

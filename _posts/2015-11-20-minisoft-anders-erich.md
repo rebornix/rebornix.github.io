@@ -22,7 +22,7 @@ tags:
 
 那就是 Anders Hejlsberg 和 Erich Gamma
 
-#[Anders Hejlsberg](https://en.wikipedia.org/wiki/Anders_Hejlsberg)
+# [Anders Hejlsberg](https://en.wikipedia.org/wiki/Anders_Hejlsberg)
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Anders_Hejlsberg.jpg/440px-Anders_Hejlsberg.jpg)
 
 Anders 出席本次 Connect 大会，主要还是介绍他设计的 TypeScript 。那么谁是 Anders？
@@ -35,7 +35,7 @@ Anders 早年写了Compass Pascal编译器的 core，后来卖给了 Borland，�
 
 简言之，如果你是微软平台上的开发者，你几乎无法和 Anders 脱离关系。而如果你是 Angular 的开发者，不久的将来，你也会感受到 Anders 的荣光。这哥们就是语言设计专业户。
 
-#[Erich Gamma](https://en.wikipedia.org/wiki/Erich_Gamma)
+# [Erich Gamma](https://en.wikipedia.org/wiki/Erich_Gamma)
 ![](https://pbs.twimg.com/profile_images/66432812/eg2.gif)
 
 我们知道 Anders 醉心于语言设计，而 Erich 就是软件开发的实践派。每每谈到软件开发，大家就不可避免地提及设计模式。而将设计模式从建筑行业引入到软件领域的，就是 Erich Gamma（当然，还有另外三个小伙伴，他们的统称十分霸气，Gang of Four，四人 帮）。Erich 91年博士毕业后就来到美国，与三个小伙伴一起布道设计模式。

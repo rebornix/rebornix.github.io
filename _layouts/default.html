@@ -24,7 +24,7 @@ theme :
 
   {% if page.keywords %}
   <meta name="keywords" content="{{ page.keywords | join: ', ' }}" /> {% else %}
-  <meta name="keywords" content="rebornix, peng lv, njukidreborn, web design, development, C#, JavaScript, jekyll, grunt, , front-end developer, raspberry pi, stackoverflow, angularjs, angular, angular2, microsoft, software development engineer, sde, windows, SA, unix"
+  <meta name="keywords" content="rebornix, peng lv, njukidreborn, Visual Studio Code, VS Code, Monaco, C#, JavaScript, jekyll , frontend, raspberry pi, stackoverflow, angularjs, angular, angular2, microsoft, software development engineer, sde, windows, SA, unix"
   /> {% endif %}
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@njukidreborn">
@@ -36,38 +36,19 @@ theme :
 
   <link rel="canonical" href="https://rebornix.com{{page.url}}" />
 
-  <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-  <!--<link href='/stylesheets/font.css' rel='stylesheet' type='text/css'>-->
   <link href="/stylesheets/main.css" rel="stylesheet" type="text/css" media="all">
-  <!-- Update these with your own images
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  -->
 </head>
 
 <body>
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-      <div class="herotator">
-        <a href="/"><img src="/assets/avatar.jpg" class="avatar" alt="Rebornix Avatar"></a>
-        <h1 style="
-	    color: white;
-	"><a href="/" style="color: white">Rebornix</a></h1>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="content" style="height: 100%">
-      {{ content }}
-    </div>
 
+  <div class="herotator">
+    <div class="cover"></div>
+    <div class="site"><h1><a href="/" style="color: white">Rebornix</a></h1></div>
   </div>
-  <div style="margin-top:80px;margin-bottom: 20px; text-align:center; opacity: 0.6; font-size: 16px;">
-    <3 cici </div>
-      <script src="/assets/themes/hooligan/js/jquery.min.js"></script>
-      <script src="/assets/themes/hooligan/bootstrap/js/bootstrap.min.js"></script>
+  <div class="container">
+      {{ content }}
+  </div>
+      <script src="/assets/jquery.min.js"></script>
       <script>
         (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {

@@ -3,31 +3,36 @@ layout: default
 description: Homepage of rebornix.com
 ---
 
-<div class="row">
-  <div class="col-md-8 archive-list">
-    <div style="font-size:18px;text-align: left;">
-    {% for post in site.posts %}
-      <div class="archive-item">
-      {% if post.external_url %}
-      <span class="post-date archive-date">{{ post.date | date_to_string }}</span>
-      <a href="{{ post.external_url }}" class="archive-title">{{ post.channel }} / {{ post.title }}</a>
-      {% else %}
-      <span class="post-date archive-date">{{ post.date | date_to_string }}</span>
-      <a href="{{ post.url }}" class="archive-title">{{ post.title }}</a>
+<div class="archive-list">
+   {% for post in site.posts %} {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %} {% capture next_year %}{{
+  post.previous.date | date: "%Y" }}{% endcapture %} {% if forloop.first %}
+    <h2 id="{{ this_year }}-ref">{{this_year}}</h2>
+    <ul>
       {% endif %}
-      </div>
-    {% endfor %}
-    </div>
-  </div>
-  <div class="col-md-4 bio">
-    <p style="color: #337ab7; font-size: 20px;">Peng Lyu</p>
-    <p>Developer on <a href="https://code.visualstudio.com">VS Code</a>, Co-host Chinese Podcast <a href="http://dotnet.fm">.NET FM</a></p>
-    <p></p>
-    <p>Follow me at <a href="https://github.com/rebornix" target="_blank">GitHub</a>, <a href="https://medium.com/@rebornix" target="_blank">Medium</a>, <a href="/atom" target="_blank">RSS</a>
-    <div class="profile_meta">
-      <ul>
-        <li></li>
-      </ul>
-    </div>
+      <li>
+       {% if post.external_url %}
+      <span class="post-date archive-date">{{ post.date | date: "%B" | upcase }} {{ post.date | date: "%d" }}</span>
+      <a href="{{ post.external_url }}" class="archive-title">{{ post.channel }} / {{ post.title }}</a> {% else %}
+      <span class="post-date archive-date">{{ post.date | date: "%B" | upcase }} {{ post.date | date: "%d" }}</span>
+      <a href="{{ post.url }}" class="archive-title">{{ post.title }}</a> {% endif %}
+      </li>
+      {% if forloop.last %}
+    </ul>
+    {% else %} {% if this_year != next_year %}
+    </ul>
+    <h2 id="{{ next_year }}-ref">{{next_year}}</h2>
+    <ul>
+    {% endif %} {% endif %} {% endfor %}
+</div>
+
+<div class="bio">
+  <p style="color: #337ab7; font-size: 20px;">Peng Lyu</p>
+  <p>Developer on <a href="https://code.visualstudio.com">VS Code</a>, Co-host Chinese Podcast <a href="http://dotnet.fm">.NET FM</a></p>
+  <p></p>
+  <p>Follow me at <a href="https://github.com/rebornix" target="_blank">GitHub</a>, <a href="https://medium.com/@rebornix" target="_blank">Medium</a>, <a href="/atom" target="_blank">RSS</a>
+  <div class="profile_meta">
+    <ul>
+      <li></li>
+    </ul>
   </div>
 </div>
