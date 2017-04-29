@@ -1,12 +1,36 @@
 ---
 ---
 
-$link: #337ab7;
-$link-border: #337ab7;
+$blue: #06CDE0;
+$yellow: #F25E30;
+$link: #333;
+$link-border: #06CDE0;
 
 body {
-  font-family: helvetica neue, helvetica, "Hiragino Sans GB", "Microsoft YaHei","WenQuanYi Micro Hei", sans-serif;
+  font-family: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
   margin: 0;
+  line-height: 1.75;
+  position: relative;
+  text-align: justify;
+  color: #333;
+}
+
+::selection {
+  background: $blue; /* WebKit/Blink Browsers */
+  color: white;
+}
+::-moz-selection {
+  background: $blue; /* Gecko Browsers */
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+
+  &:hover {
+    border-bottom: 2px solid $link-border;
+  }
 }
 
 .herotator {
@@ -47,11 +71,25 @@ body {
   padding-left: 8rem;
   padding-right: 8rem;
 
+  a {
+    text-decoration: none;
+    color: $link;
+
+    &:hover {
+      border-bottom: 2px solid $link-border;
+    }
+  }
+
   .archive-list {
     box-sizing: border-box;  
     width: 70%;
     float: left;
     padding: 2rem;
+
+    .archive-date {
+      color: $yellow;
+      display: block;
+    }
 
 
     ul {
@@ -66,32 +104,50 @@ body {
         }
       }
     }
+  }
+  .bio {
+    box-sizing: border-box;  
+    width: 30%;
+    font-size: .8rem;
+    text-align: left;
+    float: left;
+    padding: 2rem;
 
     a {
       text-decoration: none;
-      color: $link;
+      color: $yellow;
+    }
+  }
 
-      &:hover {
-        border-bottom: 2px solid $link;
+  .page-header {
+    padding: 2rem 2rem 0 2rem;
+    box-sizing: border-box;
+  }
+
+  .blogpost {
+      box-sizing: border-box;  
+      width: 70%;
+      float: left;
+      padding: 2rem;
+
+      a {
+        text-decoration: none;
+        color: $yellow;
       }
-    }
+  }
+  
 
-    .post-date {
-      display: block;
-      color: #ccc;
-    }
+  .meta {
+    box-sizing: border-box;  
+    width: 30%;
+    font-size: .8rem;
+    text-align: left;
+    float: left;
+    padding: 2rem
   }
 }
 
-.bio {
-  box-sizing: border-box;  
-  width: 30%;
-  font-size: .8rem;
-  line-height: 1.8;
-  text-align: left;
-  float: left;
-  padding: 2rem
-}
+
 
 @media (max-width: 34rem) {
   .herotator {
@@ -114,11 +170,22 @@ body {
       width: 100%;
       float: left;
     }
+    .bio {
+      margin-top: 60px;
+      width: 100%;
+    }
+
+    .blogpost {
+      box-sizing: border-box;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .meta {
+      margin-top: 60px;
+      width: 100%;
+    }
   }
-  .bio {
-    margin-top: 60px;
-    width: 100%;
-  }
+
 }
 
 
