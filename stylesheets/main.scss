@@ -66,6 +66,10 @@ a {
   }
 }
 
+.social {
+  background-color: $yellow;
+  height: 2px;
+}
 .container {
   box-sizing: border-box;
   padding-left: 8rem;
@@ -89,8 +93,13 @@ a {
     .archive-date {
       color: $yellow;
       display: block;
+      font-size: 0.8rem;
+      font-weight: bold;
     }
 
+    h2 {
+      font-size: 2rem;
+    }
 
     ul {
       padding: 0;
@@ -105,13 +114,16 @@ a {
       }
     }
   }
+
   .bio {
     box-sizing: border-box;  
     width: 30%;
     font-size: .8rem;
     text-align: left;
     float: left;
-    padding: 2rem;
+    margin-top: 2rem;
+    padding-left: 2rem;
+    // border-left: $yellow 1px solid;
 
     a {
       text-decoration: none;
@@ -151,12 +163,12 @@ a {
 
 @media (max-width: 34rem) {
   .herotator {
-    background: rgba(0, 122, 204, 1);
+    // background: $blue;
     
     .site {
       position: relative;
       text-align: center;
-      // padding: 8rem 0rem;
+      padding: 2rem;
     }
   }
 
@@ -209,11 +221,11 @@ pre {
 }
 
 blockquote {
-    border-left: 3px solid #0151ba;
+    border-left: 3px solid $blue;
     margin: 0;
     padding: 1rem 1.25rem;
     font-size: 1.4rem;
-    color: #0151ba;
+    color: $blue;
 }
 
 // .navbar-default .navbar-nav > li > a {
