@@ -7,4 +7,8 @@ category: vscode
 status: publish
 published: true
 type: post
+keywords:
+  - Visual Studio Code
+  - VS Code
+  - TypeScript
 ---

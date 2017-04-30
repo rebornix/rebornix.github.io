@@ -14,6 +14,7 @@ keywords:
   - VS Code
   - Angular 2
   - TypeScript
+  - Microsoft
 tags: 
 - microsoft
 

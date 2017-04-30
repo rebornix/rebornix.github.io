@@ -5,7 +5,11 @@ category: vscode
 status: publish
 published: true
 type: post
-tags: 
+tags: Visual Studio Code
+keywords:
+  - Visual Studio Code
+  - VS Code
+  - October Plan
 ---
 
 很久没有写博客了，虽然很想把问题归结为太忙了，但每天都有一堆狗事要忙，这样的借口显然是苍白无力的。关于我这一小段时间都干嘛去了，后续会有文章跟进。这里先行介绍一下 [Visual Studio Code](https://code.visualstudio.com) 十月份的开发计划（当然是中文的啦）。

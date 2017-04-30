@@ -9,6 +9,18 @@ meta:
 type: post
 tags: 
 - raspberry pi
+keywords:
+  - transmission
+  - raspberry pi
+  - 树莓派
+  - 小米盒子
+  - 家庭影院
+  - xbmc
+  - bittorrent
+  - 参数
+  - docker registry
+  - berryio
+
 
 ---
 先给读者们拜个年，新春快乐！

@@ -5,7 +5,12 @@ category: vscode
 status: publish
 published: true
 type: post
-tags: 
+tags: Visual Studio Code
+keywords:
+  - Visual Studio Code
+  - VS Code
+  - NPM
+  - Automatic Type Acquisition
 ---
 
 十天之前（11 月 2 日）Visual Studio Code 发布十月 Iteration （1.7）的更新，但三个小时后之后 1.7.0 便被从服务器上拿下，用户收到 roll back 回 1.6.1 的更新通知。第二天（11 月 3 日）我们便发布了 VS Code 1.7.1，并且发表了一个[申明](http://code.visualstudio.com/blogs/2016/11/3/rollback)，详细解释了此次事故的来龙去脉，以及为何此次事故会牵扯到 NPM。
