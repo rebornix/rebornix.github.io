@@ -70,6 +70,15 @@ a {
   background-color: $yellow;
   height: 2px;
 }
+
+.languages {
+  padding: 2rem 2rem 0 2rem;
+
+  .active {
+    color: $yellow;
+  }
+}
+
 .container {
   box-sizing: border-box;
   padding-left: 8rem;
@@ -112,6 +121,15 @@ a {
           font-size: 1.25rem;
         }
       }
+    }
+  }
+  
+  .archive-list.en {
+    li {
+      display: none;
+    }
+    li.en {
+      display: block;
     }
   }
 
