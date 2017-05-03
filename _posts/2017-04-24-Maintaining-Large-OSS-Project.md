@@ -7,7 +7,6 @@ category: vscode
 status: publish
 published: true
 type: post
-language: en
 keywords:
   - Visual Studio Code
   - VS Code
