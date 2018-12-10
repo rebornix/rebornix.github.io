@@ -1,14 +1,14 @@
---- 
+---
 layout: post
 title: 海上日志 Try something new
 category: 海上日志
 status: publish
-published: true
-meta: 
+published: false
+meta:
   _edit_last: "1"
 type: post
-tags: 
-- 工作/实习 
+tags:
+- 工作/实习
 - 海上日志
 
 ---

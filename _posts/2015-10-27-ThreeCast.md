@@ -1,9 +1,9 @@
---- 
+---
 layout: post
 title: 为什么我打算来录播客
 category: podcast
-status: publish 
-published: true
+status: publish
+published: false
 type: post
 keywords:
   - podcast
@@ -14,7 +14,7 @@ keywords:
   - 播客
   - sneezry
   - hunternsk
-tags: 
+tags:
 - podcast
 
 ---

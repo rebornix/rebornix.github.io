@@ -1,13 +1,13 @@
---- 
+---
 layout: post
 title: 远程下载：一点野路子
 category: Raspberry Pi
 status: publish
-published: true
-meta: 
+published: false
+meta:
   _edit_last: ""
 type: post
-tags: 
+tags:
 - raspi
 keywords:
   - samba
@@ -18,7 +18,7 @@ keywords:
   - aria2
   - 远程下载
   - 离线下载
-  
+
 ---
 ##闲言乱语
 等待了四个月之后，我终于拿到了新的笔记本。不过仔细想来，这个笔记本我其实等了一年半了。新员工入职的时候理论上都能拿到一台服务器，两个24寸显示器和一个笔记本。但是由于种种原因，有的时候你只能拿到baseline（一台服务器，一个显示器），如果你入职的是美国MS，基本上你只能拿到这些。

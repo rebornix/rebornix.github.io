@@ -1,14 +1,14 @@
---- 
+---
 layout: post
 title: 最好的时代
-category: 海上日志 
-status: publish 
-published: true
-meta: 
+category: 海上日志
+status: publish
+published: false
+meta:
   _edit_last: "1"
 type: post
-tags: 
-- 
+tags:
+-
 
 ---
 今早起床又被Sneezry吐槽太久没有更新博客，万分羞愧，觉得如果再拖下去，我估计会丢掉我的最后几位读者。从昨天Connect大会开始我就基本处于亢奋状态，于是我决定来写一篇软文。
@@ -39,7 +39,7 @@ Steve Ballmer宣布要辞职那天MS股票涨了，辞职那天又涨了。伟�
  - .NET Core 5通过NuGet发布，你可以将它和你的应用程序打包。这意味着你不用再担心你的程序因为使用了最新的.NET特性而无法在过时机器上运行，你也无需要求用户更新他们的系统来升级.NET。
  - ASP.NET 同样能够在Mac和Linux上运行。试想一下，在你的Windows上，用免费的几乎拥有全部人类所需功能的Visual Studio Community编写ASP.NET网站，然后把它deploy到任何一个便宜的Linux 虚拟机上。是的，你不需要满世界找Windows虚拟机并为它高昂的价格发愁，你那用来翻墙的一年5刀的debian可以把网站跑起来。
  - 一个你可能觉得蛮重要的消息：它们都是开源的。.NET开源，ASP.NET也开源，到[http://microsoft.github.io](http://microsoft.github.io) 查看更多~
- 
+
  这里引用一下Scott Hanselman的一张图，这些你都可以在Github上细细品味。来宾请掌声鼓励鼓励。
  ![2015](http://www.hanselman.com/blog/content/binary/Windows-Live-Writer/Announcing-.NET-in-your-Editor-of-Choice_E16B/image_4034547f-9f37-4a27-8a0c-5eb89d13d944.png)
 

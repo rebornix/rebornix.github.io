@@ -1,14 +1,14 @@
---- 
+---
 layout: post
 title: 靖江人在上海
 category: 靖江人在上海
 status: publish
-published: true
-meta: 
+published: false
+meta:
   _edit_last: "1"
 type: post
-tags: 
-- 工作/实习 
+tags:
+- 工作/实习
 
 ---
 
