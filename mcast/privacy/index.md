@@ -1,3 +1,8 @@
+---
+layout: privacy 
+---
+{% include JB/setup %}
+
 <h1>Privacy Policy</h1>
 
 
