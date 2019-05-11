@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>mCast</title>
+        <link>https://rebornix.com/mCast</link>
+        <description>Sparkle feed for mCast</description>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <language>en</language>
+        <atom:link href="https://rebornix.com/mcast/appcast.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Sketch 1.1</title>
+            <description>The final build of mCast 1.1</description>
+            <pubDate>9 May 2019</pubDate>
+            <sketchSupportDate>9 May 2019</sketchSupportDate>
+            <sparkle:minimumSystemVersion/>
+            <sparkle:releaseNotesLink>https://rebornix.com/mcast</sparkle:releaseNotesLink>
+            <enclosure url="https://rebornix.com/mcast/mcast11.dmg" length="" type="application/zip" sparkle:version="1.1.0" sparkle:shortVersionString="1.1.0" sparkle:dsaSignature=""/>
+            <guid isPermaLink="false"/>
+        </item>
+    </channel>
+</rss>
