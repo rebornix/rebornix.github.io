@@ -101,7 +101,7 @@ Keyboard Event 中还包含了 charCode、which、keyIdentifier 等等，它们�
 
 关于操作系统提供的 virtual key code ，Windows 是有非常明确的[定义](https://docs.microsoft.com/en-us/windows/win32/inputdev/about-keyboard-input)的。 可惜的是，macOS 和 Linux 上我没有找到具体的文档。
 
-看到这里你可能已经感觉到问题出在哪里了，以及为什么 w3c 已经将 keyCode **从标准里移除**了。它的值仅在有限情况下是 OS independent 且 Browser independent 的（ASCII），其他情况下全看系统或者浏览器是怎么实现的。
+看到这里你可能已经感觉到问题出在哪里了，以及为什么 keyCode 已经被**从标准里移除**了。它的值仅在有限情况下是 OS independent 且 Browser independent 的（ASCII），其他情况下全看系统或者浏览器是怎么实现的。
 
 来个实际的例子来解释一下 keyCode 的不可预知性。我们将分别在 Windows / macOS，US / 德语键盘上按下 `Y`，`Z`，`7`，`Shift+7` 。选这几个键的原因是，US 和德语键盘上这几个键的位置和作用是不同的。
 
@@ -195,9 +195,9 @@ Keyboard Event 中还包含了 charCode、which、keyIdentifier 等等，它们�
 
 我们既可以把它理解为 `ctrl+shift+/`，也可以理解为 `ctrl+/`。请允许我说一句 what the ...
 
-## w3c 的替代方案
+## keyCode 的替代方案
 
-w3c 将 keyCode 从标准移除了，这个我们要举双手赞成，因为 keyCode 是有歧义的。用来替代 keyCode 将是两个属性，key 和 code。key 是用于表示按下这几个键将会生成的字符，而 code 则是代表用户在键盘上按下了哪个物理键。前者只关心用户看到的什么，后者只与物理键盘有关，相当于将 keyCode 拆分开了。
+keyCode 已经被从标准移除了，这个我们要举双手赞成，因为 keyCode 是有歧义的。用来替代 keyCode 则是两个属性，key 和 code。key 是用于表示按下这几个键将会生成的字符，而 code 则是代表用户在键盘上按下了哪个物理键。前者只关心用户看到的什么，后者只与物理键盘有关，相当于将 keyCode 拆分开了。
 
 比如在 macOS 德语键盘上按下 Ctrl+Shift+7 时
 
