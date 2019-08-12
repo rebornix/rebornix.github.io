@@ -94,7 +94,7 @@ a {
   }
 
   .archive-list {
-    box-sizing: border-box;  
+    box-sizing: border-box;
     width: 70%;
     float: left;
     padding: 2rem;
@@ -123,7 +123,7 @@ a {
       }
     }
   }
-  
+
   .archive-list.en {
     li {
       display: none;
@@ -134,7 +134,7 @@ a {
   }
 
   .bio {
-    box-sizing: border-box;  
+    box-sizing: border-box;
     width: 30%;
     font-size: .8rem;
     text-align: left;
@@ -155,7 +155,7 @@ a {
   }
 
   .blogpost {
-      box-sizing: border-box;  
+      box-sizing: border-box;
       width: 70%;
       float: left;
       padding: 2rem;
@@ -165,10 +165,10 @@ a {
         color: $yellow;
       }
   }
-  
+
 
   .meta {
-    box-sizing: border-box;  
+    box-sizing: border-box;
     width: 30%;
     font-size: .8rem;
     text-align: left;
@@ -182,7 +182,7 @@ a {
 @media (max-width: 34rem) {
   .herotator {
     // background: $blue;
-    
+
     .site {
       position: relative;
       text-align: center;
@@ -196,7 +196,7 @@ a {
     padding-right: 2rem;
 
     .archive-list {
-      box-sizing: border-box;  
+      box-sizing: border-box;
       width: 100%;
       float: left;
     }
@@ -209,6 +209,7 @@ a {
       box-sizing: border-box;
       padding-left: 2rem;
       padding-right: 2rem;
+      width: 100%;
     }
     .meta {
       margin-top: 60px;
