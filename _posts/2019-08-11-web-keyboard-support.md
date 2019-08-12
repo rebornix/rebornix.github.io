@@ -15,7 +15,7 @@ keywords:
 这篇文章是系列文章《Web 应用快捷键支持》的第一篇。《Web 应用快捷键支持》将介绍 Web 应用中实现快捷键支持面临的 Web 标准的问题，以及 VS Code 中如何处理快捷键国际化以及快捷键服务的实现方法。
 
 - Web 应用快捷键支持
-  - （一）正确处理 Keyboard Event
+  - [（一）正确处理 Keyboard Event](https://rebornix.com/vscode/2019/08/11/web-keyboard-support/)
   - （二）scanCode/key 的缺点和 Node Native Keymap
   - （三）VS Code 快捷键服务的实现
 
