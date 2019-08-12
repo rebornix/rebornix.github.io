@@ -101,7 +101,7 @@ Keyboard Event 中还包含了 charCode、which、keyIdentifier 等等，它们�
 
 关于操作系统提供的 virtual key code ，Windows 是有非常明确的[定义](https://docs.microsoft.com/en-us/windows/win32/inputdev/about-keyboard-input)的。 可惜的是，macOS 和 Linux 上我没有找到具体的文档。
 
-看到这里你可能已经感觉到问题出在哪里了，以及为什么 keyCode 已经被**从标准里移除**了。它的值仅在有限情况下是 OS independent 且 Browser independent 的（ASCII），其他情况下全看系统或者浏览器是怎么实现的。
+看到这里你可能已经感觉到问题出在哪里了，以及为什么 keyCode 已经被**从标准里移除**了。它的值仅在有限情况下是 OS independent 且 Browser independent 的（ASCII 值），其他情况下全看系统或者浏览器是怎么实现的。
 
 来个实际的例子来解释一下 keyCode 的不可预知性。我们将分别在 Windows / macOS，US / 德语键盘上按下 `Y`，`Z`，`7`，`Shift+7` 。选这几个键的原因是，US 和德语键盘上这几个键的位置和作用是不同的。
 
@@ -156,13 +156,13 @@ Keyboard Event 中还包含了 charCode、which、keyIdentifier 等等，它们�
 </table>
 
 
-首先前两排，你可以看出，无论是是是用 US 还是德语虚拟键盘，按下的键如果生成`Y`，那么 keyCode 就是 89，如果生成的是`Z`，那么 keyCode 就是 90。这个结果对应上面 keyCode 生成规则的 3。操作系统对结果也没影响。
+首先前两排，你可以看出，无论是是是用 US 还是德语虚拟键盘，按下的键如果生成 `Y`，那么 keyCode 就是 89，如果生成的是 `Z`，那么 keyCode 就是 90。这个结果对应上面 keyCode 生成规则的 3。操作系统对结果也没影响。
 
-如果按下了`7`，无论是哪个键盘上，keyCode 都是 55。
+如果按下了 `7`，无论是哪个键盘上，keyCode 都是 55。
 
-如果按下 `shift+7`，结果就开始变得奇怪了。首先，在 US 键盘上，keyCode 总是 55，也就是`7`的所对应的 ASCII 值，同时 shift 是 true。虽然 `shift+7`能够生成 `&`，但不满足条件 2 和 3，所以并不能使用 `&`的 ASCII 值。
+如果按下 `shift+7`，结果就开始变得奇怪了。首先，在 US 键盘上，keyCode 总是 55，也就是`7`的所对应的 ASCII 值，同时 shift 是 true。虽然 `shift+7` 能够生成 `&`，但不满足条件 2 和 3，所以并不能使用 `&`的 ASCII 值。
 
-而在德语键盘上，Windows 系统上，keyCode 55，shift 为 true，跟 US 保持一致。同样的，虽然德语键盘上，`shift+7`生成 `/`，但是不满足 2 和 3，所以 keyCode 依然按照`7`返回了 55。
+而在德语键盘上，Windows 系统上，keyCode 55，shift 为 true，跟 US 保持一致。同样的，虽然德语键盘上，`shift+7` 生成 `/`，但是不满足 2 和 3，所以 keyCode 依然按照 `7` 返回了 55。
 
 可是 macOS 德语键盘给出的结果居然是
 
@@ -173,11 +173,11 @@ Keyboard Event 中还包含了 charCode、which、keyIdentifier 等等，它们�
 }
 ```
 
-这是上面的例子里，唯一一个不符合预期的。同时 191 是 `/`所对应的 keyCode，由于 shift 仍然是 true，这个结果跟 US 键盘上，按下 `shift+/`生成的事件是一样的。
+这是上面的例子里，唯一一个不符合预期的。同时 191 是 `/` 所对应的 keyCode，由于 shift 仍然是 true，这个结果跟 US 键盘上，按下 `shift+/` 生成的事件是一样的。
 
 这样的害群之马还有很多，导致如果你只看 keyCode 和 modifiers，你根本不知道用户真正按下的是什么键，也就别说进行快捷键的处理了。
 
-文章最开始提到的 Toggle Line Comment 命令，在 VS Code / Monaco 中，我们给 macOS 预设的快捷键是 `Ctrl+/` 。在 US 键盘上按下 Ctrl 和`/`就行了。但是在德语键盘上，因为没有`/`键，用户的直觉会是用`shift+7`代替`/`。也就是说用户会按下`ctrl+shift+7`。
+文章最开始提到的 Toggle Line Comment 命令，在 VS Code / Monaco 中，我们给 macOS 预设的快捷键是 `ctrl+/` 。在 US 键盘上按下 Ctrl 和`/`就行了。但是在德语键盘上，因为没有 `/` 键，用户的直觉会是用 `shift+7` 代替 `/`。也就是说用户会按下 `ctrl+shift+7`。
 
 但是我们在 macOS 得到的 Keyboard Event 是
 
@@ -197,7 +197,7 @@ Keyboard Event 中还包含了 charCode、which、keyIdentifier 等等，它们�
 
 ## keyCode 的替代方案
 
-keyCode 已经被从标准移除了，这个我们要举双手赞成，因为 keyCode 是有歧义的。用来替代 keyCode 则是两个属性，key 和 code。key 是用于表示按下这几个键将会生成的字符，而 code 则是代表用户在键盘上按下了哪个物理键。前者只关心用户看到的什么，后者只与物理键盘有关，相当于将 keyCode 拆分开了。
+keyCode 已经被从标准移除了，这个我们要举双手赞成，因为 keyCode 是有歧义的。用来替代 keyCode 则是两个属性 key 和 code。key 是用于表示按下这几个键将会生成的字符，而 code 则是代表用户在键盘上按下了哪个物理键。前者只关心用户看到的什么，后者只与物理键盘有关，相当于将 keyCode 拆分开了。
 
 比如在 macOS 德语键盘上按下 Ctrl+Shift+7 时
 
