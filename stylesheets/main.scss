@@ -240,11 +240,24 @@ pre {
 }
 
 blockquote {
-    border-left: 3px solid $blue;
+    border-left: 3px solid #06CDE0;
     margin: 0;
-    padding: 1rem 1.25rem;
-    font-size: 1.4rem;
-    color: $blue;
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
 }
 
 // .navbar-default .navbar-nav > li > a {

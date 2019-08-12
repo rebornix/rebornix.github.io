@@ -23,7 +23,7 @@ keywords:
 
 转眼 2019 年已经过去了一半，Electron 和 PWA 之间的竞争可以说是逐渐激烈起来了。一方面随着微软的大力投资，以及和社区的每半年一次的 private meetup/conference， Electron 在稳定上已经上了好几个台阶了。而发布周期上，Electron 团队更是在 Chrome 76 发布的同一天，发布了携带了与 Chrome 76 相同的版本的 Chromium 的 Electron 6。而说到 PWA （Progressive Web App），谷歌和微软一直以来都是最大的推动者，随着 Edge 转投了 Chromium 阵营，将 PWA 落地替代传统桌面应用则更具有实际意义。
 
-不管哪个技术最后能成为赢家，我们在桌面端见到更多的基于 Web 技术的应用几乎是板上钉钉了。但是，要想在 Web 应用里实现一套跟传统桌面应用一致的快捷键体验，是比较有挑战的，几乎没有什么应用能够实现完美的快捷键支持（包括 VS Code ;( ）。这个锅并不能由应用开发者来背，Web 标准的不完整以及不完善的更新才是始作俑者。
+不管哪个技术最后能成为赢家，我们在桌面端见到更多的基于 Web 技术的应用几乎是板上钉钉了。但是，要想在 Web 应用里实现一套跟传统桌面应用一致的快捷键体验，是比较有挑战的，几乎没有什么应用能够实现完美的快捷键支持（包括 VS Code 😢 ）。这个锅并不能由应用开发者来背，Web 标准的不完整以及不完善的更新才是始作俑者。
 
 ## Keyboard Event
 
@@ -67,21 +67,20 @@ Keyboard Event 中还包含了 charCode、which、keyIdentifier 等等，它们�
 
 > The keyCode for keydown / keyup events is calculated as follows:
 >
-> 	1	Read the virtual key code from the operating system's event information, if such information is available.
+> 1	Read the virtual key code from the operating system's event information, if such information is available.
+> 2	If an Input Method Editor is processing key input and the event is keydown, return 229.
 >
-> 	2	If an Input Method Editor is processing key input and the event is keydown, return 229.
+> 3	If input key when pressed without modifiers would insert a numerical character (0-9), return the ASCII code of that numerical character.
 >
-> 	3	If input key when pressed without modifiers would insert a numerical character (0-9), return the ASCII code of that numerical character.
+> 4	If input key when pressed without modifiers would insert a a lower case character in the a-z alphabetical range, return the ASCII code of the upper case equivalent.
 >
-> 	4	If input key when pressed without modifiers would insert a a lower case character in the a-z alphabetical range, return the ASCII code of the upper case equivalent.
+> 5	If the implementation supports a key code conversion table for the operating system and platform, look up the value. If the conversion table specifies an alternate virtual key value for the given input, return the specified value.
 >
-> 	5	If the implementation supports a key code conversion table for the operating system and platform, look up the value. If the conversion table specifies an alternate virtual key value for the given input, return the specified value.
+> 6	If the key's function, as determined in an implementation-specific way, corresponds to one of the keys in the ~table of fixed virtual key codes~, return the corresponding key code.
 >
-> 	6	If the key's function, as determined in an implementation-specific way, corresponds to one of the keys in the ~table of fixed virtual key codes~, return the corresponding key code.
+> 7	Return the virtual key code from the operating system.
 >
-> 	7	Return the virtual key code from the operating system.
->
-> 	8	If no key code was found, return 0.
+> 8	If no key code was found, return 0.
 
 如果你拿上面这八条定义跟 Google 上搜索 `keyCode`得到的各种结果进行比对的话，你会发现，大部分内容都只描述了 `3` 和 `4`
 
@@ -116,6 +115,7 @@ Keyboard Event 中还包含了 charCode、which、keyIdentifier 等等，它们�
 * 德语键盘上没有 `/`。而要打出这个键的话，需要按下 `shift+7`
 
 按下这几个键的结果如下
+
 
 <table>
   <tr>
