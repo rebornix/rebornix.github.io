@@ -16,7 +16,7 @@ keywords:
 
 - Web 应用快捷键支持
   - [（一）正确处理 Keyboard Event](https://rebornix.com/vscode/2019/08/11/web-keyboard-support/)
-  - （二）code/key 的缺点和 Node Native Keymap
+  - [（二）code/key 的缺点和 Node Native Keymap](https://rebornix.com/vscode/2019/08/25/web-keyboard-support-2/)
   - （三）VS Code 快捷键服务的实现
 
 ---
