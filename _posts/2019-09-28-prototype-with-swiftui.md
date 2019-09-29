@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 从 mCast 聊聊申明式 UI（Vue.js 与 SwiftUI）和原型构建效率
+title: 从 mCast 聊聊声明式 UI（Vue.js 与 SwiftUI）和原型构建效率
 category: Swift
 status: publish
 published: true
@@ -18,7 +18,7 @@ keywords:
 
 作为玩票性质的 Vue.js 用户和 iOS/macOS 开发，这个标题对于我来说，写起来本来是没有多少底气的。不过半年前我花了点业余时间和朋友写了个 macOS 的播客客户端 [‎mCast](https://apps.apple.com/us/app/mcast/id1462802606?ls=1&mt=12) ，获得了一些第一手的感悟，故此写篇文章聊聊我的想法。
 
-先说结论，申明式 UI 及配套的现代工具链（Hot Reload，Live Editing）能够大幅提高原型构建的效率，而且对经验不丰富的开发者尤为明显。
+先说结论，声明式 UI 及配套的现代工具链（Hot Reload，Live Editing）能够大幅提高原型构建的效率，而且对经验不丰富的开发者尤为明显。
 
 我们先不妨看看 mCast 的设计、原型和最终实现的过程。
 
@@ -158,8 +158,8 @@ struct BoxView: View {
 
 从时代的角度来说，苹果推出 SwiftUI 一点也不奇怪，甚至是必然的结果（当然这里我有“马后炮”的嫌疑）
 
-* 申明式 UI 已经有了广泛的群众基础。WPF、React、Flutter 已经花了足够多的时间教育用户，而前端社区的爆发式增长也降低了推广难度。
+* 声明式 UI 已经有了广泛的群众基础。WPF、React、Flutter 已经花了足够多的时间教育用户，而前端社区的爆发式增长也降低了推广难度。
 * 为 iOS/macOS 跨平台提供基础。
 * 无论是近些年流行的 Full Stack，还是苹果社区推崇的独立开发，再或是降低设计和开发之间协作鸿沟的需求，都在要求开发者能够完成一定的设计或者原型构建的工作。SwiftUI 无疑是一枚“银弹”。
 
-现在是学习申明式 UI 的最佳时机，不能再晚了。不过如果要真的在生产环境使用 SwiftUI 的话，建议还是再等个半年。苹果向来是一流的设计（UI、语言、框架均是如此），二流的实现和工具链，现在就强行推 SwiftUI 的话，要踩的坑会比较多。在等待 SwiftUI 的同时，不妨学习一下 Swift 和响应式编程。
+现在是学习声明式 UI 的最佳时机，不能再晚了。不过如果要真的在生产环境使用 SwiftUI 的话，建议还是再等个半年。苹果向来是一流的设计（UI、语言、框架均是如此），二流的实现和工具链，现在就强行推 SwiftUI 的话，要踩的坑会比较多。在等待 SwiftUI 的同时，不妨学习一下 Swift 和响应式编程。
