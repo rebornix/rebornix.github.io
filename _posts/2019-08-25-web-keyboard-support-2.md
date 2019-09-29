@@ -35,7 +35,7 @@ code 代表着用户按下的物理键，这个值不会因为用户所使用的
 > * A key string that corresponds to the character typed by the user, taking into account the user’s current locale setting, modifier state, and any system-level keyboard mapping overrides that are in effect.
 > * A named key attribute value, as defined by the tables in this document …
 
-大部分情况下，key 代表着用户按下某个键后生成的字符，这个字符会受用户的键盘布局、语言、是否按下了 Modifer以及系统级别的键盘映射等等。除此之外还有一些附加条件。
+大部分情况下，key 代表着用户按下某个键后生成的字符，这个字符会受用户的键盘布局、语言、是否按下了 Modifier 以及系统级别的键盘映射等等。除此之外还有一些附加条件。
 
 code 和 key 这两个属性，一个只关心物理按键，一个只关心最终的按键输出结果，比 keyCode 这样模棱两可的属性容易理解多了。不过它们能解决前一篇文章里的问题吗？
 

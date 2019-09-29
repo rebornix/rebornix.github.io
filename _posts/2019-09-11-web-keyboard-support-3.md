@@ -46,6 +46,15 @@ _commandTokeybindings: Map<string, Keybinding[]>
 
 第一个 Map 是从 Keybinding stringify 的结果到 Keybinding 本身的映射。比如
 
+this 
+
+is 
+
+typewriter
+
+
+mode
+
 ```json
 “cmd+/”: [
 	{

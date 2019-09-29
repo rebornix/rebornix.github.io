@@ -1,16 +1,17 @@
---- 
+---
 layout: post
 title: 造一个Badge Service的轮子
 category: snippets
 status: publish
-published: true
-meta: 
+published: false
+meta:
   _edit_last: ""
 type: post
-tags: 
+tags:
 - microsoft
 
 ---
+
 ##什么是Badge Service
 细心的读者朋友一定在很多Github的Repo，npm的package页面看到过诸如![Dependence](https://david-dm.org/rebornix/delta.png) ![DevDependence](https://david-dm.org/rebornix/delta/dev-status.png)的徽章。这些徽章是干什么用的？
 
@@ -34,17 +35,17 @@ Shield提供了一套绘制badge的方案，并且开源了nodejs、php、go等�
 
 ### 例子
     DotBadge.exe -sb "Downloads" -st "1000" -c "Green" -sl 0
-	
+
 ![demo1](http://rebornix.qiniudn.com/demo1.svg)
 
 
     DotBadge.exe -sb "Build" -st "fail" -c "Red" -sl 0
-	
+
 ![demo2](http://rebornix.qiniudn.com/demo2.svg)
 
 
     DotBadge.exe -sbhttps://github.com/rebornix/DotBadge/edit/master/Readme.md# "Star" -st "234" -c "#ddf" -sl 1
-	
+
 ![demo3](http://rebornix.qiniudn.com/demo3.svg)
 
 ### 如何放到你自己的项目里面
@@ -58,7 +59,7 @@ Shield提供了一套绘制badge的方案，并且开源了nodejs、php、go等�
 ### 例子
     using DotBadge;
     using System.IO;
-    
+
     namespace Badge
     {
         class Program
@@ -67,7 +68,7 @@ Shield提供了一套绘制badge的方案，并且开源了nodejs、php、go等�
             {
                 var bp = new BadgePainter();
                 File.WriteAllText(@"C:\Users\peng\Desktop\nuget.svg", bp.DrawSVG("Badge", ".Net", ColorScheme.Red, Style.Flat));
-    
+
             }
         }
     }

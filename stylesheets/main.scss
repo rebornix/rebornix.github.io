@@ -1,6 +1,8 @@
 ---
 ---
 
+$black: #111;
+$gray: rgba(0, 0, 0, 0.3);
 $blue: #06CDE0;
 $yellow: #F25E30;
 $link: #333;
@@ -12,7 +14,7 @@ body {
   line-height: 1.75;
   position: relative;
   text-align: justify;
-  color: #333;
+  color: $black;
 }
 
 ::selection {
@@ -54,7 +56,7 @@ a {
   .site {
     position: relative;
     text-align: center;
-    padding: 8rem 4rem;
+    padding: 4rem 4rem;
 
     h1{
       font-size: 4rem;
@@ -81,8 +83,8 @@ a {
 
 .container {
   box-sizing: border-box;
-  padding-left: 8rem;
-  padding-right: 8rem;
+  max-width: 876px;
+  margin: auto;
 
   a {
     text-decoration: none;
@@ -95,14 +97,15 @@ a {
 
   .archive-list {
     box-sizing: border-box;
-    width: 70%;
+    width: calc(100% - 260px);
     float: left;
     padding: 2rem;
 
     .archive-date {
-      color: $yellow;
+      color: $gray;
       display: block;
       font-size: 0.8rem;
+      line-height: 2rem;
       font-weight: bold;
     }
 
@@ -110,12 +113,23 @@ a {
       font-size: 2rem;
     }
 
+    h3 {
+      font-size: 1.3rem;
+      margin-top: 0rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
     ul {
       padding: 0;
 
       li {
         list-style-type: none;
-        margin-bottom: 1.75rem;
+        margin-bottom: 2rem;
 
         a {
           font-size: 1.25rem;
@@ -135,7 +149,7 @@ a {
 
   .bio {
     box-sizing: border-box;
-    width: 30%;
+    width: 240px;
     font-size: .8rem;
     text-align: left;
     float: left;
@@ -143,6 +157,10 @@ a {
     padding-left: 2rem;
     // border-left: $yellow 1px solid;
 
+    h2 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
     a {
       text-decoration: none;
       color: $yellow;
@@ -152,13 +170,19 @@ a {
   .page-header {
     padding: 2rem 2rem 0 2rem;
     box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    h1 {
+      font-size: 1.8rem;
+    }
   }
 
   .blogpost {
       box-sizing: border-box;
-      width: 70%;
+      // width: calc(100% - 240px);
+      width: 100%;
       float: left;
-      padding: 2rem;
+      padding: 0rem 2rem 2rem 2rem;
 
       a {
         text-decoration: none;
@@ -169,14 +193,25 @@ a {
 
   .meta {
     box-sizing: border-box;
-    width: 30%;
+    width: 240px;
     font-size: .8rem;
     text-align: left;
     float: left;
-    padding: 2rem
+    padding: 0rem 2rem 2rem 2rem;
   }
 }
 
+#footer {
+  clear: both;
+  text-align: center;
+
+  .footter-container {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    color: $gray;
+    font-size: 0.9rem;
+  }
+}
 
 
 @media (max-width: 34rem) {
