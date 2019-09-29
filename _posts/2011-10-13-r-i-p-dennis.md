@@ -1,12 +1,12 @@
---- 
+---
 layout: post
 title: R.I.P  Dennis
 status: publish
-published: true
-meta: 
+published: false
+meta:
   _edit_last: "1"
 type: post
-tags: 
+tags:
 - C/C++
 ---
 <a href="http://rebornix.com/wp-content/uploads/rebornix.com/2011/10/hewrotec.jpg"><img class="size-full wp-image-114 alignnone" title="hewrotec" src="http://rebornix.com/wp-content/uploads/rebornix.com/2011/10/hewrotec.jpg" alt="" width="640" height="480" /><!--more--></a>

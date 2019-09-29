@@ -35,7 +35,7 @@ description: Homepage of rebornix.com
       <span class="post-date archive-date">{{ post.date | date: "%B" }} {{ post.date | date: "%d" }}, {{ post.date | date: "%Y" }}</span>
       <a href="{{ post.url }}" class="archive-title">
         <h3>{{ post.title }}</h3>
-        <div class="description">{{ post.content | truncate:100 | strip_html }}</div>
+        <div class="description">{{ post.content | truncate:72 | strip_html }}</div>
       </a>
       {% endif %}
       </li>
