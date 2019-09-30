@@ -296,8 +296,8 @@ a {
 
   .container {
     box-sizing: border-box;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    // padding-left: 2rem;
+    // padding-right: 2rem;
 
     .archive-list {
       box-sizing: border-box;
@@ -327,6 +327,7 @@ a {
 code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size:12px;
+  white-space:pre-wrap;
 }
 
 pre {
