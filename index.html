@@ -11,9 +11,16 @@ description: Homepage of rebornix.com
     document.getElementById('list').className = "archive-list " + language;
   }
 </script>
-<div class="languages">
-  <span><a id="zh" title="简体中文" onclick="toggle(this)" class="active">简体中文</a></span>
-  <span> | <a id="en" title="English" onclick="toggle(this, 'en')">English</a></span>
+<div class="info">
+  <div class="intro">
+    <span>Developer on <a href="https://code.visualstudio.com">VS Code</a>. Follow me on <a href="https://t.me/rebornix" target="_blank">Telegram</a>, <a href="https://github.com/rebornix"
+      target="_blank">GitHub</a>, <a href="https://medium.com/@rebornix" target="_blank">Medium</a>, <a href="/atom"
+      target="_blank">RSS</a></span>
+  </div>
+  <div class="languages">
+    <span><a id="zh" title="简体中文" onclick="toggle(this)" class="active">简体中文</a></span>
+    <span> | <a id="en" title="English" onclick="toggle(this, 'en')">English</a></span>
+  </div>
 </div>
 <div id="list" class="archive-list">
    {% for post in site.posts %} {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %} {% capture next_year %}{{
@@ -46,10 +53,4 @@ description: Homepage of rebornix.com
     <!-- <h2 id="{{ next_year }}-ref">{{next_year}}</h2> -->
     <ul>
     {% endif %} {% endif %} {% endfor %}
-</div>
-
-<div class="bio" style="font-size: 14px">
-  <p>Developer on <a href="https://code.visualstudio.com">VS Code</a></p>
-  <p></p>
-  <p>Follow me <a href="https://t.me/rebornix" target="_blank">Telegram</a>, <a href="https://github.com/rebornix" target="_blank">GitHub</a>, <a href="https://medium.com/@rebornix" target="_blank">Medium</a>, <a href="/atom" target="_blank">RSS</a>
 </div>

@@ -3,13 +3,18 @@
 
 $black: #111;
 $gray: rgba(0, 0, 0, 0.3);
-$blue: #06CDE0;
 $yellow: #F25E30;
 $link: #333;
-$link-border: #06CDE0;
+$link-border: #F25E30;
+
+:root {
+  --en-sans: "Helvetica Neue", "Helvetica", Aria;
+  --sys-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue";
+  --cjk-sans: "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei";
+}
 
 body {
-  font-family: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  font-family: var(--en-sans), var(--cjk-sans), sans-serif;
   margin: 0;
   line-height: 1.75;
   position: relative;
@@ -18,17 +23,17 @@ body {
 }
 
 ::selection {
-  background: $blue; /* WebKit/Blink Browsers */
+  background: $yellow; /* WebKit/Blink Browsers */
   color: white;
 }
 ::-moz-selection {
-  background: $blue; /* Gecko Browsers */
+  background: $yellow; /* Gecko Browsers */
   color: white;
 }
 
 a {
   text-decoration: none;
-  color: $blue;
+  color: $yellow;
 
   &:hover {
     border-bottom: 2px solid $link-border;
@@ -51,6 +56,10 @@ a {
     right: 0;
     background: rgba(0,0,0,.1);
     height: 100%;
+
+    &.post {
+      height: 80px;
+    }
   }
 
   .site {
@@ -58,12 +67,21 @@ a {
     text-align: center;
     padding: 4rem 4rem;
 
-    h1{
+    h1 {
       font-size: 4rem;
     }
 
     a {
       text-decoration: none;
+    }
+
+    &.post {
+      height: 80px;
+      padding: 1rem 4rem;
+
+      h1 {
+        font-size: 2rem;
+      }
     }
   }
 }
@@ -73,18 +91,52 @@ a {
   height: 2px;
 }
 
-.languages {
-  padding: 2rem 2rem 0 2rem;
 
-  .active {
-    color: $yellow;
-  }
-}
+
+
 
 .container {
   box-sizing: border-box;
   max-width: 876px;
   margin: auto;
+
+  .info {
+    color: $gray;
+
+    .intro {
+      float: left;
+      padding: 2rem 2rem 0 2rem;
+
+      a {
+        text-decoration: none;
+        color: $link-border;
+
+        &:hover {
+          border-bottom: 2px solid $link-border;
+          cursor: pointer;
+        }
+      }
+  }
+
+  }
+
+  .languages {
+    float: right;
+    padding: 2rem 2rem 0 2rem;
+    font-size: 0.8rem;
+
+    .active {
+      color: $yellow;
+    }
+
+    a {
+      color: $gray;
+      &:hover {
+        border-bottom: 2px solid $link-border;
+        cursor: pointer;
+      }
+    }
+  }
 
   a {
     text-decoration: none;
@@ -97,7 +149,7 @@ a {
 
   .archive-list {
     box-sizing: border-box;
-    width: calc(100% - 260px);
+    width: 100%;
     float: left;
     padding: 2rem;
 
@@ -106,7 +158,6 @@ a {
       display: block;
       font-size: 0.8rem;
       line-height: 2rem;
-      font-weight: bold;
     }
 
     h2 {
@@ -147,30 +198,38 @@ a {
     }
   }
 
-  .bio {
-    box-sizing: border-box;
-    width: 240px;
-    font-size: .8rem;
-    text-align: left;
-    float: left;
-    margin-top: 2rem;
-    padding-left: 2rem;
-    // border-left: $yellow 1px solid;
+  // .bio {
+  //   box-sizing: border-box;
+  //   width: 240px;
+  //   font-size: .8rem;
+  //   text-align: left;
+  //   float: left;
+  //   margin-top: 2rem;
+  //   padding-left: 2rem;
+  //   // border-left: $yellow 1px solid;
 
-    h2 {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-    a {
-      text-decoration: none;
-      color: $yellow;
-    }
-  }
+  //   h2 {
+  //     margin-top: 1rem;
+  //     margin-bottom: 1rem;
+  //   }
+  //   a {
+  //     text-decoration: none;
+  //     color: $yellow;
+  //   }
+  // }
 
   .page-header {
     padding: 2rem 2rem 0 2rem;
     box-sizing: border-box;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    .pagination {
+      a {
+        color: $gray;
+        font-size: 0.8rem;
+        padding-right: 8px;
+      }
+    }
 
     h1 {
       font-size: 1.8rem;
@@ -213,10 +272,20 @@ a {
   }
 }
 
+@media (max-width: 760px) {
+  .container {
+    .languages {
+      padding-top: 0.5rem;
+      font-style: italic;
+      float: left;
+    }
+  }
+}
+
 
 @media (max-width: 34rem) {
   .herotator {
-    // background: $blue;
+    // background: $yellow;
 
     .site {
       position: relative;
@@ -235,10 +304,10 @@ a {
       width: 100%;
       float: left;
     }
-    .bio {
-      margin-top: 60px;
-      width: 100%;
-    }
+    // .bio {
+    //   margin-top: 60px;
+    //   width: 100%;
+    // }
 
     .blogpost {
       box-sizing: border-box;
@@ -275,14 +344,16 @@ pre {
 }
 
 blockquote {
-    border-left: 3px solid #06CDE0;
+    border-left: 3px solid $yellow;
     margin: 0;
     padding: 0.2rem 1rem;
     font-size: 0.8rem;
 }
 
 img {
-  max-width: 100%;
+  max-width: 80%;
+  margin: 20px 10% 20px 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 table {

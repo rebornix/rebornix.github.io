@@ -3,7 +3,20 @@ layout: default
 ---
 {% include JB/setup %}
 
+
 <div class="page-header">
+	<div class="pagination btn-group">
+		<a class="btn home" href="/">Home</a>
+		{% if page.previous %}
+		<a class="btn prev" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&#8612;
+			Previous</a> {% else %}
+		<a class="btn disabled prev">&#8612; Previous</a>&nbsp;&nbsp;{% endif %}
+		{% if page.next %}
+		<a class="btn next" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &#8614;</a>
+		{% else %}
+		<a class="btn next disabled">Next &rarr;</a> {% endif %}
+	</div>
+
 	<h1>
 		{{ page.title }} {% if page.tagline %}
 		<small>{{ page.tagline }}</small> {% endif %}
@@ -11,6 +24,8 @@ layout: default
 </div>
 <div class="blogpost">
 	 {{ content }}
+	<p><small><strong>&lt;推广&gt;</strong> <a href="https://apps.apple.com/us/app/mcast/id1462802606?ls=1&mt=12"
+				title="mCast">mCast</a>: macOS 播客客户端，搜索、订阅、播放一气呵成。</small></p>
 	<hr>
 	<div class="pagination btn-group">
 		{% if page.previous %}
