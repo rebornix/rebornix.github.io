@@ -13,7 +13,7 @@ theme :
     {% if page.title %} {{ page.title }} - {% endif %} {{ site.title }}
   </title>
   {% if page.description %}
-  <meta name="description" content="{{ page.description }}">{% elsif page.excerpt %}
+  <meta name="description" content="{{ page.title }} {{ page.description }}">{% elsif page.excerpt %}
   <meta name="description" content="{{ page.excerpt | strip_html }}">{% endif %}
   <meta name="author" content="{{ site.author.name }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +26,7 @@ theme :
   <meta name="keywords" content="{{ page.keywords | join: ', ' }}" /> {% else %}
   <meta name="keywords" content="rebornix, peng lv, njukidreborn, Visual Studio Code, VS Code, Monaco, C#, JavaScript, jekyll , frontend, raspberry pi, stackoverflow, angularjs, angular, angular2, microsoft, software development engineer, sde, windows, SA, unix"
   /> {% endif %}
+  <meta name="headline" content="{{ page.title }}" />
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@njukidreborn">
   <meta name="twitter:creator" content="@njukidreborn"> {% if page.title %}
