@@ -1,13 +1,13 @@
---- 
+---
 layout: post
 title: 派
 category: Raspberry Pi
 status: publish
-published: true
-meta: 
+published: false
+meta:
   _edit_last: ""
 type: post
-tags: 
+tags:
 - raspberry pi
 keywords:
   - transmission
@@ -75,7 +75,7 @@ keywords:
 * 潜在的危险：太酷
 * 难度：两颗星
 * 耗时：半小时
- 
+
 这年头随着网速的大幅提升和无线技术的发展，网线对于普通用户都快成上世纪恐龙了。树莓派自带了一个网线接口，不够方便。于是我京东花30块钱撸了一个[无线网卡](http://item.jd.com/509932.html)，免驱动完美支持，一次点亮。然后我将我闲置快三年的移动电源拿了出来给树莓派供电，20Wh，够树莓派坚持五六个小时。从此我的派，说走就走。
 
 <img src="https://dn-rebornix.qbox.me/raspi-WP_20150227_002.jpg" alt="installation" style="height: 400px;width: 600px;">

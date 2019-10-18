@@ -1,13 +1,13 @@
---- 
+---
 layout: post
 title: 卓有成效的Windows程序员
-category: 海上日志 
-status: publish 
-published: true
-meta: 
+category: 海上日志
+status: publish
+published: false
+meta:
   _edit_last: "1"
 type: post
-tags: 
+tags:
 - 工作/实习
 
 ---
@@ -20,9 +20,9 @@ tags:
 这里，我也就讲讲在windows下开发时，我都是通过哪些方法提高产出，权当抛砖引玉了（本文持续更新...）。
 # Part I: The Basics
 
-* Install Windows 8.1 or Windows Server 2012 
+* Install Windows 8.1 or Windows Server 2012
 * Run System Updates
-* [7zip](http://7-zip.org) 
+* [7zip](http://7-zip.org)
 
 # Part II: The Essentials
 
@@ -42,7 +42,7 @@ tags:
 * [Git](http://git-scm.com/) TFS也支持git，我司都没法否认的业界潮流啊
 
 ## Debugging and Testing
-* [windbg](http://windbg.org/) 
+* [windbg](http://windbg.org/)
 * [Enterprise Library](entlib.codeplex.com) 我倾向于使用这个suite来做logging
 
 

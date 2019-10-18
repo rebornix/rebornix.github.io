@@ -1,13 +1,13 @@
---- 
+---
 layout: post
 title: Single Page Blog with AngularJS
-category: 海上日志 
-status: publish 
-published: true
-meta: 
+category: 海上日志
+status: publish
+published: false
+meta:
   _edit_last: "1"
 type: post
-tags: 
+tags:
 - JavaScript
 
 ---
@@ -34,7 +34,7 @@ tags:
     <html data-ng-app="SinglePageBlogApp">
         <div data-ng-view=""></div>
     </html>
-    
+
 知道把动态的page往哪儿塞，任务已经刚完成了一半，剩下的另一半就是怎么往里面塞呢？
 
 ###Routing##
@@ -52,7 +52,7 @@ tags:
         });
         $routeProvider.otherwise({ redirectTo: "/home" });
     });
-    
+
 上面的code简直就像普通话一样通俗易懂。引入一个名叫ngRoute的module后，我可以定义不同url pattern对应的页面，比如访问"/home"，就会得到"home.html"；访问"2014/04/20/SinglePageBlog"，会得到"entry.html"。
 
 不过"home.html"依然只是static page，我们肯定不希望每次写了一篇新的文章，我都去更新"home.html"中的blog list。这样虽然够静态够环保，可是真的大丈夫吗？
@@ -94,7 +94,7 @@ ng-repeat的作用是轮询`blogList`里的blog object，为每个blog创建一�
 			    $window.location.href = "#/" + params[0] + "/" + params[1] + "/" + params[2] + "/" + params[3].replace(".md", "");
 		    }
     });
-    
+
 读者可能并不知道上面代码里`$scope $http`的含义，但不影响我们理解这段代码的作用。我对`https://api.github.com/repos/rebornix/rebornix.github.io/contents/_posts`Get了一把，获得了我写过的文章的列表，然后赋值给了blogList，因为blogList是一个list，我们最终能够在`home.html`里对它做了一个轮询`ng-repeat="blog in blogList"`，记得吗？
 
 通过相同的方式，我给"entry.html"写了一个controller用来显示blog content。

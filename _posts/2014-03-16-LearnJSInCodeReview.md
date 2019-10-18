@@ -1,13 +1,13 @@
---- 
+---
 layout: post
 title: Learn JavaScript in Code Review
-category: 海上日志 
-status: publish 
-published: true
-meta: 
+category: 海上日志
+status: publish
+published: false
+meta:
   _edit_last: "1"
 type: post
-tags: 
+tags:
 - 工作/实习
 - JavaScript
 
@@ -70,13 +70,13 @@ function query() {
         tree.search($("#searchText").attr("value"), false);
     }
 };
-            
+
 // Click the search button for search results.
 $("#searchButton").click(query);
 
 // Press ENTER in search text box for search results.
 $("#searchText").keyup(function (event) {
-    if (event.which == KEY_ENTER) { // check if the enter was pressed.          
+    if (event.which == KEY_ENTER) { // check if the enter was pressed.
         query();
     }
 });
@@ -87,7 +87,7 @@ $("#searchText").keyup(function (event) {
 
 我们先看第一条：
 
- - better naming 
+ - better naming
 
 这一点，是我没有以写C#的态度来写JS，觉得前端代码随便写写就好了。当然是不可取的。
 
@@ -160,7 +160,7 @@ function metadataQuery() {
             cache: false,
             success: function (result) {
                 var isClixIdRegex = /^\d+$/;
-                            
+
                 if (!isClixIdRegex.exec(result) || result == 0) {
                     tree.search($("#searchText").attr("value"), false);
                 } else {
@@ -175,13 +175,13 @@ function metadataQuery() {
         tree.search($("#searchText").attr("value"), false);
     }
 };
-            
+
 // Click the search button for search results.
 $("#searchButton").click(metadataQuery);
 
 // Press ENTER in search text box for search results.
 $("#searchText").keyup(function (event) {
-    if (event.which == KEY_ENTER) { // check if the enter was pressed.          
+    if (event.which == KEY_ENTER) { // check if the enter was pressed.
         metadataQuery();
     }
 });
@@ -195,7 +195,7 @@ $("#searchText").keyup(function (event) {
 修改完上述问题后，他们终于不好意思再给我comment了，最终版是这样的：
 ```
 var ShortIdRegexPattern = /^[a-zA-Z]{2}\d+$/;
-            
+
 function metadataQuery() {
     var queryTerm = $("#searchboxText").attr("value");
     var isShortId = ShortIdRegexPattern.exec(queryTerm);
@@ -223,13 +223,13 @@ function metadataQuery() {
         tree.search(queryTerm, false);
     }
 };
-            
+
 // Click the search button for search results.
 $("#searchButton").click(metadataQuery);
 
 // Press ENTER in search text box for search results.
 $("#searchText").keyup(function (event) {
-    if (event.which == KEY_ENTER) { // check if the enter was pressed.          
+    if (event.which == KEY_ENTER) { // check if the enter was pressed.
         metadataQuery();
     }
 });

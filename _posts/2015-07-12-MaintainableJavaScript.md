@@ -1,9 +1,9 @@
---- 
+---
 layout: post
 title: 编写可维护的JavaScript
 category: Frontend
-status: publish 
-published: true
+status: publish
+published: false
 type: post
 keywords:
   - javascript
@@ -11,8 +11,8 @@ keywords:
   - Nicholas
   - 可维护的
   - 耦合
-tags: 
-- 
+tags:
+-
 
 ---
 每次亚马逊或者京东满xxx打折的时候，总会凑单撸各种奇怪的不知道哪年才会翻开来看看的书（大家不是都这样么:) ）。前两天给同事 code review JavaScript 代码，由于我经验不丰富，看着总觉得心里没底。转眼瞥见书架上夹着一本[《编写可维护的 JavaScript》](http://book.douban.com/subject/21792530/) ，虽然怎么想也想不起是什么时候买回来的,但记得 [Sneezry](https://sneezry.com) 老师推荐过本书，便立马拿出来翻了翻。
@@ -35,7 +35,7 @@ tags:
 你几乎可以在每一本语言书上找到这些章节。书中推荐使用 [JSHint](http://jshint.com/) [JSLint](http://www.jslint.com/) 等编程风格检查工具，个人觉得，选择其中一种并且推行下去既可以了，事半功倍。
 
 #编程实践
-这一部分就是讲编程过程中的 best practice 
+这一部分就是讲编程过程中的 best practice
 
 ##UI层的松耦合
 我们知道在Web开发中，用户界面由 HTML, CSS 和 JavaScript 三层一起构建的
@@ -43,7 +43,7 @@ tags:
 1. HTML 定义页面数据和语义
 2. CSS 给页面添加样式，创建视觉特征
 3. JavaScript 用来给页面添加行为
- 
+
 我们应当努力减少这三层之间的依赖性，让更改单独修改某个组件时无需修改其他组建。作者给出的建议，有这几条我觉得值得牢记
 
 1. 将 CSS 从 JavaScript 中抽离。举一个实际的栗子，我们经常在页面上实现 lazy loading，在 request 发送出去之后，我们会秀出一张菊花图提示用户正在加载，加载完毕后，隐藏或者删除掉这个张菊花图。最直接的做法就是在 ajax call 前后调整这张图片的 display 属性。但是这么做会带来一个问题，样式是由 JavaScript 而非 CSS 来加载的，当出现样式的问题时，我们会第一时间查看 CSS，但�最直   当我们查到精尽人亡的时候，我们才发现样式是由 JavaScript 改变的，一定会哭的。Best practise 是把所有样式保留在 CSS 中，当需要用 JavaScript 来修改元素样式时，**操作 CSS 的 className**（计算元素定位例外）。
@@ -64,7 +64,7 @@ tags:
 
      if (typeof name === "string") {
 	 }
-	 
+
 上面的代码就清晰的交代了函数期待 name 这个 variable 是一个 string 而非其他类型的值。
 
 ##其他
@@ -73,7 +73,7 @@ tags:
 * 避免使用全局变量
 * 使用命名空间和模块
 * 将配置数据从代码中分离出来
-* 自定义 error 
+* 自定义 error
 
 或者比较 hacky，比如 浏览器嗅探。读者可以在互联网上找到更全面的解决方案。
 
