@@ -81,7 +81,7 @@ keywords:
 <img width="190" alt="image" src="https://user-images.githubusercontent.com/876920/68721527-83d89100-0567-11ea-95d2-627bb2893d63.png">
 
 
-这个应用我主要在远程工作时使用。如果 One Switch 能够支持这个功能，那我不比再多开一个应用了。
+这个应用我主要在远程工作时使用。如果 One Switch 能够支持这个功能，那我不必再多开一个应用了。
 
 文中提到的其他几点，比如避免笔记本断电、切换编辑器 Dark Mode、使用专业麦克风，并没有什么通用的解决方案，还望见谅 ;)
 
