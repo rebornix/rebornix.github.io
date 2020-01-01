@@ -7,8 +7,8 @@ layout: privacy
 
 <h3>Support</h3>
 
-<p>Please contact Peng Lyu (email: <a href="mailto:penn.lv@gmail.com">penn.lv@gmail.com</a>) for support if you run into any issues when using Hyperest on iOS.</p>
+<p>Please contact Peng Lyu (email: <span style="font-weight: bold"><a href="mailto:penn.lv@gmail.com">penn.lv@gmail.com</a></span>) for support if you run into any issues when using Hyperest on iOS.</p>
 
 <h3>Privacy</h3>
 
-<p>Please read our <a href="http://rebornix.com/hyperest/privacy/">privacy polices</a></p>
+<p>Please read our <span style="font-weight: bold"><a href="http://rebornix.com/hyperest/privacy/">privacy polices</a></span></p>
