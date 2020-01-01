@@ -3,7 +3,7 @@ layout: privacy
 ---
 {% include JB/setup %}
 
-<h1>Hyperest, advanced REST and GraphQL client on iOS</h1>
+<h1>Hyperest. Advanced REST and GraphQL client on iOS</h1>
 
 <h3>Features</h3>
 <ul>
@@ -17,3 +17,7 @@ layout: privacy
 <h3>Support</h3>
 
 <p>Please contact Peng Lyu (email: penn.lv@gmail.com) for support if you run into any issues when using Hyperest on iOS.</p>
+
+<h3>Privacy</h3>
+
+<p>Please read our <a href="http://rebornix.com/hyperest/privacy/">privacy polices</a></p>
