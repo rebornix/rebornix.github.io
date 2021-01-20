@@ -34,11 +34,11 @@ keywords:
 
 *Home Assistant UI*
 
-<img width="1516" alt="image" src="https://user-images.githubusercontent.com/876920/105220774-07e3bc80-5b0d-11eb-9940-a1ba61ecaf3e.png">
+<img width="1648" alt="image" src="https://user-images.githubusercontent.com/876920/105220823-1d58e680-5b0d-11eb-82ac-3aa00a7263b5.png">
 
 *Homekit (macOS)*
 
-<img width="1648" alt="image" src="https://user-images.githubusercontent.com/876920/105220823-1d58e680-5b0d-11eb-82ac-3aa00a7263b5.png">
+<img width="1516" alt="image" src="https://user-images.githubusercontent.com/876920/105220774-07e3bc80-5b0d-11eb-9940-a1ba61ecaf3e.png">
 
 就使用体验来说
 
