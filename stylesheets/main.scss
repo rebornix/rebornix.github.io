@@ -1,436 +1,363 @@
 ---
 ---
 
-$black: #111;
-$gray: rgba(0, 0, 0, 0.3);
-$yellow: #F25E30;
-$link: #333;
-$link-border: #F25E30;
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+// Typography
 :root {
-  --en-sans: "Helvetica Neue", "Helvetica", Aria;
-  --sys-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue";
-  --cjk-sans: "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei";
+  --font-sans: "JetBrains Mono", "Fira Code", "Source Code Pro", "IBM Plex Mono", Consolas, Monaco, monospace;
+  --font-mono: "JetBrains Mono", "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --text-color: #2a2a2a;
+  --link-color: #0066cc;
+  --border-color: #e0e0e0;
+  --bg-color: #fff;
+  --code-bg: #f5f5f5;
 }
 
 body {
-  font-family: var(--en-sans), var(--cjk-sans), sans-serif;
-  margin: 0;
-  line-height: 1.75;
-  position: relative;
-  text-align: justify;
-  color: $black;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-color);
+  background: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-::selection {
-  background: $yellow; /* WebKit/Blink Browsers */
-  color: white;
-}
-::-moz-selection {
-  background: $yellow; /* Gecko Browsers */
-  color: white;
-}
-
-a {
-  text-decoration: none;
-  color: $yellow;
-
-  &:hover {
-    border-bottom: 2px solid $link-border;
-  }
-}
-
-.herotator {
-  position: relative;
-  vertical-align: middle;
-  text-align: center;
-  color: white;
-  background-image: url(/assets/bat.jpeg);
-  background-position: center center;
-  background-size: cover;
-
-  .cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,.1);
-    height: 100%;
-
-    &.post {
-      height: 80px;
-    }
-  }
-
-  .site {
-    position: relative;
-    text-align: center;
-    padding: 4rem 4rem;
-
-    h1 {
-      font-size: 4rem;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    &.post {
-      height: 80px;
-      padding: 1rem 4rem;
-
-      h1 {
-        font-size: 2rem;
-      }
-    }
-  }
-}
-
-.social {
-  background-color: $yellow;
-  height: 2px;
-}
-
-
-
-
-
+// Container
 .container {
-  box-sizing: border-box;
-  max-width: 876px;
-  margin: auto;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
 
-  .info {
-    color: $gray;
-
-    .intro {
-      float: left;
-      padding: 2rem 2rem 0 2rem;
-      font-size: 0.8rem;
-
-      a {
-        text-decoration: none;
-        color: $link-border;
-
-        &:hover {
-          border-bottom: 2px solid $link-border;
-          cursor: pointer;
-        }
-      }
-  }
-
-  }
-
-  .languages {
-    float: right;
-    padding: 2rem 2rem 0 2rem;
-    font-size: 0.8rem;
-
-    .active {
-      color: $yellow;
-    }
-
-    a {
-      color: $gray;
-      &:hover {
-        border-bottom: 2px solid $link-border;
-        cursor: pointer;
-      }
-    }
-  }
-
-  a {
-    text-decoration: none;
-    color: $link;
-
-    &:hover {
-      border-bottom: 2px solid $link-border;
-    }
-  }
-
-  .archive-list {
-    box-sizing: border-box;
-    width: 100%;
-    float: left;
-    padding: 2rem;
-
-    .archive-date {
-      color: $gray;
-      display: block;
-      font-size: 0.8rem;
-      line-height: 2rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-    }
-
-    h3 {
-      font-size: 1.3rem;
-      margin-top: 0rem;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .description {
-      font-size: 1rem;
-    }
-
-    ul {
-      padding: 0;
-
-      li {
-        list-style-type: none;
-        margin-bottom: 2rem;
-
-        a {
-          font-size: 1.25rem;
-        }
-      }
-    }
-  }
-
-  .archive-list.en {
-    li {
-      display: none;
-    }
-    li.en {
-      display: block;
-    }
-  }
-
-  // .bio {
-  //   box-sizing: border-box;
-  //   width: 240px;
-  //   font-size: .8rem;
-  //   text-align: left;
-  //   float: left;
-  //   margin-top: 2rem;
-  //   padding-left: 2rem;
-  //   // border-left: $yellow 1px solid;
-
-  //   h2 {
-  //     margin-top: 1rem;
-  //     margin-bottom: 1rem;
-  //   }
-  //   a {
-  //     text-decoration: none;
-  //     color: $yellow;
-  //   }
-  // }
-
-  .page-header {
-    padding: 2rem 2rem 0 2rem;
-    box-sizing: border-box;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-    .pagination {
-      a {
-        color: $gray;
-        font-size: 0.8rem;
-        padding-right: 8px;
-      }
-    }
-
-    h1 {
-      font-size: 1.8rem;
-    }
-  }
-
-  .blogpost {
-      box-sizing: border-box;
-      // width: calc(100% - 240px);
-      width: 100%;
-      float: left;
-      padding: 0rem 2rem 2rem 2rem;
-
-      a {
-        text-decoration: none;
-        color: $yellow;
-      }
-  }
-
-
-  .meta {
-    box-sizing: border-box;
-    width: 240px;
-    font-size: .8rem;
-    text-align: left;
-    float: left;
-    padding: 0rem 2rem 2rem 2rem;
+// Headers
+header {
+  margin-bottom: 3rem;
+  
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
   }
 }
 
-#footer {
-  clear: both;
-  text-align: center;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
 
-  .footter-container {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+h2 {
+  font-size: 1.3rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
 
-    color: $gray;
-    font-size: 0.9rem;
+h3 {
+  font-size: 1.1rem;
+}
+
+// Links
+a {
+  color: #0066cc;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+  -webkit-text-decoration-skip: objects;
+  -webkit-tap-highlight-color: transparent;
+  
+  &:hover {
+    border-bottom-color: #0066cc;
+  }
+  
+  &:visited {
+    color: #0066cc;
+  }
+  
+  &:active {
+    color: #0052a3;
   }
 }
 
-@media (max-width: 760px) {
-  .container {
-    .languages {
-      padding-top: 0.5rem;
-      font-style: italic;
-      float: left;
+// Sections
+section {
+  margin-bottom: 3rem;
+  
+  &#about,
+  &#work,
+  &#patents,
+  &#links {
+    margin-bottom: 2.5rem;
+  }
+}
+
+// Lists
+ul, ol {
+  margin-bottom: 1rem;
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+// Social links
+.social-links {
+  list-style: none;
+  padding: 0;
+  
+  li {
+    display: inline-block;
+    margin-right: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Post list
+.post-list {
+  list-style: none;
+  padding: 0;
+  
+  li {
+    margin-bottom: 1rem;
+    
+    .post-date {
+      color: #666;
+      font-size: 0.875rem;
+      display: inline-block;
+      min-width: 5.5rem;
+      margin-right: 1rem;
     }
   }
 }
 
-
-@media (max-width: 34rem) {
-  .herotator {
-    // background: $yellow;
-
-    .site {
-      position: relative;
-      text-align: center;
-      padding: 2rem;
-    }
-  }
-
-  .container {
-    box-sizing: border-box;
-    // padding-left: 2rem;
-    // padding-right: 2rem;
-
-    .archive-list {
-      box-sizing: border-box;
-      width: 100%;
-      float: left;
-    }
-    // .bio {
-    //   margin-top: 60px;
-    //   width: 100%;
-    // }
-
-    .blogpost {
-      box-sizing: border-box;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      width: 100%;
-    }
-    .meta {
-      margin-top: 60px;
-      width: 100%;
-    }
-  }
-
+// Paragraphs
+p {
+  margin-bottom: 1rem;
 }
 
-
-code, pre {
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size:12px;
-  white-space:pre-wrap;
+// Code
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 0.2em 0.4em;
+  background: var(--code-bg);
+  border-radius: 3px;
 }
 
 pre {
-    display: block;
-    padding: 9.5px;
-    margin: 0 0 10px;
-    font-size: 13px;
-    line-height: 1.42857143;
-    color: #333;
-    word-break: break-all;
-    word-wrap: break-word;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  padding: 1rem;
+  background: var(--code-bg);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  
+  code {
+    padding: 0;
+    background: none;
+  }
 }
 
+// Blockquotes
 blockquote {
-    border-left: 3px solid $yellow;
-    margin: 0;
-    padding: 0.2rem 1rem;
-    font-size: 0.8rem;
+  border-left: 3px solid var(--border-color);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #666;
 }
 
+// Images
 img {
-  max-width: 80%;
-  margin: 20px 10% 20px 10%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
 }
 
+// Tables
 table {
+  width: 100%;
   border-collapse: collapse;
+  margin-bottom: 1rem;
+  
+  th, td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  th {
+    font-weight: 600;
+  }
 }
 
-table,
-th,
-td {
-  border: 1px solid black;
+// Footer
+footer, #footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.875rem;
+  color: #666;
+  text-align: center;
+  
+  .footer-container {
+    padding: 1rem;
+  }
 }
 
-// .navbar-default .navbar-nav > li > a {
-// 	color: white;
-// }
+// Blog post specific
+.blogpost {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .meta {
+    color: #666;
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+  }
+}
 
-// .blogpost h2 {
-//   margin-top: 30px;
-// }
+.page-header {
+  margin-bottom: 2rem;
+  
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+}
 
-// .profile_meta ul li{
-// 	list-style-type: none;
-//     display: inline-block;
-//     padding-right: 20px;
-//     padding-left: 20px;
-//     margin-top: 10px;
-// }
+// Archive page
+.archive-list {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 1.5rem;
+  }
+  
+  .archive-date {
+    color: #666;
+    font-size: 0.875rem;
+    display: block;
+  }
+  
+  h3 {
+    margin: 0.25rem 0;
+    font-size: 1.125rem;
+  }
+  
+  .description {
+    color: #666;
+    font-size: 0.875rem;
+  }
+}
 
-// .profile_meta ul li a{
-// 	color: white;
-// }
-// .profile_meta ul {
-//   padding-left: 0px;
-// }
+// Mobile responsiveness
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .container {
+    padding: 2rem 1.25rem;
+  }
+  
+  header h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+  
+  .post-list li .post-date {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .social-links li {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+}
 
-// img.avatar {
-//     height: 100px;
-//     width: 100px;
-//     background-color: #fff;
-//     border-radius: 50px;
-//     -webkit-border-radius: 50px;
-//     -moz-border-radius: 50px;
-//     box-shadow: 0 0 0 5px #fff;
-// }
+// Very small devices
+@media (max-width: 400px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+}
 
-// .archive {
-//   margin-bottom: 3rem;
-// }
+// iOS specific fixes
+@supports (-webkit-touch-callout: none) {
+  body {
+    font-family: "JetBrains Mono", -apple-system, BlinkMacSystemFont, monospace;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  a {
+    color: #0066cc !important;
+    -webkit-tap-highlight-color: rgba(0, 102, 204, 0.2);
+  }
+  
+  .container {
+    padding: 2rem 1.5rem !important;
+    padding-left: max(1.5rem, env(safe-area-inset-left)) !important;
+    padding-right: max(1.5rem, env(safe-area-inset-right)) !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 680px !important;
+  }
+}
 
-// .archive-item {
-//   margin-bottom: 2rem;
-//   overflow: auto; /* clearfix */
-// }
-
-// .archive-title {
-//   font-size: 20px;
-// }
-
-// .archive-date {
-
-// }
-
-// @media (max-device-width: 480px) {
-//   p {
-//    font-size: 16px;
-//   }
-// }
-
-// .navbar {
-//   background-color: rgba(0, 122, 204, 1);
-// }
-// @media (min-width: 34rem) {
-//   .navbar {
-//     background-image: url(/assets/bat.jpeg);
-//     background-position: center;
-//   }
-// }
-
+// Dark mode support (optional)
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #e0e0e0;
+    --bg-color: #1a1a1a;
+    --link-color: #66b3ff;
+    --border-color: #333;
+    --code-bg: #2a2a2a;
+  }
+  
+  .post-date,
+  .archive-date,
+  .description,
+  .meta,
+  footer {
+    color: #999;
+  }
+  
+  blockquote {
+    color: #ccc;
+  }
+}

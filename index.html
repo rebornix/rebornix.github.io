@@ -1,56 +1,46 @@
 ---
 layout: default
-description: Homepage of rebornix.com
+title: Peng Lyu
+description: Personal website of Peng Lyu
 ---
 
-<script>
-  function toggle(elm, language) {
-    document.getElementById('zh').className = "";
-    document.getElementById('en').className = "";
-    elm.className = 'active';
-    document.getElementById('list').className = "archive-list " + language;
-  }
-</script>
-<div class="info">
-  <div class="intro">
-    <span>Developer on <a href="https://code.visualstudio.com">VS Code</a>. Follow me on <a href="https://t.me/rebornix" target="_blank">Telegram</a>/<a href="https://github.com/rebornix"
-      target="_blank">GitHub</a>/<a href="/atom"
-      target="_blank">RSS</a>. Try the apps I built: <a href="https://apps.apple.com/app/apple-store/id6447794447?pt=120102995&ct=rebornix&mt=8" target="_blank">ProxMobo</a>, <a href="https://apps.apple.com/in/app/uptime-kuma-manager/id6446004887" target="_blank">Uptime Kuma Manager</a>, <a href="https://apps.apple.com/ua/app/totk-gears-guide/id6449793363" target="_blank">TOTK Gears Guide</a>.</span>
-  </div>
-  <div class="languages">
-    <span><a id="zh" title="简体中文" onclick="toggle(this)" class="active">简体中文</a></span>
-    <span> | <a id="en" title="English" onclick="toggle(this, 'en')">English</a></span>
-  </div>
-</div>
-<div id="list" class="archive-list">
-   {% for post in site.posts %} {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %} {% capture next_year %}{{
-  post.previous.date | date: "%Y" }}{% endcapture %} {% if forloop.first %}
-    <!-- <h2 class="year" id="{{ this_year }}-ref">{{this_year}}</h2> -->
+<div class="container">
+  <header>
+    <h1>Peng Lyu</h1>
+  </header>
+
+  <section id="about">
+    <p>Hey! I'm an Engineering Manager at Microsoft on the VS Code team, though I still stumble a bit when saying "EM". Thanks to our <a href="https://www.youtube.com/live/X3qUfOB3x8Q?si=RxEWdNeNbhXahJAu&t=1119">team culture</a>, I spend a good amount of time writing code and being a tech lead. My team owns notebooks/jupyter, search, remote development, vscode.dev, and more. I'm also leading a cross team effort to integrate GitHub Copilot coding agent into the editor.</p>
+    
+    <p>I joined the team back in 2016 when they started growing the Redmond office. Started by working on <a href="https://github.com/microsoft/monaco-editor">Monaco Editor</a> (the core editor), then built the commenting system that powers the GitHub Pull Request integration. In 2019, I began building native notebook support for VS Code, which eventually led to my EM role.</p>
+    
+    <p>Outside of work, I enjoy self hosting and building <a href="https://apps.apple.com/us/app/proxmobo/id6447794447">mobile apps</a> and <a href="https://apps.apple.com/us/app/uptime-kuma-manager/id6446004887">tools</a> to manage my homelab servers.</p>
+  </section>
+
+  <section id="work">
+    <h2>Related Work</h2>
     <ul>
-      {% endif %}
-      {% if post.language == "en" %}
-        <li class="{{ post.language }}">
-      {% else %}
-        <li>
-      {% endif %}
-       {% if post.external_url %}
-      <span class="post-date archive-date">{{ post.date | date: "%B" }} {{ post.date | date: "%d" }}, {{ post.date | date: "%Y" }}</span>
-      <a href="{{ post.external_url }}" class="archive-title">
-        <h3>{{ post.channel }}&thinsp;/&thinsp;{{ post.title }}</h3>
-      </a>
-      {% else %}
-      <span class="post-date archive-date">{{ post.date | date: "%B" }} {{ post.date | date: "%d" }}, {{ post.date | date: "%Y" }}</span>
-      <a href="{{ post.url }}" class="archive-title">
-        <h3>{{ post.title }}</h3>
-        <div class="description">{{ post.content | truncate:72 | strip_html }}</div>
-      </a>
-      {% endif %}
-      </li>
-      {% if forloop.last %}
+      <li><a href="https://code.visualstudio.com/docs/copilot/guides/notebooks-with-ai">Notebooks with AI</a> - Copilot integration for data science</li>
+      <li><a href="https://code.visualstudio.com/blogs/2021/11/08/custom-notebooks">Custom Notebooks</a> - Extensibility for notebook ecosystem</li>
+      <li><a href="https://code.visualstudio.com/blogs/2021/08/05/notebooks">Notebooks in VS Code</a> - Native notebook support</li>
+      <li><a href="https://code.visualstudio.com/blogs/2018/09/10/introducing-github-pullrequests">Introducing GitHub Pull Requests</a> - Commenting infrastructure & GitHub Integration</li>
+      <li><a href="https://code.visualstudio.com/blogs/2018/03/23/text-buffer-reimplementation">Text Buffer Reimplementation</a> - Core editor performance improvements</li>
     </ul>
-    {% else %} {% if this_year != next_year %}
-    </ul>
-    <!-- <h2 id="{{ next_year }}-ref">{{next_year}}</h2> -->
+  </section>
+
+  <section id="patents">
+    <h2>Patents</h2>
     <ul>
-    {% endif %} {% endif %} {% endfor %}
+      <li><a href="https://patents.google.com/patent/US12265800">US Patent 12265800</a> - Multicell document editor minimoremap</li>
+      <li><a href="https://patents.google.com/patent/US11243745">US Patent 11243745</a> - Text editor buffering implementation with offsets management</li>
+    </ul>
+  </section>
+
+  <section id="links">
+    <h2>Connect</h2>
+    <ul class="social-links">
+      <li><a href="https://github.com/rebornix">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/penglv">LinkedIn</a></li>
+    </ul>
+  </section>
 </div>
