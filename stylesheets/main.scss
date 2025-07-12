@@ -237,6 +237,54 @@ footer, #footer {
   }
 }
 
+// Blog listing page
+.posts-list {
+  .post-item {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  .post-date {
+    color: #666;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .post-item h3 {
+    margin: 0 0 0.5rem 0;
+    
+    a {
+      color: var(--text-color);
+      border-bottom: none;
+      
+      &:hover {
+        color: var(--link-color);
+      }
+    }
+  }
+  
+  .post-excerpt {
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .post-category {
+    background: var(--code-bg);
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 3px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
 .page-header {
   margin-bottom: 2rem;
   
