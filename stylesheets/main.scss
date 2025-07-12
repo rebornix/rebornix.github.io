@@ -238,6 +238,42 @@ footer, #footer {
 }
 
 // Blog listing page
+.blog-nav {
+  margin-bottom: 2rem;
+  
+  .nav-home {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    
+    &:hover {
+      color: var(--link-color);
+    }
+  }
+}
+
+.blog-header {
+  margin-bottom: 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+  
+  .blog-description {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
 .posts-list {
   .post-item {
     margin-bottom: 3rem;
@@ -254,14 +290,18 @@ footer, #footer {
     font-size: 0.875rem;
     margin-bottom: 0.5rem;
     display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
   
-  .post-item h3 {
-    margin: 0 0 0.5rem 0;
+  .post-title {
+    margin: 0 0 0.75rem 0;
     
     a {
       color: var(--text-color);
       border-bottom: none;
+      font-size: 1.25rem;
+      font-weight: 500;
       
       &:hover {
         color: var(--link-color);
@@ -271,18 +311,181 @@ footer, #footer {
   
   .post-excerpt {
     color: #666;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
   }
   
   .post-category {
     background: var(--code-bg);
-    padding: 0.2rem 0.5rem;
+    padding: 0.25rem 0.75rem;
     font-size: 0.75rem;
-    border-radius: 3px;
+    border-radius: 4px;
     color: #666;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    font-weight: 500;
   }
+}
+
+// Individual blog post layout
+.post-header {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+  
+  .post-nav {
+    margin-bottom: 1.5rem;
+    
+    a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-right: 1rem;
+      
+      &:hover {
+        color: var(--link-color);
+      }
+    }
+  }
+  
+  .post-meta {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    .post-date {
+      color: #666;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .post-category {
+      background: var(--code-bg);
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+  }
+  
+  .post-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--text-color);
+  }
+}
+
+.post-content {
+  .promo-notice {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 2rem 0;
+    
+    small {
+      color: #666;
+      line-height: 1.5;
+    }
+  }
+  
+  .post-body {
+    line-height: 1.7;
+    margin: 2rem 0;
+    
+    h2, h3, h4, h5, h6 {
+      margin: 2rem 0 1rem 0;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+    }
+    
+    blockquote {
+      border-left: 4px solid var(--border-color);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: #666;
+      font-style: italic;
+    }
+    
+    code {
+      background: var(--code-bg);
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-family: var(--font-mono);
+      font-size: 0.9em;
+    }
+    
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      
+      code {
+        background: none;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.post-pagination {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  
+  a {
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background: #fafafa;
+    max-width: 45%;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      border-color: var(--link-color);
+      background: #f0f8ff;
+    }
+    
+    .nav-label {
+      display: block;
+      font-size: 0.8rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+    
+    .nav-title {
+      display: block;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+  }
+  
+  .next-post {
+    text-align: right;
+    margin-left: auto;
+  }
+}
+
+.post-comments {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
 }
 
 .page-header {
