@@ -1,0 +1,233 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gist Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: #fafafa;
+      color: #333;
+    }
+    .toolbar {
+      padding: 12px 20px;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .toolbar label { font-size: 13px; font-weight: 500; white-space: nowrap; }
+    .toolbar input[type="text"] {
+      flex: 1;
+      min-width: 200px;
+      padding: 6px 10px;
+      font-family: inherit;
+      font-size: 13px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+    .toolbar input[type="text"]:focus { border-color: #0969da; }
+    .toolbar button {
+      padding: 6px 16px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      background: #0969da;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .toolbar button:hover { background: #0860c4; }
+    .toolbar select {
+      padding: 6px 8px;
+      font-family: inherit;
+      font-size: 13px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+    }
+    .status {
+      padding: 8px 20px;
+      font-size: 12px;
+      color: #666;
+      background: #f6f6f6;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .status.error { color: #d1242f; background: #fff0f0; }
+    #preview-frame {
+      width: 100%;
+      height: calc(100vh - 100px);
+      border: none;
+      background: #fff;
+    }
+    .empty-state {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 100px);
+      color: #999;
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <label for="gist-url">Gist URL:</label>
+    <input type="text" id="gist-url" placeholder="https://gist.github.com/user/gist_id" />
+    <select id="file-select" style="display:none"></select>
+    <button onclick="loadGist()">Preview</button>
+  </div>
+  <div id="status" class="status" style="display:none"></div>
+  <div id="empty" class="empty-state">
+    Paste a GitHub Gist URL above and click Preview.<br>
+    Or visit: /gist/?url=https://gist.github.com/user/id
+  </div>
+  <iframe id="preview-frame" style="display:none" sandbox="allow-scripts allow-same-origin"></iframe>
+
+  <script>
+    const urlInput = document.getElementById('gist-url');
+    const fileSelect = document.getElementById('file-select');
+    const statusEl = document.getElementById('status');
+    const emptyEl = document.getElementById('empty');
+    const frame = document.getElementById('preview-frame');
+
+    let gistData = null;
+
+    function showStatus(msg, isError) {
+      statusEl.textContent = msg;
+      statusEl.className = 'status' + (isError ? ' error' : '');
+      statusEl.style.display = msg ? '' : 'none';
+    }
+
+    function parseGistInput(input) {
+      input = input.trim();
+      // Direct ID (hex string)
+      if (/^[a-f0-9]+$/i.test(input)) return { id: input, file: null };
+      // URL like https://gist.github.com/user/id or https://gist.github.com/id
+      // May include #file-filename-ext fragment
+      const match = input.match(/gist\.github\.com\/(?:[^/]+\/)?([a-f0-9]+)/i);
+      if (!match) return null;
+      const id = match[1];
+      // Extract file hint from #file-name fragment
+      const fragMatch = input.match(/#file-(.+)/);
+      const file = fragMatch ? fragMatch[1].replace(/-/g, '.') : null;
+      return { id, file };
+    }
+
+    async function loadGist() {
+      const raw = urlInput.value;
+      const parsed = parseGistInput(raw);
+      if (!parsed) {
+        showStatus('Invalid gist URL or ID.', true);
+        return;
+      }
+
+      showStatus('Fetching gist...');
+      try {
+        const resp = await fetch('https://api.github.com/gists/' + parsed.id);
+        if (!resp.ok) {
+          const msg = resp.status === 404
+            ? 'Gist not found. Make sure the URL is correct and the gist is accessible.'
+            : 'GitHub API error: ' + resp.status;
+          showStatus(msg, true);
+          return;
+        }
+
+        gistData = await resp.json();
+        const files = Object.values(gistData.files);
+        const htmlFiles = files.filter(f => f.filename.endsWith('.html') || f.filename.endsWith('.htm'));
+        const candidates = htmlFiles.length > 0 ? htmlFiles : files;
+
+        if (candidates.length === 0) {
+          showStatus('No files found in this gist.', true);
+          return;
+        }
+
+        // Populate file selector
+        fileSelect.innerHTML = '';
+        candidates.forEach(f => {
+          const opt = document.createElement('option');
+          opt.value = f.filename;
+          opt.textContent = f.filename;
+          fileSelect.appendChild(opt);
+        });
+        fileSelect.style.display = candidates.length > 1 ? '' : 'none';
+
+        // Update URL without reload
+        const newUrl = new URL(window.location);
+        newUrl.searchParams.set('url', 'https://gist.github.com/' + parsed.id);
+        history.replaceState(null, '', newUrl);
+
+        // Auto-select file from #file- fragment if present
+        let targetFile = candidates[0].filename;
+        if (parsed.file) {
+          const match = candidates.find(f =>
+            f.filename.replace(/[^a-z0-9.]/gi, '.') === parsed.file ||
+            f.filename === parsed.file
+          );
+          if (match) {
+            targetFile = match.filename;
+            fileSelect.value = targetFile;
+          }
+        }
+
+        renderFile(targetFile);
+      } catch (e) {
+        showStatus('Network error: ' + e.message, true);
+      }
+    }
+
+    async function renderFile(filename) {
+      const file = gistData.files[filename];
+      if (!file) return;
+
+      showStatus('Loading ' + filename + '...');
+
+      let content = file.content;
+      // If file was truncated, fetch the raw URL
+      if (file.truncated && file.raw_url) {
+        try {
+          const resp = await fetch(file.raw_url);
+          content = await resp.text();
+        } catch (e) {
+          showStatus('Failed to fetch full file content: ' + e.message, true);
+          return;
+        }
+      }
+
+      emptyEl.style.display = 'none';
+      frame.style.display = '';
+      frame.srcdoc = content;
+      showStatus('Previewing: ' + filename + (gistData.description ? ' — ' + gistData.description : ''));
+    }
+
+    fileSelect.addEventListener('change', () => renderFile(fileSelect.value));
+
+    // Auto-load from query parameter
+    (function init() {
+      const params = new URLSearchParams(window.location.search);
+      let url = params.get('url') || params.get('id');
+      if (url) {
+        // Append fragment from page URL so #file- selection works
+        if (window.location.hash) url += window.location.hash;
+        urlInput.value = url;
+        loadGist();
+      }
+    })();
+  </script>
+</body>
+</html>
