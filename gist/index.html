@@ -18,57 +18,67 @@ layout: null
       color: #333;
     }
     .toolbar {
-      padding: 12px 20px;
+      padding: 6px 12px;
       background: #fff;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e8e8e8;
       display: flex;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 6px;
     }
-    .toolbar label { font-size: 13px; font-weight: 500; white-space: nowrap; }
     .toolbar input[type="text"] {
       flex: 1;
-      min-width: 200px;
-      padding: 6px 10px;
+      padding: 5px 10px;
       font-family: inherit;
-      font-size: 13px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      font-size: 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
       outline: none;
+      color: #444;
+      background: #f9f9f9;
+      transition: border-color 0.15s, background 0.15s;
     }
-    .toolbar input[type="text"]:focus { border-color: #0969da; }
-    .toolbar button {
-      padding: 6px 16px;
-      font-family: inherit;
-      font-size: 13px;
-      font-weight: 500;
-      background: #0969da;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .toolbar button:hover { background: #0860c4; }
-    .toolbar select {
-      padding: 6px 8px;
-      font-family: inherit;
-      font-size: 13px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+    .toolbar input[type="text"]:focus {
+      border-color: #bbb;
       background: #fff;
     }
-    .status {
-      padding: 8px 20px;
+    .toolbar button {
+      padding: 5px 14px;
+      font-family: inherit;
       font-size: 12px;
-      color: #666;
-      background: #f6f6f6;
-      border-bottom: 1px solid #e0e0e0;
+      font-weight: 500;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.15s;
     }
-    .status.error { color: #d1242f; background: #fff0f0; }
+    .toolbar button:hover { opacity: 0.75; }
+    .toolbar select {
+      padding: 5px 6px;
+      font-family: inherit;
+      font-size: 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      background: #f9f9f9;
+      color: #444;
+      max-width: 200px;
+    }
+    .status {
+      padding: 3px 12px;
+      font-size: 11px;
+      color: #888;
+      background: #fff;
+      border-bottom: 1px solid #f0f0f0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .status.error { color: #c0392b; }
     #preview-frame {
       width: 100%;
-      height: calc(100vh - 100px);
+      height: calc(100vh - 54px);
       border: none;
       background: #fff;
     }
@@ -76,17 +86,16 @@ layout: null
       display: flex;
       align-items: center;
       justify-content: center;
-      height: calc(100vh - 100px);
-      color: #999;
-      font-size: 14px;
+      height: calc(100vh - 54px);
+      color: #bbb;
+      font-size: 13px;
       text-align: center;
-      line-height: 1.8;
+      line-height: 2;
     }
   </style>
 </head>
 <body>
   <div class="toolbar">
-    <label for="gist-url">Gist URL:</label>
     <input type="text" id="gist-url" placeholder="https://gist.github.com/user/gist_id" />
     <select id="file-select" style="display:none"></select>
     <button onclick="loadGist()">Preview</button>
