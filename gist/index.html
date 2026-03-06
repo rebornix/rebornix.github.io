@@ -14,13 +14,13 @@ layout: null
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'JetBrains Mono', monospace;
-      background: #fafafa;
-      color: #333;
+      background: #1a1a1a;
+      color: #ccc;
     }
     .toolbar {
-      padding: 6px 12px;
-      background: #fff;
-      border-bottom: 1px solid #e8e8e8;
+      padding: 6px 10px;
+      background: #1a1a1a;
+      border-bottom: 1px solid #333;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -30,24 +30,21 @@ layout: null
       padding: 5px 10px;
       font-family: inherit;
       font-size: 12px;
-      border: 1px solid #e0e0e0;
+      border: 1px solid #3a3a3a;
       border-radius: 6px;
       outline: none;
-      color: #444;
-      background: #f9f9f9;
-      transition: border-color 0.15s, background 0.15s;
+      color: #ccc;
+      background: #111;
+      transition: border-color 0.15s;
     }
-    .toolbar input[type="text"]:focus {
-      border-color: #bbb;
-      background: #fff;
-    }
+    .toolbar input[type="text"]:focus { border-color: #666; }
     .toolbar button {
       padding: 5px 14px;
       font-family: inherit;
       font-size: 12px;
       font-weight: 500;
-      background: #111;
-      color: #fff;
+      background: #e8e8e8;
+      color: #111;
       border: none;
       border-radius: 6px;
       cursor: pointer;
@@ -59,26 +56,26 @@ layout: null
       padding: 5px 6px;
       font-family: inherit;
       font-size: 12px;
-      border: 1px solid #e0e0e0;
+      border: 1px solid #3a3a3a;
       border-radius: 6px;
-      background: #f9f9f9;
-      color: #444;
+      background: #111;
+      color: #ccc;
       max-width: 200px;
     }
     .status {
-      padding: 3px 12px;
+      padding: 2px 10px;
       font-size: 11px;
-      color: #888;
-      background: #fff;
-      border-bottom: 1px solid #f0f0f0;
+      color: #555;
+      background: #1a1a1a;
+      border-bottom: 1px solid #2a2a2a;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .status.error { color: #c0392b; }
+    .status.error { color: #e05555; }
     #preview-frame {
       width: 100%;
-      height: calc(100vh - 54px);
+      height: calc(100vh - 50px);
       border: none;
       background: #fff;
     }
@@ -86,8 +83,8 @@ layout: null
       display: flex;
       align-items: center;
       justify-content: center;
-      height: calc(100vh - 54px);
-      color: #bbb;
+      height: calc(100vh - 50px);
+      color: #444;
       font-size: 13px;
       text-align: center;
       line-height: 2;
