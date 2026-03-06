@@ -6,7 +6,17 @@
     <meta name="author" content="Peng Lyu">
 	<link href="/main.css" rel="stylesheet" type="text/css" media="all">
     <link href="http://fonts.googleapis.com/css?family=Offside|Cagliostro|Patrick+Hand+SC|Bigelow+Rules|Londrina+Shadow|Geo|Maven+Pro" rel="stylesheet" type="text/css">
-	<script type="text/javascript"> function delayer() {window.location = "http://www.rebornix.com"} </script>
+	<script type="text/javascript">
+		// Route /gist/{id} → /gist/?url=https://gist.github.com/{id}
+		(function() {
+			var m = window.location.pathname.match(/^\/gist\/([a-f0-9]+)\/?$/i);
+			if (m) {
+				window.location.replace('/gist/?url=https://gist.github.com/' + m[1] + window.location.hash);
+				return;
+			}
+		})();
+		function delayer() {window.location = "http://www.rebornix.com"}
+	</script>
 </head>
 <body onLoad="setTimeout('delayer()', 5000)">    
     <div class="container">
