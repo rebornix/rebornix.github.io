@@ -9,7 +9,7 @@
 	<script type="text/javascript">
 		// Route /gist/{id} → /gist/?url=https://gist.github.com/{id}
 		(function() {
-			var m = window.location.pathname.match(/^\/gist\/([a-f0-9]+)\/?$/i);
+			var m = window.location.pathname.match(/^\/gist\/(?:[^/]+\/)?([a-f0-9]+)\/?$/i);
 			if (m) {
 				window.location.replace('/gist/?url=https://gist.github.com/' + m[1] + window.location.hash);
 				return;
